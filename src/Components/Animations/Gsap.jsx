@@ -7,6 +7,8 @@ export const gsapAnimations = () => {
     const visionHeading = document.querySelector('.vision-heading');
     const visionSubheading = document.querySelector('.vision-subheading');
     const visionBtn = document.querySelector('.vision-btn');
+    const categories = document.getElementsByClassName('category');
+
 
   gsap.from(visioIcon, {
   rotation: 360, 
@@ -44,5 +46,12 @@ export const gsapAnimations = () => {
       opacity: 0,
       duration: 1,
       delay: 1,
+    });
+
+    gsap.from(categories, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.8
     });
 }

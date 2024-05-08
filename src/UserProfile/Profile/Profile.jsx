@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import './Profile.css';
 import { AuthContext } from '../../Components/Context/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { doc, setDoc, getFirestore, getDoc } from 'firebase/firestore';
 import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
@@ -28,7 +28,7 @@ function Profile() {
       console.log(img); 
       img.items.forEach(val => {
        const lastFile = img.items[img.items.length - 1];
-       console.log(lastFile);
+      //  console.log(lastFile);
        
         getDownloadURL(lastFile).then((url) => {
           setProfileImage(url);
@@ -48,10 +48,6 @@ function Profile() {
 
   return (
     <div className="profile-container">
-      {/* <video autoPlay loop muted className="background-video">
-        <source src='./Videos/5818973-uhd_3840_2160_24fps.mp4' type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
       <div className="profile-details">
         <div className="profile-photo">
           {/* Display the selected profile image */}
@@ -70,12 +66,12 @@ function Profile() {
       </div>
       <div className="classRoom">
         <div className="joinClass">
-          <img src="./Icons/group.png" alt="" />
-          <p>Join a classroom</p>
+          <Link to="/categories"><img src="./Icons/group.png" alt="" /></Link>
+          <p className="Join">Join a classroom</p>
         </div>
         <div className="ressumeClassRoom">
           <img src="./Icons/add.png" alt="" />
-          <p>Resume classroom</p>
+          <p className="Join">Resume classroom</p>
         </div>
       </div>
     </div>

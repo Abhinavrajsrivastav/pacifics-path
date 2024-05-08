@@ -9,6 +9,8 @@ import HowWork from './Components/Welcome/Pages/How-Work-Page/HowWork';
 import Profile from './UserProfile/Profile/Profile';
 import { AuthProvider } from './Components/Context/AuthProvider';
 import { AuthContext } from './Components/Context/AuthProvider';
+import Categories from './Categories/Categories';
+import PopupForm from './Categories/PopopForm';
 
 function App() {
   
@@ -28,6 +30,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path={`/profile/`} element={<Profile />} />
+          <Route path="/categories" element={<Categories />} />
+          {/* <Route path="/form" element={<PopupForm onClose={undefined} />} /> */}
         </Routes>
       </AuthProvider>
     </Router>
