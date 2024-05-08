@@ -30,7 +30,7 @@ const handleSubmit = async (e) => {
     try {
         ///ye wali line problem kar rahi hai
         const newDocRef = doc(dp, `Domains`);
-        // Set the data to the new document
+        // Set the data to the new  document  
         await setDoc(newDocRef, formData);
         console.log('User data stored in Firestore successfully');
     } catch (error) {
