@@ -12,6 +12,7 @@ import com.edubbell.edubell.Models.SignupUser;
 @CrossOrigin(origins = "http://localhost:3000")
 public class Controller {
     
+    //adding some logic to find user existing in the firebase 
     
     @PostMapping("/sign-up")
     public void createUser(@RequestBody SignupUser user) {
