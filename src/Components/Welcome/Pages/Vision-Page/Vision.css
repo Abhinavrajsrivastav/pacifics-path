@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.vision-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.centered {
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+  top: 0px;
+  padding: 50px;
+  padding-top: 200px;
+}
+
+.vision-heading{
+    font-size: 4.6rem;
+    font-weight: bolder;
+    opacity: .9;
+    padding: 0;
+    margin: 0;
+}
+
+.vision-icon {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
+
+.vision-image {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.vision-subheading{
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  opacity: 0.8;
+  word-spacing: 3px;
+  letter-spacing: 0px;
+}
+
+.vision-learning{
+    color: var(--main-color);
+}
+
+.vision-btn{
+    margin: 5rem;
+    padding: 2rem 3rem;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 2rem;;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+@media(max-width: 1005px){
+  .vision-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding: 0px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  height: auto;
+  margin: 0px;
+}
+  .centered {
+    padding: 2rem;
+    text-align: start;
+    overflow-x: hidden;
+    /* padding: 0px; */
+    /* background-color: tomato; */
+  }
+
+  .vision-heading{
+    font-size: 2.3rem;
+  }
+  .vision-subheading{
+    font-size: 1.0rem;
+  }
+  .vision-learning{
+    position: relative;
+    right: 5px;
+  }
+  .vision-btn{
+    margin: 0;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    position: relative;
+    text-align: start;
+  }
+}
