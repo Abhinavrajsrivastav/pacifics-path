@@ -1,18 +1,20 @@
 import React, { useState, useContext } from 'react';
 import './PopopForm.css';
-import { getFirestore, doc, setDoc, collection } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../Components/Firebase/Firebase';
-import {AuthContext} from '../Components/Context/AuthProvider';
+import { AuthContext } from '../Components/Context/AuthProvider';
 
 function PopupForm({ onClose, category }) {
-    const dp = getFirestore(app);
+    const db = getFirestore(app);
 
     const { setUser, user } = useContext(AuthContext);
 
     const [formData, setFormData] = useState({
-        name: '',
-        number: '',
+        firstName: '',
+        lastName: '',
         email: '',
+        password: '',
+        confirmPassword: ''
     });
 
     const handleInputChange = (e) => {
@@ -22,60 +24,95 @@ function PopupForm({ onClose, category }) {
             [name]: value,
         });
     };
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    
 
-    try {
-        ///ye wali line problem kar rahi hai
-        const newDocRef = doc(dp, `Domains`);
-        // Set the data to the new  document  
-        await setDoc(newDocRef, formData);
-        console.log('User data stored in Firestore successfully');
-    } catch (error) {
-        console.error('Error storing user data in Firestore:', error);
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+        console.log('Category:', category); // Log the category variable
 
-    // Clear form data and close popup
-    setFormData({
-        name: '',
-        number: '',
-        email: '',
-    });
-    onClose();
-};
+        try {
+            // Reference the collection using the category variable
+            const docRef = await addDoc(collection(db, `${category}/user-data/${formData.firstName}`), formData);
+            console.log('User data stored in Firestore successfully with ID:', docRef.id);
+        } catch (error) {
+            console.error('Error storing user data in Firestore:', error);
+        }
 
+        // Clear form data and close popup
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        });
+        onClose();
+    };
 
     return (
         <div className="popup-form">
             <div className="popup-form-inner">
                 <button className="close-btn" onClick={onClose}>Close</button>
-                <h2>Enter Your Details</h2>
-                <form onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
+            <div><p className="title">Register</p>
+            <p className="message">Signup now and get full access to our app.</p></div>
+            <div className="flex">
+                <label>
                     <input
+                        className="input"
                         type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={formData.name}
+                        placeholder=""
+                        name="firstName"
+                        value={formData.firstName}
                         onChange={handleInputChange}
+                        required
                     />
+                    <span>Firstname</span>
+                </label>
+
+                <label>
                     <input
-                        type="number"
-                        name="number"
-                        placeholder="Number"
-                        value={formData.number}
+                        className="input"
+                        type="text"
+                        placeholder=""
+                        name="lastName"
+                        value={formData.lastName}
                         onChange={handleInputChange}
+                        required
                     />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                    />
-                    <button type="submit">Submit</button>
-                </form>
+                    <span>Lastname</span>
+                </label>
+            </div>
+
+            <label>
+                <input
+                    className="input"
+                    type="email"
+                    placeholder=""
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                />
+                <span>Email</span>
+            </label>
+
+            <label>
+                <input
+                    className="input"
+                    type="email"
+                    placeholder=""
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                />
+                <span>Email</span>
+            </label>
+
+            <button className="submit" type="submit">Submit</button>
+            </form>
+
             </div>
         </div>
     );

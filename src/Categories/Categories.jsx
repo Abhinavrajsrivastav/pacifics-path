@@ -35,6 +35,14 @@ function Categories() {
         "Programming", "Languages"
     ];
 
+    const colors = ["#FFC312", "#C4E538", "#12CBC4", "#FDA7DF", "#ED4C67",
+        "#F79F1F", "#A3CB38", "#1289A7", "#D980FA", "#B53471",
+        "#EE5A24", "#009432", "#0652DD", "#9980FA", "#833471",
+        "#EA2027", "#006266", "#1B1464", "#5758BB", "#6F1E51",
+        "#B33939", "#4CD137", "#487EB0", "#0097E6", "#8C7AE6",
+        "#44BD32", "#40739e"
+    ]
+
     return (
         <div className="Categories-container">
             <div className="category-head">
@@ -46,7 +54,7 @@ function Categories() {
                     <div
                         key={index}
                         className={`category ${category.replace(/\s/g, '')}`}
-                        style={{ backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}` }}
+                        style={{ backgroundColor: colors[index] }} // Set background color dynamically
                         onClick={() => toggleForm(category)} // Corrected onClick event handler
                     >
                         {category}
