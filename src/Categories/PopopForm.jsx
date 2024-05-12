@@ -13,8 +13,7 @@ function PopupForm({ onClose, category }) {
         firstName: '',
         lastName: '',
         email: '',
-        password: '',
-        confirmPassword: ''
+        number: ''
     });
 
     const handleInputChange = (e) => {
@@ -43,8 +42,7 @@ function PopupForm({ onClose, category }) {
             firstName: '',
             lastName: '',
             email: '',
-            password: '',
-            confirmPassword: ''
+            number: ''
         });
         onClose();
     };
@@ -52,7 +50,7 @@ function PopupForm({ onClose, category }) {
     return (
         <div className="popup-form">
             <div className="popup-form-inner">
-                <button className="close-btn" onClick={onClose}>Close</button>
+                <button className="close-btn" onClick={onClose}>×</button>
                 <form className="form" onSubmit={handleSubmit}>
             <div><p className="title">Register</p>
             <p className="message">Signup now and get full access to our app.</p></div>
@@ -100,14 +98,14 @@ function PopupForm({ onClose, category }) {
             <label>
                 <input
                     className="input"
-                    type="email"
+                    type="number"
                     placeholder=""
-                    name="email"
-                    value={formData.email}
+                    name="number"
+                    value={formData.number}
                     onChange={handleInputChange}
                     required
                 />
-                <span>Email</span>
+                <span>Number</span>
             </label>
 
             <button className="submit" type="submit">Submit</button>
