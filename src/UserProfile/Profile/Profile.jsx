@@ -71,7 +71,7 @@ function Profile() {
         </div>
         <div className="ressumeClassRoom">
           <img src="./Icons/add.png" alt="" />
-          <p className="Join">Resume classroom</p>
+          <p className="Join">Explore</p>
         </div>
       </div>
     </div>

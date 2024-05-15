@@ -47,7 +47,7 @@ function Categories() {
         <div className="Categories-container">
             <div className="category-head">
                 <h1>Choose what excites you</h1>
-                <img src="./Icons/checklist.png" alt="" />
+                <img className="checklist" src="./Icons/checklist.png" alt="" />
             </div>
             <div className={`categories-body ${form ? 'form-open' : ''}`}>
                 {categories.map((category, index) => (
