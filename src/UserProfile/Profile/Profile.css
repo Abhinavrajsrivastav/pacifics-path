@@ -48,7 +48,7 @@
 
 .classRoom{
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: start;
   justify-content: start;
   color: white;
@@ -57,7 +57,8 @@
   height: 450px;
   margin: 4px;
   gap: 10px;
-  width: 100vh;
+  width: auto;
+  max-width: 800px;
   background-color: rgba(39, 111, 212, 0.447);
 }
 

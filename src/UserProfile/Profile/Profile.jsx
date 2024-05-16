@@ -73,6 +73,14 @@ function Profile() {
           <img src="./Icons/add.png" alt="" />
           <p className="Join">Explore</p>
         </div>
+         <div className="ressumeClassRoom">
+          <Link to="/selfLearn"><img src="./Icons/self-learning.png" alt="" /></Link>
+          <p className="Join">Self Learning</p>
+        </div>
+         <div className="ressumeClassRoom">
+          <img src="./Icons/video-call.png" alt="" />
+          <p className="Join">Group Learning</p>
+        </div>
       </div>
     </div>
   );
