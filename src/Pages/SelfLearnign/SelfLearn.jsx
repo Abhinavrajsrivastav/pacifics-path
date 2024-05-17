@@ -2,11 +2,11 @@ import React from 'react';
 import './SelfLearn.css';
 
 function SelfLearn() {
-    console.log('SelfLearnmmmmm');
+    console.log('self');
     
   return (
-    <div className='selfLearn-page'>SelfLearn</div>
+    <div className='selfLearn-Page'>SelfLearn</div>
   )
 }
 
-export default SelfLearn;
+export default SelfLearn

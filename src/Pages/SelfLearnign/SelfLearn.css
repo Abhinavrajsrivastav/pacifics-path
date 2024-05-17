@@ -1,4 +1,6 @@
-.selfLearn-page{
+.selfLearn-Page{
     height: 100vh;
-    background: url('./stacked-waves-haikei.png') no-repeat center center/cover;
+    width: 100%;
+    background: url('./stacked-waves-haikei.png')  no-repeat center center/cover;
 }
+
