@@ -35,7 +35,7 @@ function Login() {
                     <p>Sign in with Google</p>
                 </button>
                 <p>or</p>
-                <form className="form" onSubmit={(e) => EmailLogin(e)}>
+                <form className="forms" onSubmit={(e) => EmailLogin(e)}>
                     <input type="text" name="email" placeholder="Phone, email or username" required />
                     <input type="password" name="password" placeholder="Password..." required />
                     {error && <p className="error-message">{error}</p>}

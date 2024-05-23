@@ -258,3 +258,13 @@ form {
     opacity: 0;
   }
 }
+
+@media(max-width: 1005px) {
+  .popup-form {
+    width: 300px;
+  }
+
+  .form {
+    width: auto;
+  }
+}

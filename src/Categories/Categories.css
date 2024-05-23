@@ -76,7 +76,7 @@
 @media(max-width: 1005px){
     .Categories-container {
       gap:2px;
-      padding-top: 60px; 
+      padding-top: 0px; 
     }
     .category-head h1{
        font-size: 1.5rem;
