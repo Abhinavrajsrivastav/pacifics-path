@@ -28,11 +28,11 @@ const Queries = () => {
 
   return (
     <div className="app-container">
-     <div class="brand-container">
-    <span class="brand-name">Eduland</span>
-    <span class="brand-slogan">Have a question? ask it !</span>
+     <div className="brand-container">
+    <span className="brand-name">Eduland</span>
+    <span className="brand-slogan">Have a question? ask it !</span>
   </div>
-      <div className="messageBox">
+  <div className="messageBox">
   <div className="fileUploadWrapper">
     <label for="file">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
@@ -61,8 +61,13 @@ const Queries = () => {
     </label>
     <input type="file" id="file" name="file" />
   </div>
-  <input required="" placeholder="Message..." value={query} type="text" id="messageInput" />
-  <button id="sendButton" onClick={handleSubmit}>
+  <input
+    required=""
+    placeholder="Write here..."
+    type="text"
+    id="messageInput"
+  />
+  <button id="sendButton">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
       <path
         fill="none"
@@ -78,6 +83,7 @@ const Queries = () => {
     </svg>
   </button>
 </div>
+
 
     </div>
   );

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
 
 .app-container {
@@ -12,58 +12,45 @@
   gap: 50px;
 }
 
+.brand-container{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  color: white;
+}
+
+.brand-name{
+  color: white;
+  font-size: 80px;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .messageBox {
-  width: 600px;
-  height: 40px;
+  width: 500px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2d2d2d;
   padding: 0 15px;
-  border-radius: 10px;
-  border: 1px solid;
-  border-color: rgb(107, 62, 255);
+  border-radius: 14px;
+  border: 1px solid rgb(63, 63, 63);
 }
-
-
-/* Updated CSS styles */
-
-/* Brand container */
-.brand-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 20px; /* Adjust spacing as needed */
+.messageBox:focus-within {
+  border: 2px solid var(--main-color);;
 }
-
-.brand-name {
-  font-size: 8rem;
-  font-weight: bold;
-  color: white;
-  margin-top: 10px; /* Adjust spacing as needed */
-  font-family: "Redressed", cursive;
-  font-weight: 400;
-  font-style: normal;
-
-}
-
-.brand-slogan {
-  font-size: 14px;
-  color: #ccc; /* Adjust color as needed */
-}
-
-
-
 .fileUploadWrapper {
   width: fit-content;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  bottom: 2px;
+  justify-content: center;
+  font-family: Play;
 }
 
 #file {
@@ -79,13 +66,19 @@
   position: relative;
 }
 .fileUploadWrapper label svg {
-  height: 18px;
+  height: 20px;
 }
 .fileUploadWrapper label svg path {
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .fileUploadWrapper label svg circle {
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .fileUploadWrapper label:hover svg path {
   stroke: #fff;
@@ -104,28 +97,33 @@
   display: none;
   opacity: 0;
   color: white;
-  font-size: 10px;
+  font-size: 12px;
   text-wrap: nowrap;
   background-color: #000;
   padding: 6px 10px;
-  border: 1px solid #3c3c3c;
-  border-radius: 5px;
+  border: 1px solid #3600b4;
+  border-radius: 8px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 #messageInput {
-  width: 100%;
+  width: 405px;
   height: 100%;
   background-color: transparent;
   outline: none;
   border: none;
-  padding-left: -20px;
+  padding-left: 0px;
   color: white;
+  font-family: Play;
+  font-size: 16px;
 }
 #messageInput:focus ~ #sendButton svg path,
 #messageInput:valid ~ #sendButton svg path {
   fill: #3c3c3c;
-  stroke: white;
+  stroke: var(--main-color);
 }
 
 #sendButton {
@@ -138,20 +136,28 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 #sendButton svg {
-  height: 18px;
-  transition: all 0.3s;
+  height: 20px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 #sendButton svg path {
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 #sendButton:hover svg path {
   fill: #3c3c3c;
-  stroke: white;
+  stroke: var(--main-color);
 }
-
 
 @media(max-width: 1005px){
 
