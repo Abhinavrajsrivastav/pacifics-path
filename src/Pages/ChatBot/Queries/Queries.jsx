@@ -25,6 +25,7 @@ const Queries = () => {
     setQuery(event.target.value);
     console.log(event.target.value);
   };
+  
 
   return (
     <div className="app-container">
