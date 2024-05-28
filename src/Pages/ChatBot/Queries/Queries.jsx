@@ -2,19 +2,25 @@ import React from 'react';
 import './Queries.css';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Queries = () => {
+
+  const navigate = useNavigate();
 
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
   const API_KEY = 'AIzaSyAwY9jOFq5DpDG-Tp9R1tEbteFvcdv_oAs';
-  const SEARCH_ENGINE_ID = 'https://developers.google.com/custom-search/v1/overview#search_engine_id'; // Replace this with your actual Search Engine ID
+  const SEARCH_ENGINE_ID = 'd3ec914403b414c71'; // Replace this with your actual Search Engine ID
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('Query:', query);
     try {
       const response = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${query}`);
+      console.log(response.data.items);
+      navigate('/self-learn/response', { state: { searchResults: response.data.items } });
       setSearchResults(response.data.items);
     } catch (error) {
       console.error('Error fetching search results:', error);
@@ -23,7 +29,6 @@ const Queries = () => {
 
     const handleQuery = (event) => {
     setQuery(event.target.value);
-    console.log(event.target.value);
   };
   
 
@@ -67,8 +72,10 @@ const Queries = () => {
     placeholder="Write here..."
     type="text"
     id="messageInput"
+    value={query}
+    onChange={handleQuery}
   />
-  <button id="sendButton">
+  <button id="sendButton" onClick={handleSubmit}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
       <path
         fill="none"
