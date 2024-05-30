@@ -4,7 +4,7 @@ import './WebResponses.css';
 
 function WebResponses() {
     const location = useLocation();
-    const searchResults = location.state.searchResults;
+    const searchResults = location.state.searchResults || []; // Provide a default empty array if searchResults is undefined
     console.log('Search Results:', searchResults);
 
     return (
@@ -13,11 +13,11 @@ function WebResponses() {
             <div className="response-list">
                 {searchResults.map((result, index) => (
                     <div key={index} className="response-items">
-                        <a href={result.link} target="_blank" rel="noopener noreferrer" className="result">
+                        <a href={result.link} target="_blank" rel="noopener noreferrer" className="web-result">
+                            <img src="../Icons/source-code.png" alt="" />
                             <h3 className="result-title">{result.title}</h3>
-                            <p className="result-snippet">{result.snippet}</p>
-                            <p className="result-url">{result.link}</p>
                         </a>
+                        <p className="result-snippet">{result.snippet}</p>
                     </div>
                 ))}
             </div>
