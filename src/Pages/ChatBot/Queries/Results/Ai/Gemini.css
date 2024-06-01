@@ -1,0 +1,112 @@
+.Gemini-response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bgblue {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 700px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  top: 100px;
+  color: white;
+  overflow-x: hidden;
+}
+
+.gemini-response-container h2 {
+  text-align: center;
+  color: #2b86ee;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.response-content {
+  line-height: 1.6;
+  color: #ffffff;
+  background-color: #3b3d3e83;
+}
+
+.response-content p {
+  margin-bottom: 15px;
+}
+
+.chat-bot {
+  position: absolute;
+  top: 85%;
+  left: 2%;
+}
+
+.card {
+  font-size: 1rem;
+  color: #bec4cf;
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  border: 1px solid #0978e7;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 650px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card::-webkit-scrollbar {
+  margin-left: 10px;
+  width: 5px; /* Width of the scrollbar */
+}
+
+.card::-webkit-scrollbar-track {
+  background: #f1f1f100; /* Background color of the scrollbar track */
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #2b95ff; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Radius of the scrollbar thumb */
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+.history-entry, .current-entry {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.response-left {
+  flex: 1;
+  margin-right: 10px;
+  background-color: #4175efb9;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.query-right {
+  flex: 1;
+  margin-left: 100px;
+  text-align: right;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .bgblue {
+    width: 400px;
+    top: 0px;
+  }
+
+  .gemini-response-container {
+    padding: 15px;
+  }
+
+  .gemini-response-container h2 {
+    font-size: 1.5em;
+  }
+}

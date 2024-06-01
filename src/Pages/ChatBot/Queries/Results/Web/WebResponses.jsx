@@ -1,25 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './WebResponses.css';
 
 function WebResponses() {
     const location = useLocation();
-    const searchResults = location.state.searchResults || []; // Provide a default empty array if searchResults is undefined
-    console.log('Search Results:', searchResults);
+    const searchResults = location.state.searchResults || [];
+    const [currentPage, setCurrentPage] = useState(1);
+    const resultsPerPage = 3;
+    const totalPages = Math.ceil(searchResults.length / resultsPerPage);
+
+    const nextPage = () => {
+        setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    };
+
+    const prevPage = () => {
+        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    };
+
+    const startIndex = (currentPage - 1) * resultsPerPage;
+    const endIndex = startIndex + resultsPerPage;
+    const currentResults = searchResults.slice(startIndex, endIndex);
 
     return (
         <div className="web-response-container">
-            <h2>Web Responses</h2>
-            <div className="response-list">
-                {searchResults.map((result, index) => (
-                    <div key={index} className="response-items">
+            <h2>Source</h2>
+            <div className="responses-list">
+                {currentResults.map((result, index) => (
+                    <div key={startIndex + index} className="response-items">
                         <a href={result.link} target="_blank" rel="noopener noreferrer" className="web-result">
-                            <img src="../Icons/source-code.png" alt="" />
+                            <p className='web-response-index'>{startIndex + index + 1}</p>
                             <h3 className="result-title">{result.title}</h3>
                         </a>
                         <p className="result-snippet">{result.snippet}</p>
                     </div>
                 ))}
+            </div>
+            <div className="pagination">
+                <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+                {/* <span>{currentPage} of {totalPages}</span> */}
+                <button onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
             </div>
         </div>
     );

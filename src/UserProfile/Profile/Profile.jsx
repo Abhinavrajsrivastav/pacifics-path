@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Profile.css';
 import { AuthContext } from '../../Components/Context/AuthProvider';
-import { useNavigate,Link } from 'react-router-dom';
-import { doc, setDoc, getFirestore, getDoc } from 'firebase/firestore';
+import { useNavigate, Link } from 'react-router-dom';
+import { getFirestore } from 'firebase/firestore';
 import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
-import {getDownloadURL, listAll, ref, uploadBytes} from 'firebase/storage';
-import {v4} from "uuid";
+import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 
 function Profile() {
   const authContext = useContext(AuthContext);
@@ -17,33 +17,43 @@ function Profile() {
 
   const name = user?.displayName;
   const email = user?.email;
-  console.log(user);
-  
 
   // State to hold the selected profile image
   const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
-    listAll(ref(storage, `PIMG/${name}`)).then(img => {
-      console.log(img); 
-      img.items.forEach(val => {
-       const lastFile = img.items[img.items.length - 1];
-      //  console.log(lastFile);
-       
-        getDownloadURL(lastFile).then((url) => {
-          setProfileImage(url);
-          setData({...data,photoURL: url});
-        });
+    if (name) {
+      const imgListRef = ref(storage, `PIMG/${name}`);
+      listAll(imgListRef).then((img) => {
+        if (img.items.length > 0) {
+          const lastFile = img.items[img.items.length - 1];
+          getDownloadURL(lastFile).then((url) => {
+            setProfileImage(url);
+            setData({ ...data, photoURL: url });
+          }).catch((error) => {
+            console.error("Error getting profile image URL: ", error);
+          });
+        }
+      }).catch((error) => {
+        console.error("Error listing profile images: ", error);
       });
     }
-    );
-  }, []);
+  }, [name, setData, data]);
 
   // Function to handle profile image upload
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
-    const ImgRef = ref(storage, `PIMG/${name}/${v4()}`);
-    await uploadBytes(ImgRef, file);
+    if (file && name) {
+      const ImgRef = ref(storage, `PIMG/${name}/${v4()}`);
+      try {
+        await uploadBytes(ImgRef, file);
+        const url = await getDownloadURL(ImgRef);
+        setProfileImage(url);
+        setData({ ...data, photoURL: url });
+      } catch (error) {
+        console.error("Error uploading profile image: ", error);
+      }
+    }
   };
 
   return (
@@ -54,7 +64,7 @@ function Profile() {
           {profileImage ? (
             <img src={profileImage} alt="Profile" />
           ) : (
-            <img src={profileImage} alt="Default Profile" />
+            <img src="/path/to/default-profile.png" alt="Default Profile" />
           )}
           {/* Input field for selecting a new profile image */}
           <input type="file" accept="image/*" onChange={handleImageChange} />
@@ -73,11 +83,11 @@ function Profile() {
           <img src="./Icons/add.png" alt="" />
           <p className="Join">Explore</p>
         </div>
-         <div className="ressumeClassRoom">
+        <div className="ressumeClassRoom">
           <Link to="/selfLearn"><img src="./Icons/self-learning.png" alt="" /></Link>
           <p className="Join">Self Learning</p>
         </div>
-         <div className="ressumeClassRoom">
+        <div className="ressumeClassRoom">
           <img src="./Icons/video-call.png" alt="" />
           <p className="Join">Group Learning</p>
         </div>

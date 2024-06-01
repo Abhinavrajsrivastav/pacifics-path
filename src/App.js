@@ -13,6 +13,8 @@ import Categories from './Categories/Categories';
 import PopupForm from './Categories/PopopForm';
 import SelfLearn from './Pages/SelfLearnign/SelfLearn';
 import WebResponses from './Pages/ChatBot/Queries/Results/Web/WebResponses';
+import Gemini from './Pages/ChatBot/Queries/Results/Ai/Gemini';
+import Result from './Pages/ChatBot/Queries/Results/Result';
 
 function App() {
   
@@ -34,7 +36,7 @@ function App() {
           <Route path={`/profile/`} element={<Profile />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/selfLearn" element={<SelfLearn />}/>
-          <Route path="/self-learn/response" element={<WebResponses />} />
+          <Route path="/self-learn/response" element={<Result />} />
         </Routes>
       </AuthProvider>
     </Router>

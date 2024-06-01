@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import './Queries.css';
+import './Bot.css';
 import { useEffect } from 'react';
 
-const Queries = () => {
+const Bot = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -71,10 +71,6 @@ const Queries = () => {
 
   return (
     <div className="app-container">
-      <div className="brand-container">
-        <span className="brand-name">Eduland</span>
-        <span className="brand-slogan">Have a question? ask it!</span>
-      </div>
       <div className="messageBox">
         <div className="fileUploadWrapper">
           <label htmlFor="file">
@@ -112,4 +108,4 @@ const Queries = () => {
   );
 };
 
-export default Queries;
+export default Bot;
