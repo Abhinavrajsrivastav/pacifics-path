@@ -66,7 +66,7 @@ const Bot = () => {
     setSearchResults(searchResults);
     setGeminiResponse(geminiResponse);
 
-    navigate('/self-learn/response', { state: { searchResults, geminiResponse } });
+    navigate('/self-learn/response', { state: { searchResults, geminiResponse, query } });
   };
 
   return (

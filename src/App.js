@@ -15,6 +15,7 @@ import SelfLearn from './Pages/SelfLearnign/SelfLearn';
 import WebResponses from './Pages/ChatBot/Queries/Results/Web/WebResponses';
 import Gemini from './Pages/ChatBot/Queries/Results/Ai/Gemini';
 import Result from './Pages/ChatBot/Queries/Results/Result';
+import Videos from './Pages/ChatBot/Queries/Results/Video/Videos';
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/selfLearn" element={<SelfLearn />}/>
           <Route path="/self-learn/response" element={<Result />} />
+          <Route path="/self-learn/response/Videos" element={<Videos />} />
         </Routes>
       </AuthProvider>
     </Router>

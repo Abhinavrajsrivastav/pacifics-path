@@ -1,21 +1,26 @@
-import axios from "axios";
+import axios from 'axios';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
+const API_KEY = 'AIzaSyAwY9jOFq5DpDG-Tp9R1tEbteFvcdv_oAs';
 
 const OpenApi = async (query) => {
-    const { GoogleGenerativeAI } = require("@google/generative-ai");
+  try {
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const result = await model.generateContentStream(query + " the response should be effective and efficient and do not use * or # symbols in the response");
+    const response = await result.response;
 
-// Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI("AIzaSyDe2kYb-Vtf_TnQbLbIReMPobRm7omuS-k");
-
-async function run() {
-  // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-
-  const prompt = "Write a story about a dragon that is terrorizing a village."
-
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  console.log(text);
+    let text = '';
+    for await (const chunk of result.stream) {
+      const chunkText = chunk.text();
+      console.log(chunkText);
+      text += chunkText;
+    }
+    return text;
+  } catch (error) {
+    console.error('Error generating content:', error.response ? error.response.data : error.message);
+    return 'Failed to generate content';
+  }
 }
-}
+
+export default OpenApi;

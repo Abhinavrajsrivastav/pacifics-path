@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 import './Queries.css';
-import { useEffect } from 'react';
+import OpenApi from '../../../Components/Api/OpenApi';
 
 const Queries = () => {
   const navigate = useNavigate();
@@ -11,15 +10,12 @@ const Queries = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [geminiResponse, setGeminiResponse] = useState('');
 
-
-
   const API_KEY = 'AIzaSyAwY9jOFq5DpDG-Tp9R1tEbteFvcdv_oAs';
   const SEARCH_ENGINE_ID = 'd3ec914403b414c71';
 
   const handleQuery = (event) => {
     setQuery(event.target.value);
   };
-
 
   const fetchSearchResults = async (query) => {
     try {
@@ -33,47 +29,36 @@ const Queries = () => {
     }
   };
 
-  const fetchGeminiResponse = async (query) => {
-    try {
-      const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-      const result = await model.generateContentStream(query+"the response should be effective and efficient and do not use * or # symbols in the response");
-      const response = await result.response;
-      // const text = await response.text();
-      let text = '';
-      for await (const chunk of result.stream) {
-      const chunkText = chunk.text();
-      console.log(chunkText);
-      text += chunkText;
-      }
-      return text;
-    } catch (error) {
-      console.error('Error generating content:', error.response ? error.response.data : error.message);
-      return 'Failed to generate content';
-    }
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Query:', query);
+    console.log('Form submitted with query:', query);
 
-    const searchResults = await fetchSearchResults(query);
-    const geminiResponse = await fetchGeminiResponse(query);
+    try {
+      // Fetch search results
+      const searchResults = await fetchSearchResults(query);
 
-    console.log('Search Results:', searchResults);
-    console.log('Gemini Response:', geminiResponse);
+      // Fetch response from OpenApi
+      const geminiResponse = await OpenApi(query);
 
-    setSearchResults(searchResults);
-    setGeminiResponse(geminiResponse);
+      // Ensure the data is serializable
+      const serializableGeminiResponse = JSON.parse(JSON.stringify(geminiResponse));
 
-    navigate('/self-learn/response', { state: { searchResults, geminiResponse } });
+      // Update states
+      setSearchResults(searchResults);
+      setGeminiResponse(serializableGeminiResponse);
+
+      // Navigate with state
+      navigate('/self-learn/response', { state: { searchResults, geminiResponse: serializableGeminiResponse, query } });
+    } catch (error) {
+      console.error('Error handling submit:', error);
+    }
   };
 
   return (
     <div className="app-container">
       <div className="brand-container">
         <span className="brand-name">Eduland</span>
-        <span className="brand-slogan">Have a question? ask it!</span>
+        <span className="brand-slogan">Have a question? Ask it!</span>
       </div>
       <div className="messageBox">
         <div className="fileUploadWrapper">
@@ -88,7 +73,7 @@ const Queries = () => {
           <input type="file" id="file" name="file" />
         </div>
         <input
-          required=""
+          required
           placeholder="Write here..."
           type="text"
           id="messageInput"
