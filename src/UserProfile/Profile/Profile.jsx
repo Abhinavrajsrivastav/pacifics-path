@@ -80,16 +80,16 @@ function Profile() {
           <p className="Join">Join a classroom</p>
         </div>
         <div className="ressumeClassRoom">
-          <img src="./Icons/add.png" alt="" />
-          <p className="Join">Explore</p>
+          <img src="./Icons/planning.png" alt="" />
+          <p className="Join">Manage Your Day</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/selfLearn"><img src="./Icons/self-learning.png" alt="" /></Link>
-          <p className="Join">Self Learning</p>
+          <Link to="/selfLearn"><img src="./Icons/pencil.png" alt="" /></Link>
+          <p className="Join">Learn With Ai</p>
         </div>
         <div className="ressumeClassRoom">
-          <img src="./Icons/video-call.png" alt="" />
-          <p className="Join">Group Learning</p>
+          <img src="./Icons/global-education.png" alt="" />
+          <p className="Join">Learn Globally</p>
         </div>
       </div>
     </div>

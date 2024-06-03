@@ -35,7 +35,14 @@
   margin-bottom: 20px;
   cursor: pointer;
   color: rgba(199, 47, 233, 0.535);
+  transition: .3s ease-in-out;
 }
+
+.bgblue span:hover {
+  color: rgba(199, 47, 233, 0.766);
+}
+
+
 
 .response-content {
   line-height: 1.6;
@@ -103,6 +110,14 @@
   border: 1px solid #202223;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+.response-left img{
+  height: 20px;
+  width: auto;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
 }
 
 .query-right p {

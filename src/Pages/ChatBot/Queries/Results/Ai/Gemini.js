@@ -58,6 +58,7 @@ function Gemini() {
               {entry.response !== sanitizedResponse && (
                 <>
                   <div className="response-left">
+                    <img src="./bot.png" alt="" />
                     {entry.response.split('\n').map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}

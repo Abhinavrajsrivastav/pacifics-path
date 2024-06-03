@@ -13,8 +13,8 @@ function FeaturesCard({
       <div className="wave"></div>
       <div className="wave"></div>
       <div className="wave"></div>
-      <div className="infotop">
-        <img src={icons} alt="" className="icon"/><br />      
+      <div className="infotops">
+        <img src={icons} alt="" className="feature-icon"/><br />      
         {heading}<br />
         <div className="name">{subheading}</div>
       </div>
