@@ -13,7 +13,7 @@ const Videos = () => {
   const [prompt, setPrompt] = useState(query);
   const [videos, setVideos] = useState([]);
   const [activeVideo, setActiveVideo] = useState(null);
-  const API_KEY = "AIzaSyAkzRrReqaS8Pv2oZ6BNHe1arZ7L7E4fnM";
+  const API_KEY = "AIzaSyBWWhu9BdpVY_joB0kw2YekEfQ4us8xaxo";
 
   const handlePromptChange = (event) => {
     setPrompt(event.target.value);
@@ -41,7 +41,7 @@ const Videos = () => {
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${prompt}&type=video&maxResults=50&pageToken=${nextPageToken}`
         );
-        console.log(response);
+        console.log("Videos are: " +response);
         
 
         // Add fetched videos to the array
