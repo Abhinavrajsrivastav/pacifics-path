@@ -91,6 +91,10 @@ function Profile() {
           <img src="./Icons/global-education.png" alt="" />
           <p className="Join">Learn Globally</p>
         </div>
+        <div className="ressumeClassRoom">
+          <img src="./Icons/reading.png" alt="" />
+          <p className="Join">Read Books</p>
+        </div>
       </div>
     </div>
   );
