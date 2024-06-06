@@ -13,6 +13,7 @@ const Videos = () => {
   const [prompt, setPrompt] = useState(query);
   const [videos, setVideos] = useState([]);
   const [activeVideo, setActiveVideo] = useState(null);
+  const [showShareButtons, setShowShareButtons] = useState(false); // New state for share buttons visibility
   const API_KEY = "AIzaSyBWWhu9BdpVY_joB0kw2YekEfQ4us8xaxo";
 
   const handlePromptChange = (event) => {
@@ -41,8 +42,6 @@ const Videos = () => {
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${prompt}&type=video&maxResults=50&pageToken=${nextPageToken}`
         );
-        console.log("Videos are: " +response);
-        
 
         // Add fetched videos to the array
         fetchedVideos = fetchedVideos.concat(response.data.items);
@@ -101,10 +100,12 @@ const Videos = () => {
 
   const handlePlayVideo = (videoId) => {
     setActiveVideo(videoId);
+    setShowShareButtons(true); // Show share buttons when a video is played
   };
 
   const handleCloseVideo = () => {
     setActiveVideo(null);
+    setShowShareButtons(false); // Hide share buttons when video is closed
   };
 
   const formatCount = (count) => {
@@ -174,20 +175,24 @@ const Videos = () => {
                 <h3>{video.snippet?.title}</h3>
                 <p>📈: {formatCount(video.statistics?.viewCount)}</p>
                 <p>👍: {formatCount(video.statistics?.likeCount)}</p>
-                <div className="share-buttons">
-                  <button onClick={() => handleCopyLink(video.id.videoId)}>Copy Link</button>
-                  <button onClick={() => shareOnWhatsApp(video.id.videoId)}>WhatsApp</button>
-                  <button onClick={() => shareOnTwitter(video.id.videoId)}>Twitter</button>
-                  <button onClick={() => shareOnInstagram(video.id.videoId)}>Instagram</button>
-                </div>
               </div>
             </div>
           ))}
         </div>
         {activeVideo && (
-          <div className="video-overlay" onClick={handleCloseVideo}>
-            <YouTube videoId={activeVideo} className="video-player-fullscreen" />
-          </div>
+          <>
+            <div className="video-overlay" onClick={handleCloseVideo}>
+              <YouTube videoId={activeVideo} className="video-player-fullscreen" />
+            </div>
+            {showShareButtons && (
+              <div className="share-buttons-overlay">
+                <button onClick={() => handleCopyLink(activeVideo)}>Copy Link</button>
+                <button onClick={() => shareOnWhatsApp(activeVideo)}>WhatsApp</button>
+                <button onClick={() => shareOnTwitter(activeVideo)}>Twitter</button>
+                <button onClick={() => shareOnInstagram(activeVideo)}>Instagram</button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

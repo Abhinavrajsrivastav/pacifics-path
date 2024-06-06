@@ -13,91 +13,27 @@
 
 .profile-details {
   display: flex;
+  flex-direction: column;
   align-items: start;
   color: white;
   padding: 20px;
   border-radius: 10px;
-  height: 450px;
+  height: auto; /* Adjusted height to auto to fit new sections */
   margin: 4px;
   background-color: rgba(0, 0, 0, 0.447);
 }
 
 .profile-photo {
   margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .profile-photo img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-}
-
-.profile-info h2 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.Join {
-  margin: 5px 0;
-  font-size: 12px;
-  text-decoration: none; 
-  color: white; 
-  font-weight: 400;
-}
-
-
-
-.classRoom{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  height: 450px;
-  margin: 4px;
-  gap: 20px;
-  width: auto;
-  max-width: 800px;
-  background-color: rgba(0, 0, 0, 0.447);
-}
-
-.joinClass, .ressumeClassRoom{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 30px 20px 30px;
-  cursor: pointer;
-  background-color: rgba(20, 22, 24, 0);
-  border-radius: 12px;
-}
-.classRoom img{
-  height:80px;
-  width: 80px;
-  transition: 0.3s ease-in-out;
-}
-
-.classRoom p{
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  font-weight: 400;
-}
-
-.joinClass:hover p{
-  opacity: 1;
-}
-
-.ressumeClassRoom:hover p{
-  opacity: 1;
-}
-
-/* Additional CSS for Profile Image Upload Option */
-.profile-photo {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
 }
 
 .profile-photo input[type="file"] {
@@ -128,26 +64,83 @@
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* p{
+.profile-info h2 {
+  margin: 0;
+  font-size: 20px;
+  padding: 25px 0;
+}
+
+.profile-info p {
+  margin: 5px 0; /* Added margin for spacing between details */
+  font-size: 14px;
+}
+
+.Join {
+  margin: 0px 0;
+  font-size: 12px;
   text-decoration: none;
   color: white;
-  text-decoration: none;
-} */
+  font-weight: 400;
+}
 
+.classRoom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  height: 450px;
+  margin: 4px;
+  gap: 20px;
+  width: auto;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.447);
+}
 
+.joinClass, .ressumeClassRoom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 30px 20px 30px;
+  cursor: pointer;
+  background-color: rgba(20, 22, 24, 0);
+  border-radius: 12px;
+}
 
-@media(max-width: 1005px){
+.classRoom img {
+  height: 80px;
+  width: 80px;
+  transition: 0.3s ease-in-out;
+}
 
-  .joinClass, .ressumeClassRoom{
+.classRoom p {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  font-weight: 400;
+}
+
+.joinClass:hover p {
+  opacity: 1;
+}
+
+.ressumeClassRoom:hover p {
+  opacity: 1;
+}
+
+@media(max-width: 1005px) {
+  .joinClass, .ressumeClassRoom {
     padding: 10px 10px 5px 10px;
   }
 
-  .classRoom img{
+  .classRoom img {
     height: 50px;
     width: 50px;
   }
 
-  .classRoom p{
+  .classRoom p {
     font-size: 10px;
   }
 }

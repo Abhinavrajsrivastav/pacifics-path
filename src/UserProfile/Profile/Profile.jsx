@@ -72,6 +72,11 @@ function Profile() {
         <div className="profile-info">
           <h2>{name}</h2>
           <p>Email: {email}</p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer"></a></p>
+          <p>LeetCode: <a href="https://leetcode.com/dummy" target="_blank" rel="noopener noreferrer"></a></p>
+          <p>Website: <a href="https://www.dummywebsite.com" target="_blank" rel="noopener noreferrer"></a></p>
+          <p>Bio:</p>
+          <p>Address:</p>
         </div>
       </div>
       <div className="classRoom">
@@ -94,6 +99,10 @@ function Profile() {
         <div className="ressumeClassRoom">
           <img src="./Icons/reading.png" alt="" />
           <p className="Join">Read Books</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <img src="./Icons/gemini.png" alt="" />
+          <p className="Join">Ask to Gemini</p>
         </div>
       </div>
     </div>

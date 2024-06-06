@@ -4,7 +4,8 @@
   justify-content: space-around;
   align-items: flex-start; /* Updated align-items value */
   gap: 10px;
-  background: url('./bg.jpg') no-repeat fixed; /* Updated background shorthand */
+  /* background: url('./bg.jpg') no-repeat fixed; */
+  background-color: var(--main-color);
   background-size: cover; /* Added background-size */
   height: 100vh;
   width: 100%;
