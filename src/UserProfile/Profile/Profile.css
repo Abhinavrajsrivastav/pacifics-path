@@ -18,7 +18,7 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  height: auto; /* Adjusted height to auto to fit new sections */
+  height: 450px; /* Adjusted height to auto to fit new sections */
   margin: 4px;
   background-color: rgba(0, 0, 0, 0.447);
 }

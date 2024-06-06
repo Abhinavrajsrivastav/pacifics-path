@@ -41,9 +41,9 @@ function WebResponses({
                 ))}
             </div>
             <div className="pagination">
-                <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+                <button onClick={prevPage} disabled={currentPage === 1}>{"<"}</button>
                 {/* <span>{currentPage} of {totalPages}</span> */}
-                <button onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
+                <button onClick={nextPage} disabled={currentPage === totalPages}>{">"}</button>
             </div>
         </div>
     );
