@@ -97,7 +97,7 @@ function Profile() {
           <p className="Join">Learn Globally</p>
         </div>
         <div className="ressumeClassRoom">
-          <img src="./Icons/reading.png" alt="" />
+       <Link to="/read-books"><img src="./Icons/reading.png" alt="" /></Link>
           <p className="Join">Read Books</p>
         </div>
         <div className="ressumeClassRoom">

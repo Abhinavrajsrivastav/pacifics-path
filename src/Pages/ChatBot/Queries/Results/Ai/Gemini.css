@@ -34,12 +34,12 @@
   font-size: 1.2em;
   margin-bottom: 20px;
   cursor: pointer;
-  color: rgba(199, 47, 233, 0.535);
+  color: rgba(53, 248, 131, 0.535);
   transition: .3s ease-in-out;
 }
 
 .bgblue span:hover {
-  color: rgba(199, 47, 233, 0.766);
+  color: rgba(89, 246, 86, 0.766);
 }
 
 
@@ -126,7 +126,7 @@
   text-align: right;
   color: #ffffff;
   font-weight: bold;
-  background-color: rgba(186, 45, 246, 0.344);
+  background-color: rgba(74, 249, 58, 0.507);
   padding: 10px;
   border-radius: 10px 10px 0px 10px;
   max-width: 150px;
