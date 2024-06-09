@@ -4,7 +4,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(38, 78, 195, 0.89);
+    /* background-color: rgba(38, 78, 195, 0.89); */
+    background-color: var(--main-color);
     color: white;
     padding: 0px 10px;
     position: fixed;

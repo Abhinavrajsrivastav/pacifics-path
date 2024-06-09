@@ -13,9 +13,10 @@ body{
 
 
 :root {
-  --main-color: rgba(38, 78, 195, 0.89);
+  /* --main-color: rgba(38, 78, 195, 0.89); */
+  --main-color: rgb(24, 163, 218);
 }
 
 :root{
-  --second-color: rgb(238, 56, 141);
+  --second-color: rgb(56, 104, 238);
 }
