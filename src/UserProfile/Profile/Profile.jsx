@@ -7,6 +7,7 @@ import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
+import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem } from 'react-icons/fa';
 
 function Profile() {
   const authContext = useContext(AuthContext);
@@ -18,7 +19,6 @@ function Profile() {
   const name = user?.displayName;
   const email = user?.email;
 
-  // State to hold the selected profile image
   const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
@@ -40,7 +40,6 @@ function Profile() {
     }
   }, [name, setData, data]);
 
-  // Function to handle profile image upload
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
     if (file && name) {
@@ -60,48 +59,55 @@ function Profile() {
     <div className="profile-container">
       <div className="profile-details">
         <div className="profile-photo">
-          {/* Display the selected profile image */}
           {profileImage ? (
             <img src={profileImage} alt="Profile" />
           ) : (
             <img src="/path/to/default-profile.png" alt="Default Profile" />
           )}
-          {/* Input field for selecting a new profile image */}
           <input type="file" accept="image/*" onChange={handleImageChange} />
         </div>
         <div className="profile-info">
           <h2>{name}</h2>
           <p>Email: {email}</p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer"></a></p>
-          <p>LeetCode: <a href="https://leetcode.com/dummy" target="_blank" rel="noopener noreferrer"></a></p>
-          <p>Website: <a href="https://www.dummywebsite.com" target="_blank" rel="noopener noreferrer"></a></p>
-          <p>Bio:</p>
-          <p>Address:</p>
+        </div>
+        <div className="social-links">
+          <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://github.com/dummy" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://twitter.com/dummy" target="_blank" rel="noopener noreferrer">
+            <FaTwitter />
+          </a>
+          <a href="https://www.dummywebsite.com" target="_blank" rel="noopener noreferrer">
+            <FaGlobe />
+          </a>
         </div>
       </div>
       <div className="classRoom">
         <div className="joinClass">
-          <Link to="/categories"><img src="./Icons/group.png" alt="" /></Link>
+          <Link to="/categories"><FaUsers size={50} /></Link>
           <p className="Join">Join a classroom</p>
         </div>
         <div className="ressumeClassRoom">
-          <img src="./Icons/planning.png" alt="" />
+          <FaCalendarAlt size={50} />
           <p className="Join">Manage Your Day</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/selfLearn"><img src="./Icons/pencil.png" alt="" /></Link>
+          <Link to="/selfLearn"><FaPencilAlt size={50} /></Link>
           <p className="Join">Learn With Ai</p>
         </div>
         <div className="ressumeClassRoom">
-          <img src="./Icons/global-education.png" alt="" />
+          <FaGlobeAmericas size={50} />
           <p className="Join">Learn Globally</p>
         </div>
         <div className="ressumeClassRoom">
-       <Link to="/read-books"><img src="./Icons/reading.png" alt="" /></Link>
+          <Link to="/read-books"><FaBook size={50} /></Link>
           <p className="Join">Read Books</p>
         </div>
         <div className="ressumeClassRoom">
-          <img src="./Icons/gemini.png" alt="" />
+          <FaGem size={50} />
           <p className="Join">Ask to Gemini</p>
         </div>
       </div>

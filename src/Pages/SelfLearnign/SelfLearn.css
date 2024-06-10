@@ -1,5 +1,6 @@
 .container-1{
-    background: url('./bg.jpg') no-repeat center center/cover;
+    /* background: url('./bg.jpg') no-repeat center center/cover; */
+    background-color: black;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -11,6 +12,8 @@
 .queries{
     position: relative;
     /* top: 200px; */
+    box-shadow: 0px 0px 116px 160px rgba(31, 41, 115, 0.728);
+    background-color: rgba(31, 41, 115, 0.728);
 }
 
 @media(max-width: 1005px){

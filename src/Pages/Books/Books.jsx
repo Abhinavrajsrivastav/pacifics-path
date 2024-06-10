@@ -6,16 +6,44 @@ const Books = () => {
   const [query, setQuery] = useState('');
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
+  const [showMore, setShowMore] = useState(false);
 
   const suggestedThemes = [
     'Physics',
     'Chemistry',
     'Mathematics',
-    'Biology',
-    'Computer Science',
-    'History',
-    'Geography',
-    'Literature'
+    'Astronomy',
+    'Engineering',
+    'Data Science',
+    'Machine Learning',
+    'Artificial Intelligence',
+    'Blockchain',
+    'Cybersecurity',
+    'Cloud Computing',
+    'DevOps',
+    'Software Development',
+    'Web Development',
+    'Mobile App Development',
+    'Virtual Reality',
+    'Augmented Reality',
+    'Operating Systems',
+    'Computer Networks',
+    'Database Management',
+    'Algorithms',
+    'Data Structures',
+    'Programming Languages',
+    'Software Engineering',
+    'Web Design',
+    'Java',
+    'Python',
+    'JavaScript',
+    'React',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'SQL',
+    'NoSQL',
+    'Docker',
   ];
 
   const handleSearch = async (searchQuery) => {
@@ -59,17 +87,27 @@ const Books = () => {
     handleSearch(query);
   };
 
+  const handleToggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
+  const themesToShow = showMore ? suggestedThemes : suggestedThemes.slice(0, 10);
+
   return (
     <div className="book-search-container">
-      <h1>Book Search</h1>
+      <h1>Book Bank</h1>
       <div className="suggested-themes">
-        {suggestedThemes.map((theme) => (
+        {themesToShow.map((theme) => (
           <button key={theme} className="theme-button" onClick={() => handleThemeClick(theme)}>
             {theme}
           </button>
         ))}
       </div>
-      <input
+      <button className="read-more-button" onClick={handleToggleShowMore}>
+        {showMore ? 'read less' : 'read more'}
+      </button>
+      <div>
+        <input
         type="text"
         value={query}
         onChange={handleInputChange}
@@ -77,6 +115,7 @@ const Books = () => {
         placeholder="Enter educational book type (e.g., NCERT, textbook)"
       />
       <button onClick={handleButtonClick} className="book-search-button">Search</button>
+      </div>
       {error && <p className="error-message">{error}</p>}
       <div className="books-container">
         {books.map((book) => (

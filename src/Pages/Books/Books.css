@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 50px 20px;
-  background-color: #1e1e1e;
+  background-color: #000000;
   color: white;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
@@ -16,26 +16,32 @@
 }
 
 .suggested-themes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
   margin-bottom: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: -1px -1px 93px 105px rgba(16, 31, 83, 0.578);
+  border-radius: 10px;
+  background-color:  rgba(16, 31, 83, 0.578);
 }
 
 .theme-button {
   padding: 10px 20px;
   border: none;
-  border-radius: 20px;
-  background-color: #2196F3;
+  border-radius: 10px;
+  border: .1px solid #9e9e9e;
+  background-color: #1434718a;
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .theme-button:hover {
-  background-color: #1976D2;
+  background-color: #103c7e91;
+  /* transform: scale(1.05); */
 }
 
 .book-search-input {
@@ -51,7 +57,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #4c61af;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -59,7 +65,7 @@
 }
 
 .book-search-button:hover {
-  background-color: #45a049;
+  background-color: #4553a0;
 }
 
 .books-container {
@@ -80,18 +86,20 @@
   margin-bottom: 15px;
   text-align: left;
   background-color: #2a2a2a;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.5s ease-in-out, transform 0.3s ease;
+  transition: .1s ease-in-out;
   color: white;
 }
 
 .book-item:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
+  scale: 1.05;
 }
 
 .book-item h2 {
   font-size: 1.25rem;
-  color: #4CAF50;
+  color: #4c65af;
   margin-bottom: 10px;
 }
 
@@ -106,16 +114,34 @@
 
 .book-item a {
   font-size: 1rem;
-  color: #4CAF50;
+  color: #4c4eaf;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .book-item a:hover {
-  color: #66BB6A;
+  color: #666ebb;
 }
 
 .error-message {
   color: red;
   margin-top: 10px;
+}
+
+.read-more-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4caf4f00;
+  border: none;
+  font-size: 20px;
+  color: rgb(9, 77, 130);
+}
+
+
+
+
+@media(max-width: 1005px) {
+  .book-search-container {
+    padding-top: 150px;
+  }
 }
