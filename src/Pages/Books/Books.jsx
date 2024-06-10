@@ -7,9 +7,20 @@ const Books = () => {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
 
-  const handleSearch = async () => {
+  const suggestedThemes = [
+    'Physics',
+    'Chemistry',
+    'Mathematics',
+    'Biology',
+    'Computer Science',
+    'History',
+    'Geography',
+    'Literature'
+  ];
+
+  const handleSearch = async (searchQuery) => {
     const apiKey = 'AIzaSyAjWeMF3xhf_M79K0bXaC3i2QZNrqks8Yk';
-    const refinedQuery = `${query} subject:education`;
+    const refinedQuery = `${searchQuery} subject:education`;
     const url = `https://www.googleapis.com/books/v1/volumes?q=${refinedQuery}&key=${apiKey}`;
 
     try {
@@ -36,17 +47,36 @@ const Books = () => {
     }
   };
 
+  const handleThemeClick = (theme) => {
+    handleSearch(theme);
+  };
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    handleSearch(query);
+  };
+
   return (
     <div className="book-search-container">
       <h1>Book Search</h1>
+      <div className="suggested-themes">
+        {suggestedThemes.map((theme) => (
+          <button key={theme} className="theme-button" onClick={() => handleThemeClick(theme)}>
+            {theme}
+          </button>
+        ))}
+      </div>
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={handleInputChange}
         className="book-search-input"
         placeholder="Enter educational book type (e.g., NCERT, textbook)"
       />
-      <button onClick={handleSearch} className="book-search-button">Search</button>
+      <button onClick={handleButtonClick} className="book-search-button">Search</button>
       {error && <p className="error-message">{error}</p>}
       <div className="books-container">
         {books.map((book) => (
