@@ -20,3 +20,8 @@ body{
 :root{
   --second-color: rgb(56, 104, 238);
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

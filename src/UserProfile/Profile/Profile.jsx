@@ -7,7 +7,8 @@ import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
-import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem } from 'react-icons/fa';
+import { FaSearch, FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem, FaCode } from 'react-icons/fa';
+import { FaGooglePlusSquare,FaRegStar, FaUserFriends } from 'react-icons/fa'; // Additional icons
 
 function Profile() {
   const authContext = useContext(AuthContext);
@@ -87,7 +88,7 @@ function Profile() {
       </div>
       <div className="classRoom">
         <div className="joinClass">
-          <Link to="/categories"><FaUsers size={50} /></Link>
+          <Link to="/categories"><FaUsers size={50} color='white' /></Link>
           <p className="Join">Join a classroom</p>
         </div>
         <div className="ressumeClassRoom">
@@ -95,7 +96,7 @@ function Profile() {
           <p className="Join">Manage Your Day</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/selfLearn"><FaPencilAlt size={50} /></Link>
+          <Link to="/selfLearn"><FaPencilAlt size={50} color='white' /></Link>
           <p className="Join">Learn With Ai</p>
         </div>
         <div className="ressumeClassRoom">
@@ -103,12 +104,28 @@ function Profile() {
           <p className="Join">Learn Globally</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/read-books"><FaBook size={50} /></Link>
+          <Link to="/read-books"><FaBook size={50} color='white' /></Link>
           <p className="Join">Read Books</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaGem size={50} />
+          <FaGooglePlusSquare size={50} />
           <p className="Join">Ask to Gemini</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <FaRegStar size={50} />
+          <p className="Join">Leaderboard</p> {/* Changed text */}
+        </div>
+        <div className="ressumeClassRoom">
+          <FaUserFriends size={50} />
+          <p className="Join">Find your Match</p> {/* Changed text */}
+        </div>
+        <div className="ressumeClassRoom">
+          <Link to="/github-profile"><FaGithub size={50} /></Link>
+          <p className="Join">GitHub</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <FaGem size={50} color='white' />
+          <p className="Join">LeetCode</p>
         </div>
       </div>
     </div>
