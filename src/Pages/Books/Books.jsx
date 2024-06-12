@@ -104,7 +104,7 @@ const Books = () => {
         ))}
       </div>
       <button className="read-more-button" onClick={handleToggleShowMore}>
-        {showMore ? 'read less' : 'read more'}
+        {showMore ? 'View less' : 'View more'}
       </button>
       <div>
         <input

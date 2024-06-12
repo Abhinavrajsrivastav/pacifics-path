@@ -91,10 +91,10 @@ function Profile() {
           <Link to="/categories"><FaUsers size={50} color='white' /></Link>
           <p className="Join">Join a classroom</p>
         </div>
-        <div className="ressumeClassRoom">
+        {/* <div className="ressumeClassRoom">
           <FaCalendarAlt size={50} />
           <p className="Join">Manage Your Day</p>
-        </div>
+        </div> */}
         <div className="ressumeClassRoom">
           <Link to="/selfLearn"><FaPencilAlt size={50} color='white' /></Link>
           <p className="Join">Learn With Ai</p>
@@ -120,7 +120,7 @@ function Profile() {
           <p className="Join">Find your Match</p> {/* Changed text */}
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/github-profile"><FaGithub size={50} /></Link>
+          <Link to="/github-profile"><FaGithub size={50} color='white' /></Link>
           <p className="Join">GitHub</p>
         </div>
         <div className="ressumeClassRoom">

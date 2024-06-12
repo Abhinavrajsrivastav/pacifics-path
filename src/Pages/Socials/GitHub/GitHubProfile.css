@@ -1,5 +1,4 @@
-
-
+/* Global styles */
 .github-profile {
   min-width: 100vh;
   min-height: 100vh;
@@ -17,16 +16,16 @@
   display: none;
 }
 
+/* Form styles */
 .github-profile form {
   display: flex;
   box-shadow: 0px 0px 23px 40px rgba(38, 46, 190, 0.2);
-  background-color:  rgba(38, 46, 190, 0.2);
+  background-color: rgba(38, 46, 190, 0.2);
   position: relative;
   left: 40px;
 }
 
 .github-profile input {
-  /* padding: 10px; */
   font-size: 16px;
   border: 1px solid #444;
   border-radius: 4px 0 0 4px;
@@ -35,114 +34,117 @@
   width: 250px;
 }
 
+/* Button styles */
 button {
- position: relative;
- display: inline-block;
- cursor: pointer;
- outline: none;
- border: 0;
- vertical-align: middle;
- text-decoration: none;
- background: transparent;
- padding: 0;
- font-size: inherit;
- font-family: inherit;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 button.learn-more {
- width: 12rem;
- height: auto;
+  width: 12rem;
+  height: auto;
 }
 
 button.learn-more .circle {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: relative;
- display: block;
- margin: 0;
- width: 3rem;
- height: 3rem;
- background: #282936;
- border-radius: 1.625rem;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
 }
 
 button.learn-more .circle .icon {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- bottom: 0;
- margin: auto;
- background: #fff;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
 }
 
 button.learn-more .circle .icon.arrow {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- left: 0.625rem;
- width: 1.125rem;
- height: 0.125rem;
- background: none;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
 }
 
 button.learn-more .circle .icon.arrow::before {
- position: absolute;
- content: "";
- top: -0.29rem;
- right: 0.0625rem;
- width: 0.625rem;
- height: 0.625rem;
- border-top: 0.125rem solid #fff;
- border-right: 0.125rem solid #fff;
- transform: rotate(45deg);
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
 }
 
 button.learn-more .button-text {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 10px;
- left: 0;
- right: 0;
- bottom: 0;
- padding: 0.75rem 0;
- margin: 0 0 0 1.85rem;
- color: #282936;
- font-weight: 700;
- line-height: 1.6;
- text-align: center;
- text-transform: uppercase;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 button:hover .circle {
- width: 100%;
+  width: 100%;
 }
 
 button:hover .circle .icon.arrow {
- background: #fff;
- transform: translate(1rem, 0);
+  background: #fff;
+  transform: translate(1rem, 0);
 }
 
 button:hover .button-text {
- color: #fff;
+  color: #fff;
 }
 
+/* Error message styles */
 .github-profile .error {
   color: red;
   text-align: center;
   margin-top: 20px;
 }
 
-.github-box0{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    text-align: start;
-    align-items: start;
+/* Profile info styles */
+.github-box0 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: start;
+  align-items: start;
 }
 
-.GitHub-Profile-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px 0;
-    max-width: 600px;
+.GitHub-Profile-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0;
+  max-width: 600px;
 }
 
 .github-profile .profile {
@@ -168,6 +170,7 @@ button:hover .button-text {
   color: #ccc;
 }
 
+/* Details styles */
 .github-profile .details {
   margin: 20px 0;
   min-width: 300px;
@@ -181,6 +184,7 @@ button:hover .button-text {
   margin: 5px 0;
 }
 
+/* Repos and languages styles */
 .github-profile .repos,
 .github-profile .languages {
   margin-top: 30px;
@@ -201,7 +205,6 @@ button:hover .button-text {
   padding: 10px 0;
 }
 
-
 .github-profile .repos li a {
   font-size: 18px;
   color: #ffffff;
@@ -218,6 +221,7 @@ button:hover .button-text {
   color: #aaa;
 }
 
+/* Input group styles */
 .input-group {
   display: flex;
   flex-direction: row;
@@ -225,18 +229,17 @@ button:hover .button-text {
   justify-content: center;
 }
 
-
+/* Repository card styles */
 .repo-card {
-    display: flex;
-    flex-direction: column;
- max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
   text-align: start;
   margin-bottom: 20px;
   border: 1px solid #000000;
   border-radius: 5px;
   padding: 10px;
-  background-color: #5784ee87;
-  gap: 10px;
+  background-color: #2996e98b;
 }
 
 .repo-card h3 {
@@ -247,7 +250,7 @@ button:hover .button-text {
 .repo-card h3 a {
   margin: 5px 0;
   color: #ccc;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .repo-card .language {
@@ -255,6 +258,7 @@ button:hover .button-text {
   color: #aaa;
 }
 
+/* Languages card styles */
 .languages-card {
   text-align: left;
   margin-bottom: 20px;
@@ -267,7 +271,6 @@ button:hover .button-text {
 .languages-card h2 {
   color: white;
 }
-
 .languages-card ul {
   list-style-type: none;
   padding-left: 0;
@@ -275,4 +278,82 @@ button:hover .button-text {
 
 .languages-card li {
   color: #ccc;
+}
+
+.user-rankings {
+  margin-top: 50px;
+  max-width: 500px;
+  position: relative;
+  left: 370px;
+  box-shadow: 0px 0px 23px 40px rgba(38, 46, 190, 0.615);
+  background-color: rgba(38, 46, 190, 0.2);
+  border: 1px solid #b4b4b4;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.user-rankings h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ranking-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.profile-infos {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+}
+
+.profile-att{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  gap: 80px;
+}
+
+.git-att{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.profile-infos img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.dev-score {
+  color: #ffffff;
+}
+
+.rank {
+  margin-left: auto;
 }

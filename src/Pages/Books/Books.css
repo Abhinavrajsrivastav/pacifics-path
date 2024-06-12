@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap');
+
 .book-search-container {
   display: flex;
   flex-direction: column;
@@ -130,11 +132,15 @@
 
 .read-more-button {
   margin-top: 10px;
+  margin-bottom: 40px;
   padding: 5px 10px;
   background-color: #4caf4f00;
   border: none;
   font-size: 20px;
-  color: rgb(9, 77, 130);
+  color: rgb(255, 255, 255);
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 600;
+  font-style: normal;
 }
 
 
