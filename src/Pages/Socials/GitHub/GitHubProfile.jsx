@@ -150,22 +150,22 @@ const GitHubProfile = () => {
               <img src={userData.avatar_url} alt="Profile" />
               <h1>{userData.name}</h1>
               <p>{userData.bio}</p>
-            </div>
-            <div className="details">
+              <div className="details">
               <p>
-                <strong>Public Repos:</strong> {userData.public_repos}
+                <strong>Repos</strong> {userData.public_repos}
               </p>
               <p>
-                <strong>Followers:</strong> {userData.followers}
+             {userData.followers} <strong>Followers</strong>
               </p>
               <p>
-                <strong>Following:</strong> {userData.following}
+                {userData.following} <strong>Following</strong> 
               </p>
               {devScore && (
                 <p>
-                  <strong>Dev Score:</strong> {devScore}/5
+                  <strong>Score</strong> {devScore}/5
                 </p>
               )}
+            </div>
             </div>
           </div>
           <h2>Top Repositories</h2>
@@ -199,7 +199,7 @@ const GitHubProfile = () => {
           </div>
         </div>
       )}
-     {userRankings.length > 0 && (
+     {username&&userRankings.length > 0 && (
   <div className="user-rankings">
     <h2>User Rankings</h2>
     <div className="ranking-list">

@@ -9,7 +9,7 @@
   color: white;
   overflow-x: hidden;
   overflow-y: hidden;
-  background: url('./01151_inthedeep_2560x1600.jpg') no-repeat center center fixed;
+  background: url('./wave-haikei.png') no-repeat center center/cover;
 }
 
 .github-profile::-webkit-scrollbar { 
@@ -172,16 +172,22 @@ button:hover .button-text {
 
 /* Details styles */
 .github-profile .details {
+  display: flex;
+  flex-direction: row;
   margin: 20px 0;
   min-width: 300px;
   justify-content: start;
   align-items: start;
   text-align: start;
+  gap: 5px;
 }
 
 .github-profile .details p {
   font-size: 18px;
   margin: 5px 0;
+  background-color: #032f5bba;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 /* Repos and languages styles */
@@ -285,7 +291,7 @@ button:hover .button-text {
   max-width: 500px;
   position: relative;
   left: 370px;
-  box-shadow: 0px 0px 23px 40px rgba(38, 46, 190, 0.615);
+  /* box-shadow: 0px 0px 23px 40px rgba(38, 46, 190, 0.615); */
   background-color: rgba(38, 46, 190, 0.2);
   border: 1px solid #b4b4b4;
   border-radius: 10px;
