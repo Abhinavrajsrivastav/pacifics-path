@@ -125,6 +125,10 @@ const GitHubProfile = () => {
 
   return (
     <div className="github-profile">
+      <div className="app-container">
+      <header className="brand-header">
+        <h1 className="brand-name">Goog-Co</h1>
+      </header>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <input
@@ -142,6 +146,7 @@ const GitHubProfile = () => {
           </button>
         </div>
       </form>
+    </div>
       {error && <p className="error">{error}</p>}
       {userData && (
         <div className="profile">
@@ -170,23 +175,26 @@ const GitHubProfile = () => {
           </div>
           <h2>Top Repositories</h2>
           <div className="repos">
-            {repos.map((repo) => (
-              <div key={repo.id} className="repo-card">
-                <h3>
-                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                    {repo.name}
-                  </a>
-                </h3>
-                <p>{repo.description}</p>
-                <p className="language">
-                  <strong>Language:</strong>{' '}
-                  {repo.language === 'Java' && <FaJava />}
-                  {repo.language === 'JavaScript' && <FaJs />}
-                  {repo.language === 'Python' && <FaPython />}
-                </p>
-              </div>
-            ))}
-          </div>
+      {repos.map((repo) => (
+        <div key={repo.id} className="repo-card">
+          <h3>
+            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+              {repo.name}
+            </a>
+          </h3>
+          <p>{repo.description}</p>
+          <p className="language">
+            <strong>Language:</strong>{' '}
+            {repo.language === 'Java' && <FaJava />}
+            {repo.language === 'JavaScript' && <FaJs />}
+            {repo.language === 'Python' && <FaPython />}
+          </p>
+          <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="view-repo-button">
+            View Repository
+          </a>
+        </div>
+      ))}
+    </div>
           <div className="languages-card">
             <h2>Most Used Languages</h2>
             <ul>

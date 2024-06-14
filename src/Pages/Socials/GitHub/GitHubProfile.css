@@ -190,100 +190,66 @@ button:hover .button-text {
   border-radius: 5px;
 }
 
-/* Repos and languages styles */
-.github-profile .repos,
-.github-profile .languages {
-  margin-top: 30px;
+.repos {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
+  justify-content: start;
+  margin: 20px;
 }
 
-.github-profile .repos ul,
-.github-profile .languages ul {
-  list-style: none;
-  padding: 0;
-}
-
-.github-profile .repos li,
-.github-profile .languages li {
-  border-bottom: 1px solid #444;
-  padding: 10px 0;
-}
-
-.github-profile .repos li a {
-  font-size: 18px;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.github-profile .repos li a:hover {
-  text-decoration: none;
-}
-
-.github-profile .repos p {
-  max-width: 300px;
-  font-size: 14px;
-  color: #aaa;
-}
-
-/* Input group styles */
-.input-group {
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-/* Repository card styles */
 .repo-card {
-  display: flex;
-  flex-direction: column;
-  max-width: 200px;
-  text-align: start;
-  margin-bottom: 20px;
+  background: #000000;
   border: 1px solid #000000;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #2996e98b;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.repo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .repo-card h3 {
-  margin-top: 0;
-  color: #007bff;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-.repo-card h3 a {
-  margin: 5px 0;
-  color: #ccc;
+.repo-card a {
   text-decoration: none;
+  color: #0073e6;
+}
+
+.repo-card a:hover {
+  text-decoration: underline;
+}
+
+.repo-card p {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .repo-card .language {
-  font-size: 14px;
-  color: #aaa;
+  display: flex;
+  align-items: center;
 }
 
-/* Languages card styles */
-.languages-card {
-  text-align: left;
-  margin-bottom: 20px;
-  border: 1px solid #000000;
+.repo-card .language strong {
+  margin-right: 5px;
+}
+
+.view-repo-button {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  text-align: center;
   border-radius: 5px;
-  padding: 10px;
-  background-color: #328ee965;
-}
-
-.languages-card h2 {
-  color: white;
-}
-.languages-card ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.languages-card li {
-  color: #ccc;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 .user-rankings {
@@ -304,7 +270,7 @@ button:hover .button-text {
 }
 
 .ranking-list {
-  display: flex;
+  display: inline;
   flex-direction: column;
   gap: 20px;
 }
