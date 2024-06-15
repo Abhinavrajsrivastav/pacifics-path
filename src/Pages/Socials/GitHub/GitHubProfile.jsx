@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'react-calendar-heatmap/dist/styles.css';
-import { FaJava, FaJs, FaPython } from 'react-icons/fa';
+import { FaJava, FaJs, FaPython, FaGithub, FaReact } from 'react-icons/fa'; // Import more icons if needed
 import './GitHubProfile.css';
 import { getFirestore, collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { app } from '../../../Components/Firebase/Firebase';
@@ -14,6 +14,7 @@ const GitHubProfile = () => {
   const [error, setError] = useState('');
   const [devScore, setDevScore] = useState(null);
   const [userRankings, setUserRankings] = useState([]);
+  const [bestLanguage, setBestLanguage] = useState('');
 
   const db = getFirestore(app);
 
@@ -33,6 +34,7 @@ const GitHubProfile = () => {
     setRepos([]);
     setLanguages({});
     setDevScore(null);
+    setBestLanguage('');
 
     try {
       const userResponse = await axios.get(`https://api.github.com/users/${username}`, {
@@ -73,20 +75,19 @@ const GitHubProfile = () => {
       );
       setLanguages(languagesData);
 
+      // Calculate the best language
+      const bestLang = Object.keys(languagesData).reduce((a, b) => languagesData[a] > languagesData[b] ? a : b, '');
+      setBestLanguage(bestLang);
+
       const score = calculateDevScore(userResponse.data, sortedRepos);
       setDevScore(score);
 
       try {
-        // Check if the user already exists in the Firestore collection
         const querySnapshot = await getDocs(query(collection(db, 'Github-rank'), where('username', '==', username)));
-
         if (!querySnapshot.empty) {
-          // If the user already exists, handle the duplicate data scenario
-          setError('User already exists in the database.');
           return;
         }
 
-        // If the user doesn't exist, add the new document
         const userDocRef = await addDoc(collection(db, 'Github-rank'), {
           username: username,
           devScore: score
@@ -104,49 +105,62 @@ const GitHubProfile = () => {
   };
 
   const fetchUserRankings = async () => {
-  try {
-    const querySnapshot = await getDocs(collection(db, 'Github-rank'));
-    const rankings = [];
-    querySnapshot.forEach((doc) => {
-      rankings.push(doc.data());
-    });
-    // Sort the rankings array in descending order based on devScore
-    rankings.sort((a, b) => b.devScore - a.devScore);
-    setUserRankings(rankings);
-  } catch (error) {
-    console.error('Error fetching user rankings:', error);
-  }
-};
-
+    try {
+      const querySnapshot = await getDocs(collection(db, 'Github-rank'));
+      const rankings = [];
+      querySnapshot.forEach((doc) => {
+        rankings.push(doc.data());
+      });
+      rankings.sort((a, b) => b.devScore - a.devScore);
+      setUserRankings(rankings);
+    } catch (error) {
+      console.error('Error fetching user rankings:', error);
+    }
+  };
 
   useEffect(() => {
     fetchUserRankings();
   }, []);
 
+  const renderLanguageIcon = (language) => {
+    switch (language) {
+      case 'Java':
+        return <FaJava />;
+      case 'JavaScript':
+        return <FaJs />;
+      case 'Python':
+        return <FaPython />;
+      case 'React':
+        return <FaReact />;
+      default:
+        return <FaGithub />;
+    }
+  };
+
   return (
     <div className="github-profile">
       <div className="app-container">
-      <header className="brand-header">
-        <h1 className="brand-name">Goog-Co</h1>
-      </header>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input
-            type="text"
-            id="input-field"
-            placeholder="Enter GitHub username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <button className="learn-more" type="submit">
-            <span className="circle" aria-hidden="true">
-              <span className="icon arrow"></span>
-            </span>
-            <span className="button-text">See Profile</span>
-          </button>
-        </div>
-      </form>
-    </div>
+        <header className="brand-header">
+          <h1 className="brand-name">Goog-Co</h1>
+        </header>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              type="text"
+              id="input-field"
+              placeholder="Enter GitHub username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <button className="learn-more" type="submit">
+              <span className="circle" aria-hidden="true">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="button-text">See Profile</span>
+            </button>
+          </div>
+        </form>
+      </div>
       {error && <p className="error">{error}</p>}
       {userData && (
         <div className="profile">
@@ -156,47 +170,50 @@ const GitHubProfile = () => {
               <h1>{userData.name}</h1>
               <p>{userData.bio}</p>
               <div className="details">
-              <p>
-                <strong>Repos</strong> {userData.public_repos}
-              </p>
-              <p>
-             {userData.followers} <strong>Followers</strong>
-              </p>
-              <p>
-                {userData.following} <strong>Following</strong> 
-              </p>
-              {devScore && (
                 <p>
-                  <strong>Score</strong> {devScore}/5
+                  Repos {userData.public_repos}
                 </p>
-              )}
-            </div>
+                <p>
+                  {userData.followers} <strong>Followers</strong>
+                </p>
+                <p>
+                  {userData.following} <strong>Following</strong>
+                </p>
+                {devScore && (
+                  <p>
+                    <strong>Score</strong> {devScore}/5
+                  </p>
+                )}
+                {bestLanguage && (
+                  <p>
+                    <strong>Best Language</strong> {bestLanguage} {renderLanguageIcon(bestLanguage)}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
           <h2>Top Repositories</h2>
           <div className="repos">
-      {repos.map((repo) => (
-        <div key={repo.id} className="repo-card">
-          <h3>
-            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-              {repo.name}
-            </a>
-          </h3>
-          <p>{repo.description}</p>
-          <p className="language">
-            <strong>Language:</strong>{' '}
-            {repo.language === 'Java' && <FaJava />}
-            {repo.language === 'JavaScript' && <FaJs />}
-            {repo.language === 'Python' && <FaPython />}
-          </p>
-          <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="view-repo-button">
-            View Repository
-          </a>
-        </div>
-      ))}
-    </div>
+            {repos.map((repo) => (
+              <div key={repo.id} className="repo-card">
+                <h3>
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                    {repo.name}
+                  </a>
+                </h3>
+                <p>{repo.description}</p>
+                <p className="language">
+                  <strong>Language:</strong>{' '}
+                  {repo.language && renderLanguageIcon(repo.language)}
+                </p>
+                <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="view-repo-button">
+                  View Repository
+                </a>
+              </div>
+            ))}
+          </div>
           <div className="languages-card">
-            <h2>Most Used Languages</h2>
+            <h2>Most Used Languages 🔥</h2>
             <ul>
               {Object.keys(languages).map((language) => (
                 <li key={language}>
@@ -207,33 +224,32 @@ const GitHubProfile = () => {
           </div>
         </div>
       )}
-     {username&&userRankings.length > 0 && (
-  <div className="user-rankings">
-    <h2>User Rankings</h2>
-    <div className="ranking-list">
+      {username && userRankings.length > 0 && (
+        <div className="user-rankings">
+          <h2>User Rankings</h2>
+          <div className="ranking-list">
             <div className='git-att'>
-              <span>profile</span>
-       <div className='profile-att'>
-            <span>Dev Score</span>
-            <span>Rank</span>
-          </div>
+              <span>Profile</span>
+              <div className='profile-att'>
+                <span>Dev Score</span>
+                <span>Rank</span>
+              </div>
             </div>
-      {userRankings.map((user, index) => (
-        <div className="ranking-item" key={index}>
-          <div className="profile-infos">
-            <img src={`https://github.com/${user.username}.png`} alt="Profile" />
-            <div className="user-details">
-              <span className="username">{user.username}</span>
-            </div>
+            {userRankings.map((user, index) => (
+              <div className="ranking-item" key={index}>
+                <div className="profile-infos">
+                  <img src={`https://github.com/${user.username}.png`} alt="Profile" />
+                  <div className="user-details">
+                    <span className="username">{user.username}</span>
+                  </div>
+                </div>
+                <span className="dev-score">{user.devScore}</span>
+                <span className="rank">{index + 1}</span>
+              </div>
+            ))}
           </div>
-          <span className="dev-score">{user.devScore}</span>
-          <span className="rank">{index + 1}</span>
         </div>
-      ))}
-    </div>
-  </div>
-)}
-
+      )}
     </div>
   );
 };
