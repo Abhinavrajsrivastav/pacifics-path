@@ -6,6 +6,8 @@ import './GitHubProfile.css';
 import { getFirestore, collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { app } from '../../../Components/Firebase/Firebase';
 
+import { MdNavigateNext } from 'react-icons/md';
+
 const GitHubProfile = () => {
   const [username, setUsername] = useState('');
   const [userData, setUserData] = useState(null);
@@ -27,7 +29,7 @@ const GitHubProfile = () => {
     return totalScore;
   };
 
- const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setUserData(null);
@@ -90,10 +92,11 @@ const GitHubProfile = () => {
 
         const userDocRef = await addDoc(collection(db, 'Github-rank'), {
           username: username,
-          devScore: score
+          devScore: score,
+          bestLanguage: bestLang,
         });
 
-        console.log('User devscore stored in Firestore successfully with ID:', userDocRef.id);
+        console.log('User dev score stored in Firestore successfully with ID:', userDocRef.id);
       } catch (error) {
         setError('Error fetching GitHub data. Please try again.');
         console.error('Error storing user data in Firestore:', error);
@@ -164,15 +167,13 @@ const GitHubProfile = () => {
       {error && <p className="error">{error}</p>}
       {userData && (
         <div className="profile">
-          <div className="GitHub-Profile-info">
+          <div className="github-profile-info">
             <div className="github-box0">
               <img src={userData.avatar_url} alt="Profile" />
               <h1>{userData.name}</h1>
               <p>{userData.bio}</p>
               <div className="details">
-                <p>
-                  Repos {userData.public_repos}
-                </p>
+                <p>Repos {userData.public_repos}</p>
                 <p>
                   {userData.followers} <strong>Followers</strong>
                 </p>
@@ -186,7 +187,7 @@ const GitHubProfile = () => {
                 )}
                 {bestLanguage && (
                   <p>
-                    <strong></strong> {bestLanguage} {renderLanguageIcon(bestLanguage)} 🔥 
+                    {bestLanguage} {renderLanguageIcon(bestLanguage)} 🔥
                   </p>
                 )}
               </div>
@@ -203,8 +204,7 @@ const GitHubProfile = () => {
                 </h3>
                 <p>{repo.description}</p>
                 <p className="language">
-                  <strong>Language:</strong>{' '}
-                  {repo.language && renderLanguageIcon(repo.language)}
+                  <strong>Language:</strong> {repo.language && renderLanguageIcon(repo.language)}
                 </p>
                 <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="view-repo-button">
                   View Repository
@@ -225,30 +225,33 @@ const GitHubProfile = () => {
         </div>
       )}
       {username && userRankings.length > 0 && (
+        
         <div className="user-rankings">
-          <h2>User Rankings</h2>
-          <div className="ranking-list">
-            <div className='git-att'>
-              <span>Profile</span>
-              <div className='profile-att'>
-                <span>Dev Score</span>
-                <span>Rank</span>
-              </div>
+  <h2>User Rankings</h2>
+  <div className="ranking-list">
+    {userRankings.map((user, index) => (
+      <div className="ranking-item" key={index}>
+        <div className="profile-infos">
+          <img src={`https://github.com/${user.username}.png`} alt="Profile" />
+          <div className="user-details">
+            <span className="username">{user.username}</span>
+            <div className="user-detail-card">
+              <span className="dev-score">Dev score {user.devScore}</span>
+              <span className="rank">Rank {index + 1}</span>
             </div>
-            {userRankings.map((user, index) => (
-              <div className="ranking-item" key={index}>
-                <div className="profile-infos">
-                  <img src={`https://github.com/${user.username}.png`} alt="Profile" />
-                  <div className="user-details">
-                    <span className="username">{user.username}</span>
-                  </div>
-                </div>
-                <span className="dev-score">{user.devScore}</span>
-                <span className="rank">{index + 1}</span>
-              </div>
-            ))}
           </div>
         </div>
+        <div className="see-profile-container">
+          <span className="see-profile-text">See Profile</span>
+          <span className="see-profile-icon">
+            <MdNavigateNext />
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
       )}
     </div>
   );

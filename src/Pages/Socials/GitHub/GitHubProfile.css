@@ -256,9 +256,8 @@ button:hover .button-text {
 
 .user-rankings {
   margin-top: 50px;
-  max-width: 500px;
+  width: auto;
   position: relative;
-  left: 370px;
   background-color: rgba(7, 7, 7, 0.2);
   border: 1px solid #b4b4b4;
   border-radius: 10px;
@@ -273,24 +272,25 @@ button:hover .button-text {
 
 .ranking-list {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .ranking-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: #0e0e0f;
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px;
+  gap: 30px;
 }
 
 .profile-infos {
   display: flex;
   align-items: center;
-  min-width: 300px;
+  width: auto;
 }
 
 .profile-att {
@@ -299,7 +299,7 @@ button:hover .button-text {
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-  gap: 80px;
+  gap: 60px;
 }
 
 .git-att {
@@ -312,7 +312,7 @@ button:hover .button-text {
 
 .profile-infos img {
   width: 50px;
-  height: 50px;
+  height: auto;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -320,6 +320,13 @@ button:hover .button-text {
 .user-details {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.user-detail-card span{
+   padding: 5px 10px;
+   background-color: #505050;
+   border-radius: 4px;
 }
 
 .username {
@@ -332,6 +339,20 @@ button:hover .button-text {
 
 .rank {
   margin-left: auto;
+  color: #ffffff;
+  background-color: rgb(25, 64, 136);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.see-profile{
+  margin-left: auto;
+  color: #ffffff;
+  background-color: rgb(94, 92, 96);
+  padding: 1px 4px;
+  border-radius: 50%;
+  margin-left: 10px;
 }
 
 /* Languages card styles */
