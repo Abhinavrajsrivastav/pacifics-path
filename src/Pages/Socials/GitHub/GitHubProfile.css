@@ -144,6 +144,8 @@ button:hover .button-text {
   justify-content: space-between;
   margin: 20px 0;
   max-width: 600px;
+  position: relative;
+  left: 20px;
 }
 
 .github-profile .profile {

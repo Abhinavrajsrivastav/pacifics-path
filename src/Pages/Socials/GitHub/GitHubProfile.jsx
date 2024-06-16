@@ -186,7 +186,7 @@ const GitHubProfile = () => {
                 )}
                 {bestLanguage && (
                   <p>
-                    <strong>Best Language</strong> {bestLanguage} {renderLanguageIcon(bestLanguage)}
+                    <strong></strong> {bestLanguage} {renderLanguageIcon(bestLanguage)} 🔥 
                   </p>
                 )}
               </div>
