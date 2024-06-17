@@ -231,22 +231,31 @@ const GitHubProfile = () => {
   <span> Java</span> <span> Java</span> <span> Java</span> <span> Java</span></h2>
   <div className="ranking-list">
     {userRankings.map((user, index) => (
-      <div className="ranking-item" key={index}>
-        <div className="profile-infos">
-          <img src={`https://github.com/${user.username}.png`} alt="Profile" />
-          <div className="user-details">
-            <span className="username">{user.username}</span>
-            <div className="user-detail-card">
-              <span className="dev-score">score {user.devScore}</span>
-              <span className="rank">Rank {index + 1}</span>
-            </div>
-          </div>
+     <div className="ranking-item" key={index}>
+  <div className="profile-infos">
+    <div className="user-profile">
+      <img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pic" />
+      <p className="username">{user.username}</p>
+    </div>
+    <div className="user-details">
+      <div className="user-detail-card">
+        <div className="user-profile-info">
+          <p className="dev-score">{user.devScore}</p>
+          <p className="label">Score</p>
         </div>
-        <div className="see-profile-link">
-          <span className="see-profile-text">Contact</span>
-          <span className="see-profile-text">See Profile</span>
+        <div className="user-profile-info">
+          <p className="rank">{index + 1}</p>
+          <p className="label">Rank</p>
         </div>
       </div>
+    </div>
+  </div>
+  <div className="see-profile-link">
+    <p className="top-skills">{user.bestLanguage}</p>
+    <p className="see-profile-text">See Profile</p>
+  </div>
+</div>
+
     ))}
   </div>
 </div>
