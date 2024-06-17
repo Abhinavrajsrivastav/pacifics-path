@@ -5,11 +5,11 @@
   padding: 20px;
   padding-top: 150px;
   font-family: Arial, sans-serif;
-  background-color: #2a2a2a;
   color: white;
   overflow-x: hidden;
   overflow-y: hidden;
-  background: url('./wave-haikei.png') no-repeat center center/cover;
+  background: rgb(35,31,106);
+  background: linear-gradient(90deg, rgba(35,31,106,1) 0%, rgba(176,14,146,1) 53%, rgba(19,33,113,1) 100%);
 }
 
 .github-profile::-webkit-scrollbar { 
@@ -283,15 +283,37 @@ button:hover .button-text {
   align-items: center;
   background-color: #0e0e0f;
   border-radius: 10px;
-  padding: 30px;
+  padding: 15px;
   gap: 30px;
+  min-width: 280px;
+  max-width: 350px;
 }
 
 .profile-infos {
   display: flex;
-  align-items: center;
+  align-items: start;
   width: auto;
 }
+
+.see-profile-link{
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  left: 40px;
+}
+
+.see-profile-link span{
+  background-color: #0073e6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: .2s ease-in-out;
+}
+
+.see-profile-link span:hover{
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
 
 .profile-att {
   display: flex;

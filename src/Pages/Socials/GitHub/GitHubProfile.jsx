@@ -227,7 +227,8 @@ const GitHubProfile = () => {
       {username && userRankings.length > 0 && (
         
         <div className="user-rankings">
-  <h2>User Rankings</h2>
+  <h2>User Rankings <span> Java</span> <span> Python</span> <span> JavaScript</span> <span> Golang</span>
+  <span> Java</span> <span> Java</span> <span> Java</span> <span> Java</span></h2>
   <div className="ranking-list">
     {userRankings.map((user, index) => (
       <div className="ranking-item" key={index}>
@@ -236,16 +237,14 @@ const GitHubProfile = () => {
           <div className="user-details">
             <span className="username">{user.username}</span>
             <div className="user-detail-card">
-              <span className="dev-score">Dev score {user.devScore}</span>
+              <span className="dev-score">score {user.devScore}</span>
               <span className="rank">Rank {index + 1}</span>
             </div>
           </div>
         </div>
-        <div className="see-profile-container">
+        <div className="see-profile-link">
+          <span className="see-profile-text">Contact</span>
           <span className="see-profile-text">See Profile</span>
-          <span className="see-profile-icon">
-            <MdNavigateNext />
-          </span>
         </div>
       </div>
     ))}
