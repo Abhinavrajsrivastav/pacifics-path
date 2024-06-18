@@ -1,7 +1,8 @@
 /* Global styles */
 .github-profile {
-  min-width: 100vh;
+  width: 100%;
   min-height: 100vh;
+  height: auto;
   padding: 20px;
   padding-top: 150px;
   font-family: Arial, sans-serif;
@@ -268,6 +269,30 @@ button:hover .button-text {
 .user-rankings h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.user-rankings span {
+  transition: .1s ease-in-out;
+}
+
+.user-rankings span:hover {
+  background-color: #c3a903;
+  transform: scale(1.1);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.navigate-professinal span{
+  background-color: #9f8e25;
+  padding: 10px 10px 10px 10px; 
+  border-radius: 5px;
+  font-size: 20px;
+  transition: .2s ease-in-out;
 }
 
 .ranking-list {
@@ -293,6 +318,7 @@ button:hover .button-text {
 
 .ranking-item:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .profile-infos {
@@ -411,16 +437,181 @@ button:hover .button-text {
   background-color: #0e0e0f;
 }
 
-.user-profile-info{
+.user-profile-info {
   display: flex;
   flex-direction: column;
   justify-content: start;
   gap: 15px;
   position: relative;
   top: 10px;
-  left: 10px
+  left: 10px;
 }
 
-@media(max-width: 1005px){
-  
+@media (max-width: 1005px) {
+  .github-profile {
+    padding: 0px;
+    padding-top: 100px;
+    overflow-x: hidden;
+  }
+
+  .github-profile form {
+    font-size: 15px;
+    justify-content: start;
+    flex-direction: row;
+    left: 0px;
+    align-items: center;
+  }
+
+  .brand-name{
+    font-size: 50px;
+    position: relative;
+    top: 40px;
+    right: 25px;
+
+  }
+
+  .github-profile input {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+
+  button.learn-more {
+    width: auto;
+  }
+
+  .button-text{
+    opacity: 0;
+  }
+
+  .GitHub-Profile-info {
+    flex-direction: column;
+    align-items: start;
+    left: 0;
+  }
+
+.profile{
+  padding: 20px;
+}
+
+  .github-profile .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .github-profile .profile h1 {
+    font-size: 20px;
+  }
+
+  .github-profile .profile p {
+    font-size: 14px;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .repos {
+    justify-content: center;
+  }
+
+  .repo-card {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  .user-rankings {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .navigate-professinal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  position: relative;
+  right: -15px;
+}
+
+  .ranking-list {
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+  }
+
+  .ranking-item {
+    min-width: 300px;
+    width: auto;
+  }
+
+  .profile-infos {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .user-profile {
+    margin-right: 0;
+    align-items: start;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .username {
+    font-size: 0.9em;
+  }
+
+  .user-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-detail-card{
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    gap: 0px;
+  }
+
+  .user-profile-info {
+    margin: 0;
+  }
+
+  .dev-score, .rank {
+    font-size: 1em;
+  }
+
+  .see-profile-link {
+    justify-content: center;
+  }
+
+  .see-profile-link {
+    margin-left: 0;
+    font-size: 0.8em;
+  }
+
+  .languages-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px
+  }
+
+  .languages-card h2 {
+    font-size: 1.2em;
+  }
+
+  .languages-card li {
+    font-size: 0.9em;
+  }
 }

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'react-calendar-heatmap/dist/styles.css';
-import { FaJava, FaJs, FaPython, FaGithub, FaReact } from 'react-icons/fa'; // Import more icons if needed
+import { FaJava, FaJs, FaPython, FaGithub, FaReact } from 'react-icons/fa';
 import './GitHubProfile.css';
 import { getFirestore, collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { app } from '../../../Components/Firebase/Firebase';
-
-import { MdNavigateNext } from 'react-icons/md';
 
 const GitHubProfile = () => {
   const [username, setUsername] = useState('');
@@ -17,6 +15,7 @@ const GitHubProfile = () => {
   const [devScore, setDevScore] = useState(null);
   const [userRankings, setUserRankings] = useState([]);
   const [bestLanguage, setBestLanguage] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('');
 
   const db = getFirestore(app);
 
@@ -77,8 +76,9 @@ const GitHubProfile = () => {
       );
       setLanguages(languagesData);
 
-      // Calculate the best language
-      const bestLang = Object.keys(languagesData).reduce((a, b) => languagesData[a] > languagesData[b] ? a : b, '');
+      const programmingLanguages = ['Java', 'JavaScript', 'Python', 'TypeScript', 'Kotlin', 'C#', 'C++', 'Ruby', 'Go', 'Rust', 'Swift'];
+      const filteredLanguages = Object.keys(languagesData).filter(lang => programmingLanguages.includes(lang));
+      const bestLang = filteredLanguages.reduce((a, b) => languagesData[a] > languagesData[b] ? a : b, '');
       setBestLanguage(bestLang);
 
       const score = calculateDevScore(userResponse.data, sortedRepos);
@@ -107,9 +107,12 @@ const GitHubProfile = () => {
     }
   };
 
-  const fetchUserRankings = async () => {
+  const fetchUserRankings = async (language = '') => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'Github-rank'));
+      const q = language
+        ? query(collection(db, 'Github-rank'), where('bestLanguage', '==', language))
+        : collection(db, 'Github-rank');
+      const querySnapshot = await getDocs(q);
       const rankings = [];
       querySnapshot.forEach((doc) => {
         rankings.push(doc.data());
@@ -122,8 +125,12 @@ const GitHubProfile = () => {
   };
 
   useEffect(() => {
-    fetchUserRankings();
-  }, []);
+    fetchUserRankings(selectedLanguage);
+  }, [selectedLanguage]);
+
+  const handleLanguageClick = (language) => {
+    setSelectedLanguage(language);
+  };
 
   const renderLanguageIcon = (language) => {
     switch (language) {
@@ -138,6 +145,10 @@ const GitHubProfile = () => {
       default:
         return <FaGithub />;
     }
+  };
+
+  const handleSeeProfileClick = (username) => {
+    window.open(`https://github.com/${username}`, '_blank');
   };
 
   return (
@@ -224,42 +235,47 @@ const GitHubProfile = () => {
           </div>
         </div>
       )}
-      {username && userRankings.length > 0 && (
-        
+      {username && (
         <div className="user-rankings">
-  <h2>User Rankings <span> Java</span> <span> Python</span> <span> JavaScript</span> <span> Golang</span>
-  <span> Java</span> <span> Java</span> <span> Java</span> <span> Java</span></h2>
-  <div className="ranking-list">
-    {userRankings.map((user, index) => (
-     <div className="ranking-item" key={index}>
-  <div className="profile-infos">
-    <div className="user-profile">
-      <img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pic" />
-      <p className="username">{user.username}</p>
-    </div>
-    <div className="user-details">
-      <div className="user-detail-card">
-        <div className="user-profile-info">
-          <p className="dev-score">{user.devScore}</p>
-          <p className="label">Score</p>
+          <h2>
+            User Rankings 
+            <div className='navigate-professinal'>
+            <span onClick={() => handleLanguageClick('Java')}> Java</span> 
+            <span onClick={() => handleLanguageClick('Python')}> Python</span> 
+            <span onClick={() => handleLanguageClick('JavaScript')}> JavaScript</span> 
+            <span onClick={() => handleLanguageClick('React')}> React</span>
+            <span onClick={() => handleLanguageClick('')}> All</span>
+            </div>
+          </h2>
+          <div className="ranking-list">
+            {userRankings.map((user, index) => (
+              <div className="ranking-item" key={index}>
+                <div className="profile-infos">
+                  <div className="user-profile">
+                    <img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pic" />
+                    <p className="username">{user.username}</p>
+                  </div>
+                  <div className="user-details">
+                    <div className="user-detail-card">
+                      <div className="user-profile-info">
+                        <p className="dev-score">{user.devScore}</p>
+                        <p className="label">Score</p>
+                      </div>
+                      <div className="user-profile-info">
+                        <p className="rank">{index + 1}</p>
+                        <p className="label">Rank</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="see-profile-link">
+                  <p className="top-skills">{user.bestLanguage}</p>
+                  <p className="see-profile-text" onClick={() => handleSeeProfileClick(user.username)}>See Profile</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="user-profile-info">
-          <p className="rank">{index + 1}</p>
-          <p className="label">Rank</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div className="see-profile-link">
-    <p className="top-skills">{user.bestLanguage}</p>
-    <p className="see-profile-text">See Profile</p>
-  </div>
-</div>
-
-    ))}
-  </div>
-</div>
-
       )}
     </div>
   );
