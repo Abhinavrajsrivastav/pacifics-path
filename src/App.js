@@ -12,6 +12,13 @@ import { AuthContext } from './Components/Context/AuthProvider';
 import Categories from './Categories/Categories';
 import PopupForm from './Categories/PopopForm';
 import SelfLearn from './Pages/SelfLearnign/SelfLearn';
+import WebResponses from './Pages/ChatBot/Queries/Results/Web/WebResponses';
+import Gemini from './Pages/ChatBot/Queries/Results/Ai/Gemini';
+import Result from './Pages/ChatBot/Queries/Results/Result';
+import Videos from './Pages/ChatBot/Queries/Results/Video/Videos';
+import Books from './Pages/Books/Books';
+import GitHubProfile from './Pages/Socials/GitHub/GitHubProfile';
+
 
 function App() {
   
@@ -32,8 +39,11 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path={`/profile/`} element={<Profile />} />
           <Route path="/categories" element={<Categories />} />
-          {/* <Route path="/form" element={<PopupForm onClose={undefined} />} /> */}
           <Route path="/selfLearn" element={<SelfLearn />}/>
+          <Route path="/self-learn/response" element={<Result />} />
+          <Route path="/self-learn/response/Videos" element={<Videos />} />
+          <Route path="/read-books" element={<Books />} />
+          <Route path="github-profile" element={<GitHubProfile />} />
         </Routes>
       </AuthProvider>
     </Router>

@@ -62,7 +62,7 @@
   justify-content: space-evenly;
   z-index: -1000;
   border-radius: 10px;
-  background-color: rgba(51, 92, 239, 0.89);
+  background-color: var(--main-color);
 }
 
 .features-card {

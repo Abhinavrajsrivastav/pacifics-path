@@ -1,12 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Profile.css';
 import { AuthContext } from '../../Components/Context/AuthProvider';
-import { useNavigate,Link } from 'react-router-dom';
-import { doc, setDoc, getFirestore, getDoc } from 'firebase/firestore';
+import { useNavigate, Link } from 'react-router-dom';
+import { getFirestore } from 'firebase/firestore';
 import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
-import {getDownloadURL, listAll, ref, uploadBytes} from 'firebase/storage';
-import {v4} from "uuid";
+import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
+import { FaSearch, FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem, FaCode } from 'react-icons/fa';
+import { FaGooglePlusSquare,FaRegStar, FaUserFriends } from 'react-icons/fa'; // Additional icons
 
 function Profile() {
   const authContext = useContext(AuthContext);
@@ -17,69 +19,113 @@ function Profile() {
 
   const name = user?.displayName;
   const email = user?.email;
-  console.log(user);
-  
 
-  // State to hold the selected profile image
   const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
-    listAll(ref(storage, `PIMG/${name}`)).then(img => {
-      console.log(img); 
-      img.items.forEach(val => {
-       const lastFile = img.items[img.items.length - 1];
-      //  console.log(lastFile);
-       
-        getDownloadURL(lastFile).then((url) => {
-          setProfileImage(url);
-          setData({...data,photoURL: url});
-        });
+    if (name) {
+      const imgListRef = ref(storage, `PIMG/${name}`);
+      listAll(imgListRef).then((img) => {
+        if (img.items.length > 0) {
+          const lastFile = img.items[img.items.length - 1];
+          getDownloadURL(lastFile).then((url) => {
+            setProfileImage(url);
+            setData({ ...data, photoURL: url });
+          }).catch((error) => {
+            console.error("Error getting profile image URL: ", error);
+          });
+        }
+      }).catch((error) => {
+        console.error("Error listing profile images: ", error);
       });
     }
-    );
-  }, []);
+  }, [name, setData, data]);
 
-  // Function to handle profile image upload
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
-    const ImgRef = ref(storage, `PIMG/${name}/${v4()}`);
-    await uploadBytes(ImgRef, file);
+    if (file && name) {
+      const ImgRef = ref(storage, `PIMG/${name}/${v4()}`);
+      try {
+        await uploadBytes(ImgRef, file);
+        const url = await getDownloadURL(ImgRef);
+        setProfileImage(url);
+        setData({ ...data, photoURL: url });
+      } catch (error) {
+        console.error("Error uploading profile image: ", error);
+      }
+    }
   };
 
   return (
     <div className="profile-container">
       <div className="profile-details">
         <div className="profile-photo">
-          {/* Display the selected profile image */}
           {profileImage ? (
             <img src={profileImage} alt="Profile" />
           ) : (
-            <img src={profileImage} alt="Default Profile" />
+            <img src="/path/to/default-profile.png" alt="Default Profile" />
           )}
-          {/* Input field for selecting a new profile image */}
           <input type="file" accept="image/*" onChange={handleImageChange} />
         </div>
         <div className="profile-info">
           <h2>{name}</h2>
           <p>Email: {email}</p>
         </div>
+        <div className="social-links">
+          <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://github.com/dummy" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://twitter.com/dummy" target="_blank" rel="noopener noreferrer">
+            <FaTwitter />
+          </a>
+          <a href="https://www.dummywebsite.com" target="_blank" rel="noopener noreferrer">
+            <FaGlobe />
+          </a>
+        </div>
       </div>
       <div className="classRoom">
         <div className="joinClass">
-          <Link to="/categories"><img src="./Icons/group.png" alt="" /></Link>
+          <Link to="/categories"><FaUsers size={50} color='white' /></Link>
           <p className="Join">Join a classroom</p>
         </div>
+        {/* <div className="ressumeClassRoom">
+          <FaCalendarAlt size={50} />
+          <p className="Join">Manage Your Day</p>
+        </div> */}
         <div className="ressumeClassRoom">
-          <img src="./Icons/add.png" alt="" />
-          <p className="Join">Explore</p>
+          <Link to="/selfLearn"><FaPencilAlt size={50} color='white' /></Link>
+          <p className="Join">Learn With Ai</p>
         </div>
-         <div className="ressumeClassRoom">
-          <Link to="/selfLearn"><img src="./Icons/self-learning.png" alt="" /></Link>
-          <p className="Join">Self Learning</p>
+        <div className="ressumeClassRoom">
+          <FaGlobeAmericas size={50} />
+          <p className="Join">Learn Globally</p>
         </div>
-         <div className="ressumeClassRoom">
-          <img src="./Icons/video-call.png" alt="" />
-          <p className="Join">Group Learning</p>
+        <div className="ressumeClassRoom">
+          <Link to="/read-books"><FaBook size={50} color='white' /></Link>
+          <p className="Join">Read Books</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <FaGooglePlusSquare size={50} />
+          <p className="Join">Ask to Gemini</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <FaRegStar size={50} />
+          <p className="Join">Leaderboard</p> {/* Changed text */}
+        </div>
+        <div className="ressumeClassRoom">
+          <FaUserFriends size={50} />
+          <p className="Join">Find your Match</p> {/* Changed text */}
+        </div>
+        <div className="ressumeClassRoom">
+          <Link to="/github-profile"><FaGithub size={50} color='white' /></Link>
+          <p className="Join">GitHub</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <FaGem size={50} color='white' />
+          <p className="Join">LeetCode</p>
         </div>
       </div>
     </div>

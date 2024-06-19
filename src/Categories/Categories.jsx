@@ -17,7 +17,6 @@ function Categories() {
     }, []);
 
     function toggleForm(category) {
-        // console.log(category); 
         setCategory(category); 
         setForm(!form);
     }
