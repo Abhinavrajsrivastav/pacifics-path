@@ -36,7 +36,7 @@ const GoogleSignIn = () => {
                     <p>Sign up with Google</p>
                 </button>
                 <p>or</p>
-                <form className="form" onSubmit={(e) => EmailSignup(e)}>
+                <form className="forms" onSubmit={(e) => EmailSignup(e)}>
                     <input type="text" placeholder="Phone, email or username" required />
                     <input type="password" placeholder="Password..." required />
                     <div className="signUp-btn">

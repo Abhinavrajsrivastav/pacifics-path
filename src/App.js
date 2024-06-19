@@ -11,6 +11,7 @@ import { AuthProvider } from './Components/Context/AuthProvider';
 import { AuthContext } from './Components/Context/AuthProvider';
 import Categories from './Categories/Categories';
 import PopupForm from './Categories/PopopForm';
+import SelfLearn from './Pages/SelfLearnign/SelfLearn';
 
 function App() {
   
@@ -32,6 +33,7 @@ function App() {
           <Route path={`/profile/`} element={<Profile />} />
           <Route path="/categories" element={<Categories />} />
           {/* <Route path="/form" element={<PopupForm onClose={undefined} />} /> */}
+          <Route path="/selfLearn" element={<SelfLearn />}/>
         </Routes>
       </AuthProvider>
     </Router>
