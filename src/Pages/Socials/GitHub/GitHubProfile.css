@@ -9,8 +9,8 @@
   color: white;
   overflow-x: hidden;
   overflow-y: hidden;
-  background: rgb(35,31,106);
-  background: linear-gradient(90deg, rgba(35,31,106,1) 0%, rgba(176,14,146,1) 53%, rgba(19,33,113,1) 100%);
+background: rgb(8,8,8);
+background: linear-gradient(90deg, rgba(8,8,8,1) 0%, rgba(4,29,114,1) 53%, rgba(6,6,6,1) 100%);
 }
 
 .github-profile::-webkit-scrollbar { 
@@ -281,14 +281,14 @@ button:hover .button-text {
 }
 
 .user-rankings span:hover {
-  background-color: #c3a903;
+  background-color: #0336c3;
   transform: scale(1.1);
   transform: translateY(-5px);
   cursor: pointer;
 }
 
 .navigate-professinal span{
-  background-color: #9f8e25;
+  background-color: #25409f;
   padding: 10px 10px 10px 10px; 
   border-radius: 5px;
   font-size: 20px;
