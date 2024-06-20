@@ -1,6 +1,8 @@
 .web-response-container {
     max-width: 400px;
     position: relative;
+    text-align: start;
+    align-items: start;
     top: 100px;
     margin-right: 20px;
     color: white;
@@ -20,14 +22,17 @@
 
 .response-items {
     margin-bottom: 20px;
+    padding: 10px;
+    background-color: #131415c2;
+    border-radius: 10px;
 }
 
 .responses-list {
     display: flex;
     flex-direction: column;
     gap: 0;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
 
 .web-result {
@@ -71,7 +76,7 @@
 }
 
 .pagination button {
-    background-color: #3970f1;
+    background-color: #0d0d0d;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -81,10 +86,10 @@
 }
 
 .pagination button:hover {
-    background-color: #305bb5;
+    background-color: #000000;
 }
 
 .pagination button:disabled {
-    background-color: #3ba3ff;
+    background-color: #2d2d2d;
     cursor: not-allowed;
 }
