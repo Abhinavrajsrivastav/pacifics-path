@@ -116,8 +116,10 @@ function Profile() {
           <p className="Join">Leaderboard</p> {/* Changed text */}
         </div>
         <div className="ressumeClassRoom">
+          <Link to="/git-mate" >
           <FaUserFriends size={50} />
-          <p className="Join">Find your Match</p> {/* Changed text */}
+          <p className="Join">Find Mate</p> 
+          </Link>
         </div>
         <div className="ressumeClassRoom">
           <Link to="/github-profile"><FaGithub size={50} color='white' /></Link>

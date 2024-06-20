@@ -18,11 +18,9 @@ import Result from './Pages/ChatBot/Queries/Results/Result';
 import Videos from './Pages/ChatBot/Queries/Results/Video/Videos';
 import Books from './Pages/Books/Books';
 import GitHubProfile from './Pages/Socials/GitHub/GitHubProfile';
-
+import Mate from './Pages/Socials/FindMate/Mate';
 
 function App() {
-  
-
   return (
     <Router>
       <AuthProvider>
@@ -37,13 +35,14 @@ function App() {
           } />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path={`/profile/`} element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/selfLearn" element={<SelfLearn />}/>
+          <Route path="/selfLearn" element={<SelfLearn />} />
           <Route path="/self-learn/response" element={<Result />} />
           <Route path="/self-learn/response/Videos" element={<Videos />} />
           <Route path="/read-books" element={<Books />} />
-          <Route path="github-profile" element={<GitHubProfile />} />
+          <Route path="/github-profile" element={<GitHubProfile />} />
+          <Route path="/git-mate" element={<Mate />} />
         </Routes>
       </AuthProvider>
     </Router>
