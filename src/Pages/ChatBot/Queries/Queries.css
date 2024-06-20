@@ -20,6 +20,9 @@
   justify-content: space-between;
   flex-direction: column;
   color: white;
+  gap: 20px;
+  position: relative;
+  bottom: 40px;
 }
 
 .brand-name{
@@ -160,6 +163,18 @@
 #sendButton:hover svg path {
   fill: #3c3c3c;
   stroke: var(--main-color);
+}
+
+.brand-slogane{
+  font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  position: relative;
+  top: 30px;
+  right: 20px;
+
 }
 
 @media(max-width: 1005px){
