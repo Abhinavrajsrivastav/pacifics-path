@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "@google/generative-ai": "^0.12.0",
+=======
     "@apollo/client": "^3.10.4",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -12,6 +15,7 @@
     "@mui/material": "^5.15.19",
     "@nivo/calendar": "^0.87.0",
     "@nivo/legends": "^0.87.0",
+>>>>>>> 2d02e319834ec84c3c51fa3342c9ff715958346f
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
