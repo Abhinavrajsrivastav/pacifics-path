@@ -37,8 +37,8 @@ const Queries = () => {
   return (
     <div className="app-container">
       <div className="brand-container">
-        <span className="brand-name">Eduland</span>
-        <span className="brand-slogan">Have a question? Ask it!</span>
+        <span className="brand-name">Goog-co</span>
+        <span className="brand-slogane">Have a question? Ask it!</span>
       </div>
       <div className="messageBox">
         <div className="fileUploadWrapper">

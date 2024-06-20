@@ -14,14 +14,9 @@ body{
 
 :root {
   /* --main-color: rgba(38, 78, 195, 0.89); */
-  --main-color: rgba(62, 64, 212, 0.995);
+  --main-color: rgba(19, 81, 140, 0.995);
 }
 
 :root{
   --second-color: rgb(56, 104, 238);
 }
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

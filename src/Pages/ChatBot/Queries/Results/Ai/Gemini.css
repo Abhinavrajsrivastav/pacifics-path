@@ -3,10 +3,12 @@
 
 .Gemini-response {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   flex-direction: column;
   height: 100vh;
+  position: relative;
+  top: 150px;
 }
 
 .bgblue {
@@ -19,7 +21,6 @@
   margin-left: 10px;
   font-family: 'Arial', sans-serif;
   position: relative;
-  /* top: 100px; */
   color: white;
   overflow-x: hidden;
 }
@@ -57,14 +58,14 @@
 
 .chat-bot {
   position: absolute;
-  top: 90%;
+  top: 65%;
   left: 2%;
 }
 
 .card {
   font-size: 1rem;
   color: #bec4cf;
-  width: 100%;
+  width: 800px;
   max-height: 350px;
   overflow: auto;
   scroll-behavior: smooth;
