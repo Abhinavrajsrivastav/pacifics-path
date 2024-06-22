@@ -19,8 +19,6 @@ const GitHubProfile = () => {
 
   const db = getFirestore(app);
 
-  const accessToken = process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN;
-
   const calculateDevScore = (userData, repos) => {
     const reposCountScore = repos.length / 10;
     const followersScore = userData.followers / 100;
