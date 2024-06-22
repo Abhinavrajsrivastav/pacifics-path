@@ -19,7 +19,7 @@ const GitHubProfile = () => {
 
   const db = getFirestore(app);
 
-  const accessToken = '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';
+  const accessToken = process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN;
 
   const calculateDevScore = (userData, repos) => {
     const reposCountScore = repos.length / 10;
@@ -29,6 +29,8 @@ const GitHubProfile = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log(process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN);
+    
     e.preventDefault();
     setError('');
     setUserData(null);

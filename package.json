@@ -11,6 +11,7 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "d3-time": "^3.1.0",
+    "env-cmd": "^10.1.0",
     "firebase": "^10.11.0",
     "graphql": "^16.8.1",
     "gsap": "^3.12.5",
@@ -31,7 +32,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
@@ -57,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "gh-pages": "^6.1.1",
     "tailwindcss": "^3.4.4"
   }
