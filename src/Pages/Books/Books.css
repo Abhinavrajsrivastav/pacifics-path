@@ -59,7 +59,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4c61af;
+  background-color: #1c317e;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -67,7 +67,7 @@
 }
 
 .book-search-button:hover {
-  background-color: #4553a0;
+  background-color: #0c2198;
 }
 
 .books-container {
@@ -150,4 +150,17 @@
   .book-search-container {
     padding-top: 150px;
   }
+  
+.book-search-button {
+  position: relative;
+  left: 15px;
+}
+
+.book-item{
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+  padding: 10px;
+}
+  
 }

@@ -265,7 +265,7 @@ button:hover .button-text {
   transition: background-color 0.3s;
 }
 
-.user-rankings {
+.user-ranking {
   margin-top: 0px;
   width: 93%;
   position: relative;
@@ -278,7 +278,7 @@ button:hover .button-text {
   top: 20px
 }
 
-.user-rankings h2 {
+.user-ranking h2 {
   font-size: 24px;
   margin-bottom: 20px;
   scroll-behavior: smooth;
@@ -287,11 +287,11 @@ button:hover .button-text {
   width: 100%;
 }
 
-.user-rankings span {
+.user-ranking span {
   transition: 0.1s ease-in-out;
 }
 
-.user-rankings span:hover {
+.user-ranking span:hover {
   background-color: #0336c3;
   transform: scale(1.1);
   transform: translateY(-5px);
@@ -306,7 +306,7 @@ button:hover .button-text {
   transition: 0.2s ease-in-out;
 }
 
-.ranking-list {
+.ranking-lists {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -315,7 +315,7 @@ button:hover .button-text {
   text-align: start;
 }
 
-.ranking-item {
+.ranking-items {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -391,6 +391,7 @@ button:hover .button-text {
   display: flex;
   align-items: start;
   margin-top: 10px;
+  position: relative;
 }
 
 .top-skills {
@@ -400,7 +401,9 @@ button:hover .button-text {
 }
 
 .see-profile-text {
-  margin-left: 10px;
+  position: relative;
+  left: 10px;
+  top: 2px;
   color: #0073e6;
   cursor: pointer;
   font-weight: bold;
@@ -459,6 +462,13 @@ button:hover .button-text {
 }
 
 @media (max-width: 1005px) {
+
+  .app-container {
+   position: relative;
+   top: 0px;
+   left: 20px
+  }
+
   .github-profile {
     padding: 0;
     padding-top: 100px;
@@ -476,7 +486,7 @@ button:hover .button-text {
   .brand-name {
     font-size: 50px;
     position: relative;
-    top: 40px;
+    top: 50px;
     right: 25px;
   }
 
@@ -535,9 +545,13 @@ button:hover .button-text {
     min-width: 300px;
   }
 
-  .user-rankings {
+  .user-ranking {
     padding: 15px;
     margin: 20px;
+    width: 88%;
+    position: relative;
+    right: 10px;
+
   }
 
   .navigate-professinal {
@@ -551,15 +565,16 @@ button:hover .button-text {
     right: -15px;
   }
 
-  .ranking-list {
+  .ranking-lists {
     flex-wrap: wrap;
     justify-content: start;
     align-items: start;
     text-align: start;
+    gap: 10px;
   }
 
-  .ranking-item {
-    min-width: 300px;
+  .ranking-items {
+    min-width: 320px;
     width: auto;
   }
 

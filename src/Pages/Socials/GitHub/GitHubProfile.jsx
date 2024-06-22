@@ -155,9 +155,9 @@ const GitHubProfile = () => {
 
   return (
     <div className="github-profile">
-      <div className="app-containers">
+      <div className="app-container">
         <header className="brand-header">
-          <h1 className="brand-name">Goog-Co</h1>
+          <h1 className="brand-name">Goom</h1>
         </header>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
@@ -238,7 +238,7 @@ const GitHubProfile = () => {
         </div>
       )}
       {username && (
-        <div className="user-rankings">
+        <div className="user-ranking">
           <h2>
             User Rankings 
             <div className='navigate-professinal'>
@@ -249,9 +249,9 @@ const GitHubProfile = () => {
             <span onClick={() => handleLanguageClick('')}> All</span>
             </div>
           </h2>
-          <div className="ranking-list">
+          <div className="ranking-lists">
             {userRankings.map((user, index) => (
-              <div className="ranking-item" key={index}>
+              <div className="ranking-items" key={index}>
                 <div className="profile-infos">
                   <div className="user-profile">
                     <img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pic" />
