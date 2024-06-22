@@ -327,7 +327,7 @@ button:hover .button-text {
   transition: transform 0.2s;
 }
 
-.ranking-item:hover {
+.ranking-items:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
