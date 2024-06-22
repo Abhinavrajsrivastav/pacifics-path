@@ -43,7 +43,6 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
-
 }
 
 .profile-photo input[type="file"] {
@@ -137,21 +136,36 @@
 
   .profile-container{
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     gap: 20px;
-  }
-  .joinClass, .ressumeClassRoom {
-    padding: 10px;
+    padding: 20px;
   }
 
+  .profile-details{
+    text-align: start;
+    align-items: start;
+  }
+
+
   .classRoom img, .classRoom .fa-icon {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
   }
 
   .classRoom p {
     font-size: 10px;
+  }
+
+  .classRoom{
+    width: 300px;
+    background-color: #0b0b0b00;
+    gap: 0px;
+  }
+
+  .joinClass, .ressumeClassRoom{
+    min-width:77px;
+    padding: 5px;padding: 10px;
   }
 }
 
