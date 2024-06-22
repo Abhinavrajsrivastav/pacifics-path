@@ -19,6 +19,7 @@ import Videos from './Pages/ChatBot/Queries/Results/Video/Videos';
 import Books from './Pages/Books/Books';
 import GitHubProfile from './Pages/Socials/GitHub/GitHubProfile';
 import Mate from './Pages/Socials/FindMate/Mate';
+import ChatRoom from './Categories/ChatRoom';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       <AuthProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={
+          <Route path="/pacifics-path" element={
             <>
               <Vision />
               <Features />
@@ -43,6 +44,7 @@ function App() {
           <Route path="/read-books" element={<Books />} />
           <Route path="/github-profile" element={<GitHubProfile />} />
           <Route path="/git-mate" element={<Mate />} />
+          <Route path="/chat/:topic" element={<ChatRoom />} />
         </Routes>
       </AuthProvider>
     </Router>

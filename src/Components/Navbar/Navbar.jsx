@@ -42,7 +42,7 @@ function NavBar() {
       <div className="nav-links">
         {windowSize > 1005 && 
         <>
-        <Link to="/"><a href="#" className="nav-link" style={{opacity: "1"}}>Home</a></Link>
+        <Link to="/pacifics-path"><a href="#" className="nav-link" style={{opacity: "1"}}>Home</a></Link>
         <a href="#" className="nav-link">About</a>
         <a href="#" className="nav-link">Services</a>
         <a href="#" className="nav-link">Contact</a>

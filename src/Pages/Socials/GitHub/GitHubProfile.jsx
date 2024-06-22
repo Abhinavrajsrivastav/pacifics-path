@@ -19,7 +19,7 @@ const GitHubProfile = () => {
 
   const db = getFirestore(app);
 
-  const accessToken = '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';
+  const accessToken = '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';
 
   const calculateDevScore = (userData, repos) => {
     const reposCountScore = repos.length / 10;
@@ -153,7 +153,7 @@ const GitHubProfile = () => {
 
   return (
     <div className="github-profile">
-      <div className="app-container">
+      <div className="app-containers">
         <header className="brand-header">
           <h1 className="brand-name">Goog-Co</h1>
         </header>
