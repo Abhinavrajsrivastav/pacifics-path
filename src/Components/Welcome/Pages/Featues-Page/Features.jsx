@@ -14,8 +14,8 @@ function Features() {
   return (
     <div className="features-page">
       <h1 className="features-page-heading">
-        <span className="Features-Page-Main-Heading">Explore some <span>cool</span> Features</span>
-        <span className="Features-Page-SubHeading">Explore our amazing features</span>
+        <span className="Features-Page-Main-Heading">Here are some <span>cool</span> Features</span>
+        {/* <span className="Features-Page-SubHeading">Explore our amazing features</span> */}
       </h1>
       <div className="features-body">
         <FeaturesCard className="features-card" icons={"./Icons/shield.png"} heading={"Read Books"} subheading={"A place where you do authentic, relevance and secure knowledge sharing."}/>

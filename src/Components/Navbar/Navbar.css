@@ -4,8 +4,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* background-color: rgba(38, 78, 195, 0.89); */
-    background-color: var(--main-color);
+    background-color: rgb(7, 17, 45);
+    /* background-color: var(--main-color); */
     color: white;
     padding: 0px 10px;
     position: fixed;
@@ -25,7 +25,7 @@
     margin-left: 8px;
     margin-top: 15px;
     gap: 20px;
-    font-size: 3.0rem;
+    font-size: 1.7rem;
     color: white;
     font-weight: 700;
 }
@@ -43,7 +43,7 @@
 
 .nav-links a{
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none;
     opacity: 1;
     font-weight: 500;

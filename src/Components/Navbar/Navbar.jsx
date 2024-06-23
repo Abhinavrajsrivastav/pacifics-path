@@ -37,7 +37,7 @@ function NavBar() {
         <div className="nav-brand-logo">
           <img src="./Icons/cat.png" alt="" style={{ height: '50px', width: '50px' }} className='m-3'/>
         </div>
-        <div className="nav-brand-name">goog-co</div>
+        <div className="nav-brand-name">googcom</div>
       </div>
       <div className="nav-links">
         {windowSize > 1005 && 
