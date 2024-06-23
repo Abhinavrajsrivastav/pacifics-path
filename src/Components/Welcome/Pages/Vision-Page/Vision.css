@@ -19,34 +19,34 @@
 }
 
 .brand-names{
-    color: white;
-    font-size: 80px;
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    position: relative;
-    bottom: 10px;
-    color: white;
+  color: white;
+  font-size: 80px;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  bottom: 10px;
 }
 
 .vision-heading{
-    font-size: 2.0rem;
-    font-weight: bolder;
-    opacity: .9;
-    padding: 0;
-    margin: 0;
+  font-size: 2.0rem;
+  font-weight: bolder;
+  opacity: 0.9;
+  padding: 0;
+  margin: 0;
 }
 
 .vision-icon {
   width: 50px; /* Adjust the width as needed */
   height: 50px; /* Adjust the height as needed */
+  transform: none !important; /* Ensure no rotation or other transformations are applied */
+  animation: none !important; /* Ensure no animations are applied */
 }
 
 .vision-image {
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
-
 
 .vision-subheading{
   font-size: 1.3rem;
@@ -59,21 +59,21 @@
 }
 
 .vision-learning{
-    color: rgb(34, 82, 213);
+  color: rgb(34, 82, 213);
 }
 
 .vision-btn{
-    margin: 2rem;
-    padding: 2rem 3rem;
-    background-color: rgb(34, 82, 213);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.5rem;;
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
+  margin: 2rem;
+  padding: 2rem 3rem;
+  background-color: rgb(34, 82, 213);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 
 .icon-container{
@@ -84,36 +84,38 @@
   align-items: start;
 }
 
-@media(max-width: 1005px){
+@media (max-width: 1005px) {
   .vision-container {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  padding: 0px;
-  padding-top: 100px;
-  padding-bottom: 50px;
-  height: auto;
-  margin: 0px;
-}
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    height: auto;
+    margin: 0;
+  }
+
   .centered {
     padding: 2rem;
     text-align: start;
     overflow-x: hidden;
-    /* padding: 0px; */
-    /* background-color: tomato; */
   }
 
-  .vision-heading{
+  .vision-heading {
     font-size: 2.3rem;
   }
-  .vision-subheading{
-    font-size: 1.0rem;
+
+  .vision-subheading {
+    font-size: 1rem;
   }
-  .vision-learning{
+
+  .vision-learning {
     position: relative;
     right: 5px;
   }
-  .vision-btn{
+
+  .vision-btn {
     margin: 0;
     margin-top: 1rem;
     padding: 1rem 2rem;

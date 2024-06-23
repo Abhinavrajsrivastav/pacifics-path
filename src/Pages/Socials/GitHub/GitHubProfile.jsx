@@ -157,7 +157,8 @@ const GitHubProfile = () => {
     <div className="github-profile">
       <div className="app-container">
         <header className="brand-header">
-          <h1 className="brand-name">Goom</h1>
+          <h1 className="brand-name">Educome</h1>
+          <p className="search-description">Find the best developers on GitHub</p>
         </header>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
@@ -172,7 +173,7 @@ const GitHubProfile = () => {
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>
               </span>
-              <span className="button-text">See Profile</span>
+              <span className="button-text">Search</span>
             </button>
           </div>
         </form>
@@ -241,7 +242,7 @@ const GitHubProfile = () => {
         <div className="user-ranking">
           <h2>
             User Rankings 
-            <div className='navigate-professinal'>
+            <div className='navigate-professinals'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 
             <span onClick={() => handleLanguageClick('Python')}> Python</span> 
             <span onClick={() => handleLanguageClick('JavaScript')}> JavaScript</span> 
