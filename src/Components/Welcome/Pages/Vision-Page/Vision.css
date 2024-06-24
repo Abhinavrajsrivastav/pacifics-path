@@ -5,31 +5,29 @@
   justify-content: center;
   align-items: center;
   height: auto;
-  background-color: rgb(7, 17, 45);
+  background-color: var(--bg-color);
   color: white;
+  padding-top: 60px;
 }
 
 .centered {
   text-align: center;
-  position: relative;
-  bottom: 0px;
-  top: 100px;
   padding: 50px;
-  margin: 60px 50px 150px 50px;
+  background-color: rgba(240, 248, 255, 0); /* Transparent background */
+  color: white; /* Assuming you want white text */
+  text-shadow: 0px 34px 406px rgb(2, 13, 116);
 }
 
-.brand-names{
-  color: white;
+
+.brand-names {
+  color: rgb(34, 82, 213); /* Blue color */
   font-size: 80px;
   font-family: "Poetsen One", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  position: relative;
-  bottom: 10px;
 }
 
-.vision-heading{
-  font-size: 2.0rem;
+.vision-heading {
+  font-size: 2rem;
   font-weight: bolder;
   opacity: 0.9;
   padding: 0;
@@ -37,62 +35,47 @@
 }
 
 .vision-icon {
-  width: 50px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
-  transform: none !important; /* Ensure no rotation or other transformations are applied */
-  animation: none !important; /* Ensure no animations are applied */
+  width: 50px;
+  height: 50px;
 }
 
-.vision-image {
-  width: 100px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.vision-subheading{
+.vision-subheading {
   font-size: 1.3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-style: normal;
   opacity: 0.8;
   word-spacing: 3px;
-  letter-spacing: 0px;
 }
 
-.vision-learning{
+.vision-learning {
   color: rgb(34, 82, 213);
+  position: relative;
+  right: 9px;
 }
 
-.vision-btn{
-  margin: 2rem;
-  padding: 2rem 3rem;
+.vision-btn {
+  margin: 15px;
+  padding: 10px 20px;
   background-color: rgb(34, 82, 213);
   border: none;
   border-radius: 8px;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
   font-weight: 800;
-  font-style: normal;
 }
 
-.icon-container{
+.icon-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  text-align: start;
   align-items: start;
 }
 
 @media (max-width: 1005px) {
   .vision-container {
-    display: flex;
     justify-content: start;
     align-items: start;
-    padding: 0;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    height: auto;
+    padding: 100px 0 50px 0;
     margin: 0;
   }
 
@@ -100,6 +83,7 @@
     padding: 2rem;
     text-align: start;
     overflow-x: hidden;
+    font-size: 1.5rem;
   }
 
   .vision-heading {
@@ -110,17 +94,9 @@
     font-size: 1rem;
   }
 
-  .vision-learning {
-    position: relative;
-    right: 5px;
-  }
-
   .vision-btn {
-    margin: 0;
-    margin-top: 1rem;
+    margin: 1rem 0 0 0;
     padding: 1rem 2rem;
     font-size: 1rem;
-    position: relative;
-    text-align: start;
   }
 }

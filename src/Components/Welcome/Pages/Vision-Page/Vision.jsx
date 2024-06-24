@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './Vision.css';
 import { Link } from 'react-router-dom';
 import { gsapAnimations } from '../../../Animations/Gsap';
-import { FaGraduationCap, FaChalkboardTeacher, FaBook, FaShareAlt, FaRegShareSquare, FaShareSquare } from 'react-icons/fa';
+import { FaGraduationCap } from 'react-icons/fa';
 
 function Vision() {
   // UseEffect hook to run GSAP animations
@@ -18,10 +18,10 @@ function Vision() {
         </div>
         <p className="brand-names">Educome</p>
         <p className="vision-heading">
-          Bring your <span className="vision-learning">learnings</span> to life
+          A Platform For <span className="vision-learning">Engineers</span>
         </p>
         <p className="vision-subheading">
-          A digital, secure and interactive classroom <br /> where students can learn and share
+          {/* A digital, secure and interactive classroom <br /> where students can learn and share */}
         </p>
         <Link to="/signup">
           <button className="vision-btn">Start Learning now!</button>

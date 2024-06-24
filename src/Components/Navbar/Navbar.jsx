@@ -1,6 +1,9 @@
 //Importing libraries
 import React, { useState } from 'react';
 
+//Importing Icon from Material UI
+import { Google } from '@mui/icons-material'; 
+
 //Importing routing functions
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -35,7 +38,7 @@ function NavBar() {
     <div className="nav-container">
       <div className="nav-brand">
         <div className="nav-brand-logo">
-          <img src="./Icons/cat.png" alt="" style={{ height: '50px', width: '50px' }} className='m-3'/>
+          <img src="./Icons/google.png" alt="" style={{ height: '50px', width: '50px' }} className='m-3'/>
         </div>
         <div className="nav-brand-name">Educome</div>
       </div>
@@ -44,8 +47,7 @@ function NavBar() {
         <>
         <Link to="/pacifics-path"><a href="#" className="nav-link" style={{opacity: "1"}}>Home</a></Link>
         <a href="#" className="nav-link">About</a>
-        <a href="#" className="nav-link">Services</a>
-        <a href="#" className="nav-link">Contact</a>
+        <a href="#" className="nav-link">Testemonials</a>
         {email==null?<Link to="/login"><button className="nav-login-btn">login</button></Link>:<a onClick={()=>logout()}>logout</a>}
         </>
         }

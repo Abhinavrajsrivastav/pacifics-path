@@ -131,7 +131,7 @@ const handleForgotPassword = () => {
  const handleLogout = () => {
     signOut(authContext.auth)
       .then(() => {
-        navigate("/");
+        navigate("/pacifics-path");
         localStorage.removeItem('userData');
         // Clear user context
         authContext.setUser(null);

@@ -1,13 +1,13 @@
 .e-card {
   margin: 0px;
   background: transparent;
-  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+  /* box-shadow: 0px 8px 28px -9px rgb(0, 0, 0); */
   position: relative;
   width: auto;
-  height: 300px;
+  height: 260px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--main-color) 5px 0px 6px 0px;
+  box-shadow: #060047 5px 0px 6px 0px;
 }
 
 .wave {
@@ -19,7 +19,7 @@
   top: 0;
   margin-left: -50%;
   margin-top: -70%;
-  background: linear-gradient(744deg,var(--main-color),var(--main-color) 60%,#8a866e);
+  background: linear-gradient(744deg,var(--bg-color), var(--bg-color) 60%,#041c3f);
 }
 
 .feature-icon {
