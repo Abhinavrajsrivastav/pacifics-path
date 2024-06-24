@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  
+  background-color: var(--bg-color);
 }
 
 .brand-container{
@@ -38,7 +38,7 @@
 }
 
 .messageBox {
-  width: 500px;
+  width: 370px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -47,6 +47,9 @@
   padding: 0 15px;
   border-radius: 14px;
   border: 1px solid rgb(63, 63, 63);
+  position: relative;
+  top: -17px;
+  left: -8px;
 }
 .messageBox:focus-within {
   border: 2px solid var(--main-color);;
@@ -166,16 +169,15 @@
   stroke: var(--main-color);
 }
 
-.brand-slogane{
+.search-suggestion{
   font-size: 20px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: white;
   position: relative;
-  top: 30px;
-  right: 20px;
-
+  top: 8px;
+  right: 30px;
 }
 
 @media(max-width: 1005px){
@@ -185,5 +187,16 @@
   }
   .messageBox {
     width: 330px;
+  }
+
+  .messageBox{
+    width: 100px;
+    top: -60px;
+    right: 60px;
+  }
+
+  .search-suggestion{
+    top: 20px;
+    left: -25px;
   }
 }

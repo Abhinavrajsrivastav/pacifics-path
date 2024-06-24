@@ -38,7 +38,7 @@ const Queries = () => {
     <div className="app-container">
       <div className="brand-container">
         <span className="brand-name">Educome</span>
-        <span className="brand-slogane">Have a question? Ask it!</span>
+        <span className="search-suggestion">Have a question? Ask it!</span>
       </div>
       <div className="messageBox">
         <div className="fileUploadWrapper">

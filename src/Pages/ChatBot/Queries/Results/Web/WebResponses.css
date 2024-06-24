@@ -93,3 +93,9 @@
     background-color: #2d2d2d;
     cursor: not-allowed;
 }
+
+@media(max-width: 1005px){
+    .web-response-container{
+        top: 50px;
+    }
+}

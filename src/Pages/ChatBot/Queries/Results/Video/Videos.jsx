@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Videos.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import YouTube from 'react-youtube';
+import { FaWhatsapp, FaInstagram, FaTwitter, FaLink } from 'react-icons/fa';
 
 const Videos = () => {
   const location = useLocation();
@@ -175,10 +176,10 @@ const Videos = () => {
             </div>
             {showShareButtons && (
               <div className="share-buttons-overlay">
-                <button onClick={() => handleCopyLink(activeVideo)}>Copy Link</button>
-                <button onClick={() => shareOnWhatsApp(activeVideo)}>WhatsApp</button>
-                <button onClick={() => shareOnTwitter(activeVideo)}>Twitter</button>
-                <button onClick={() => shareOnInstagram(activeVideo)}>Instagram</button>
+                <button onClick={() => handleCopyLink(activeVideo)}><FaLink color="white"/></button>
+                <button onClick={() => shareOnWhatsApp(activeVideo)}><FaWhatsapp color="green"/></button>
+                <button onClick={() => shareOnTwitter(activeVideo)}><FaTwitter color="blue"/></button>
+                <button onClick={() => shareOnInstagram(activeVideo)}><FaInstagram color="pink"/></button>
               </div>
             )}
           </>

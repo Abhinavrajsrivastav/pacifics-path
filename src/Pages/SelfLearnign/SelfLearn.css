@@ -1,6 +1,5 @@
 .container-1{
-    /* background: url('./bg.jpg') no-repeat center center/cover; */
-    background-color: rgb(7, 17, 45);
+    background-color: var(--bg-color);
     justify-content: center;
     align-items: center;
     display: flex;

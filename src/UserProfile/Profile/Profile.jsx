@@ -87,33 +87,21 @@ function Profile() {
         </div>
       </div>
       <div className="classRoom">
-        <div className="joinClass">
-          <Link to="/categories"><FaUsers size={50} color='white' /></Link>
-          <p className="Join">Join a classroom</p>
-        </div>
-        {/* <div className="ressumeClassRoom">
-          <FaCalendarAlt size={50} />
-          <p className="Join">Manage Your Day</p>
-        </div> */}
         <div className="ressumeClassRoom">
           <Link to="/selfLearn"><FaPencilAlt size={50} color='white' /></Link>
           <p className="Join">Learn With Ai</p>
-        </div>
-        <div className="ressumeClassRoom">
-          <FaGlobeAmericas size={50} />
-          <p className="Join">Learn Globally</p>
         </div>
         <div className="ressumeClassRoom">
           <Link to="/read-books"><FaBook size={50} color='white' /></Link>
           <p className="Join">Read Books</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaGooglePlusSquare size={50} />
-          <p className="Join">Ask to Gemini</p>
-        </div>
-        <div className="ressumeClassRoom">
           <FaRegStar size={50} />
           <p className="Join">Leaderboard</p> {/* Changed text */}
+        </div>
+        <div className="ressumeClassRoom">
+          <FaGooglePlusSquare size={50} />
+          <p className="Join">Ask to Gemini</p>
         </div>
         <div className="ressumeClassRoom">
           <Link to="/git-mate" >
@@ -123,6 +111,14 @@ function Profile() {
         <div className="ressumeClassRoom">
           <Link to="/github-profile"><FaGithub size={50} color='white' /></Link>
           <p className="Join">GitHub</p>
+        </div>
+        <div className="joinClass">
+          <Link to="/categories"><FaUsers size={50} color='white' /></Link>
+          <p className="Join">Join a classroom</p>
+        </div>
+        <div className="ressumeClassRoom">
+          <FaGlobeAmericas size={50} />
+          <p className="Join">Learn Globally</p>
         </div>
         <div className="ressumeClassRoom">
           <FaGem size={50} color='white' />

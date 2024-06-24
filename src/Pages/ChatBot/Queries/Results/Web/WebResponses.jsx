@@ -29,6 +29,11 @@ function WebResponses({
     return (
         <div className="web-response-container">
             <h2>Source</h2>
+            <div className="pagination">
+                <button onClick={prevPage} disabled={currentPage === 1}>{"<"}</button>
+                {/* <span>{currentPage} of {totalPages}</span> */}
+                <button onClick={nextPage} disabled={currentPage === totalPages}>{">"}</button>
+            </div>
             <div className="responses-list">
                 {currentResults.map((result, index) => (
                     <div key={startIndex + index} className="response-items">
@@ -39,11 +44,6 @@ function WebResponses({
                         <p className="result-snippet">{result.snippet}</p>
                     </div>
                 ))}
-            </div>
-            <div className="pagination">
-                <button onClick={prevPage} disabled={currentPage === 1}>{"<"}</button>
-                {/* <span>{currentPage} of {totalPages}</span> */}
-                <button onClick={nextPage} disabled={currentPage === totalPages}>{">"}</button>
             </div>
         </div>
     );

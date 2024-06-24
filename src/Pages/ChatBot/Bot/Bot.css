@@ -13,7 +13,7 @@
 }
 
 .messageBox {
-  width: 500px;
+  width: 370px;
   height: 30px;
   display: flex;
   align-items: center;
@@ -22,6 +22,9 @@
   padding: 0 15px;
   border-radius: 14px;
   border: 1px solid rgb(63, 63, 63);
+  position: relative;
+  top: -17px;
+  left: -8px;
 }
 .messageBox:focus-within {
   border: 2px solid var(--main-color);;
@@ -147,6 +150,12 @@
     font-size: 4rem;
   }
   .messageBox {
+    top: 60px;
     width: 330px;
+  }
+  .messageBox{
+    width: 250px;
+    top: -50px;
+    left: -20px;
   }
 }

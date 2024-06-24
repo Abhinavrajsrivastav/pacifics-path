@@ -38,7 +38,7 @@ function NavBar() {
     <div className="nav-container">
       <div className="nav-brand">
         <div className="nav-brand-logo">
-          <img src="./Icons/social.png" alt="" style={{ height: '50px', width: '50px' }} className='m-3'/>
+          <img src="./Icons/google (1).png" alt="" style={{ height: '30px', width: '30px' }} className='m-3'/>
         </div>
         <div className="nav-brand-name">Educome</div>
       </div>

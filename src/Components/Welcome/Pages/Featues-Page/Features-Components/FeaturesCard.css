@@ -44,8 +44,8 @@
   font-size: 12px;
   font-weight: 100;
   position: relative;
-  left: 2rem;
-  top: 2em;
+  left: 1rem;
+  top: 1em;
   text-transform: lowercase;
   opacity: 0;
   transition: .3s ease-in-out;

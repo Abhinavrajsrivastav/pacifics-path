@@ -16,6 +16,15 @@ function Gemini() {
   const [queryHistory, setQueryHistory] = useState([]);
   const [responseHandled, setResponseHandled] = useState(false); // New flag to track if response is handled
 
+  const splitTextIntoLines = (text, maxWordsPerLine) => {
+    const words = text.split(' ');
+    const lines = [];
+    for (let i = 0; i < words.length; i += maxWordsPerLine) {
+      lines.push(words.slice(i, i + maxWordsPerLine).join(' '));
+    }
+    return lines;
+  };
+
   useEffect(() => {
     if (sanitizedResponse && currentIndex < sanitizedResponse.length) {
       const interval = setInterval(() => {
@@ -46,7 +55,7 @@ function Gemini() {
 
   const navigateToVideosResponse = () => {
     navigate('/self-learn/response/Videos', { state: { query } });
-  }
+  };
 
   return (
     <div className="Gemini-response">
@@ -59,7 +68,7 @@ function Gemini() {
                 <>
                   <div className="response-left">
                     <img src="./bot.png" alt="" />
-                    {entry.response.split('\n').map((line, idx) => (
+                    {splitTextIntoLines(entry.response, 8).map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}
                   </div>
@@ -72,13 +81,13 @@ function Gemini() {
           ))}
           {displayedText && (
             <div className="current-entry">
-              <div className="response-left">
-                {displayedText.split('\n').map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
-              </div>
               <div className="query-right">
                 <p>{query}</p>
+              </div>
+              <div className="response-left">
+                {splitTextIntoLines(displayedText, 8).map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
               </div>
             </div>
           )}

@@ -41,6 +41,11 @@
     gap: 2rem;
 }
 
+.nav-brand-name{
+    position: relative;
+    right: 14px;
+}
+
 .nav-links a{
     color: white;
     font-size: 1.0rem;

@@ -5,11 +5,11 @@
   align-items: start;
   height: 100vh;
   position: relative;
-  top: 77px;
-  background-color: rgb(7, 17, 45);
+  top: 60px;
+  background-color: var(--bg-color);
   padding: 10px;
   padding-top: 25px;
-  gap: 20px; /* Add gap between profile details and classroom */
+  gap: 20px; 
 }
 
 .profile-details {
@@ -20,7 +20,6 @@
   padding: 20px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 4px;
   width: 300px; /* Fixed width for better alignment */
 }
 
@@ -136,6 +135,7 @@
     justify-content: start;
     gap: 20px;
     padding: 20px;
+    padding-top: 30px;
   }
 
   .profile-details{

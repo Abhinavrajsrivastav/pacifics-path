@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap');
 
-
 .Gemini-response {
   display: flex;
   justify-content: start;
@@ -8,7 +7,7 @@
   flex-direction: column;
   height: 100vh;
   position: relative;
-  top: 150px;
+  top: 80px;
 }
 
 .bgblue {
@@ -16,19 +15,19 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: 800px;
-  margin: 0 auto;
-  margin-left: 10px;
+  width: 100%;
+  height: auto;
+  margin: 0px;
   font-family: 'Arial', sans-serif;
   position: relative;
+  left: 10px;
   color: white;
-  overflow-x: hidden;
 }
 
 .gemini-response-container h2 {
   text-align: center;
   color: #2b86ee;
-  font-size: 1.8em;
+  font-size: 1.3em;
   margin-bottom: 20px;
 }
 
@@ -36,15 +35,13 @@
   font-size: 1.2em;
   margin-bottom: 20px;
   cursor: pointer;
-  color: rgba(53, 248, 131, 0.535);
+  color: rgba(53, 131, 248, 0.535);
   transition: .3s ease-in-out;
 }
 
 .bgblue span:hover {
-  color: rgba(89, 246, 86, 0.766);
+  color: rgba(86, 150, 246, 0.766);
 }
-
-
 
 .response-content {
   line-height: 1.6;
@@ -58,25 +55,24 @@
 
 .chat-bot {
   position: absolute;
-  top: 65%;
+  top: 80%;
   left: 2%;
 }
 
 .card {
   font-size: 1rem;
   color: #bec4cf;
-  width: 800px;
-  max-height: 350px;
+  width: 100%;
+  max-height: 340px;
   overflow: auto;
   scroll-behavior: smooth;
   border-radius: 10px;
-  /* padding: 30px; */
-  width: auto;
-  /* background-color: #3d59793b; */
+  background-color: #3d597900;
+  padding: 0px;
+  margin: 0 auto;
 }
 
 .card::-webkit-scrollbar {
-  margin-left: 10px;
   width: 5px; /* Width of the scrollbar */
 }
 
@@ -95,27 +91,28 @@
 
 .history-entry, .current-entry {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
 .response-left {
-  flex: 1;
-  margin-right: 10px;
-  background-color: #000000b9;
+  margin-bottom: 10px;
   border-radius: 10px 10px 10px 0px;
-  padding: 10px;
-  width: 60%;
-  max-width: 400px;
+  padding: 5px;
+  width: auto;
+  min-width: 500px;
+  max-width: 100%;
   font-family: "LXGW WenKai TC", cursive;
   font-weight: 600;
   font-style: normal;
   border: 1px solid #202223;
+  border-radius: 10px;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: #0f12157d;
 }
 
-.response-left img{
+.response-left img {
   height: 20px;
   width: auto;
   border-radius: 50%;
@@ -123,46 +120,67 @@
   top: 10%;
 }
 
-.query-right p {
-  flex: 1;
-  margin-left: 100px;
+.query-right {
   text-align: right;
   color: #ffffff;
   font-weight: bold;
-  background-color: rgba(74, 249, 58, 0.507);
   padding: 10px;
   border-radius: 10px 10px 0px 10px;
-  max-width: 150px;
   font-family: "LXGW WenKai TC", cursive;
   font-weight: 500;
   font-style: normal;
+  margin-bottom: 10px;
+}
+
+.query-right p {
+  /* background-color: var(--bg-color); */
 }
 
 @media (max-width: 1005px) {
-  .card{
+  .bgblue {
+    margin: 0;
+    margin-top: 30px;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .Gemini-response {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .card {
+    font-size: 0.9rem;
+    padding: 5px;
+    max-height: 500px;
+    width: 100%;
     position: relative;
-    left: -20px;
-    width: 100%;
-    font-size: 10px;
-    justify-content: space-around;
+    right: 15px;
+    max-height: 600px;
   }
 
-  .response-left{
-    width: 100%;
-    min-width: 250px;
+  .response-left {
+    font-size: 1.5rem;
+    padding: 10px;
+    border: none;
+
   }
 
-  .bgblue{
-    top: 0px;
-    width: 400px;
-    left: -20px;
+  .query-right {
+    font-size: 0.9rem;
+    position: relative;
+    margin-left: 0;
   }
 
-  .gemini-response-container {
-    padding: 15px;
+  .query-right p {
+    padding: 5px;
   }
 
-  .gemini-response-container h2 {
-    font-size: 1.5em;
+  .chat-bot{
+    background-color: var(--bg-color);
+    position: fixed;
+    top:100%;
+    left: 12%;
+    z-index: 1000;
   }
 }
