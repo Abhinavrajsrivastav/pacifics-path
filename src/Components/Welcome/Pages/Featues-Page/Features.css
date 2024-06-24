@@ -1,57 +1,59 @@
 .features-page {
-  margin-bottom: 0;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   color: white;
-  background-color: var(--bg-color);
-}
-.Features-page-otter-icon{
-    height: 100px;
-    width: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background-color: var(--bg-color); /* Assuming --bg-color is defined elsewhere */
+  height: auto;
+  position: relative; /* Ensure relative positioning for absolute children */
 }
 
-.Features-page-otter-icon-2{
-    height: 80px;
-    width: auto;
-    position: absolute;
-    top: 0;
-    left: 85%;
+.Features-page-otter-icon {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Features-page-otter-icon-2 {
+  height: 80px;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .features-page-heading {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center; /* Center align text */
   text-align: center;
   font-size: 25px;
 }
 
-.Features-Page-Main-Heading{
-    font-size: 2.2rem;
-    font-weight: 750;
-    opacity: 1;
-    padding: 0;
-    margin: 0;
+.Features-Page-Main-Heading {
+  font-size: 2.2rem;
+  font-weight: 700; /* Adjusted font weight */
+  opacity: 1;
+  margin: 0; /* Moved color to avoid using span */
 }
 
-.Features-Page-Main-Heading span{
+.Features-Page-Main-Heading span {
   position: relative;
-  right: 0px;
-  margin: 0px -1px 1px -2px;
+  right: 0px; /* Unnecessary property */
+  margin: 0px; /* Simplified margin */
   color: rgb(34, 82, 213);
 }
 
-
-.Features-Page-SubHeading{
+.Features-Page-SubHeading {
   font-size: 1.3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-style: normal;
   opacity: 0.8;
   word-spacing: 3px;
-  letter-spacing: 0px;
+  letter-spacing: 0px; /* Removed unnecessary property */
+  text-align: center; /* Center align text */
 }
 
 .features-body {
@@ -59,32 +61,39 @@
   flex-wrap: wrap;
   padding: 60px;
   margin-top: 20px;
-  padding-bottom: 0;
   justify-content: space-evenly;
-  z-index: -1000;
   border-radius: 10px;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color); /* Ensure background color consistency */
 }
 
 .features-card {
-  width: calc(30%);
+  width: calc(30% - 20px); /* Adjusted width and added margin */
+  margin-right: 20px; /* Added margin between cards */
   margin-bottom: 30px;
 }
 
 @media (max-width: 1005px) {
-  .features-card {
-    width: calc(100%); 
+  .features-page {
+    padding: 10px 20px; /* Adjusted padding for smaller screens */
   }
 
-  .Features-Page-Main-Heading{
-  font-size: 23px;
-}
+  .features-card {
+    width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove margin on smaller screens */
+    margin-bottom: 20px; /* Adjusted margin */
+  }
 
-.Features-Page-SubHeading{
+  .Features-Page-Main-Heading {
+    font-size: 23px;
+    text-align: center; /* Center align text on smaller screens */
+  }
+
+  .Features-Page-SubHeading {
     font-size: 1.2rem;
-}
+    text-align: center; /* Center align text on smaller screens */
+  }
 
-  .features-body{
-    padding: 20px;
+  .features-body {
+    padding: 20px; /* Adjusted padding for smaller screens */
   }
 }

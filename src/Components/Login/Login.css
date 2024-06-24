@@ -1,107 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.signup-container{
+.signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('./bg.png') no-repeat center center/cover;
-    height: 100%;
+    background-color: var(--bg-color); /* Assuming --bg-color is defined elsewhere */
+    height: 100vh;
     overflow-y: hidden;
     color: white;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 40px;
-    background-color: var(--main-color);
+    background-color: rgb(29, 23, 112);
     border-radius: 12px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    height: auto;
     max-height: 600px;
     width: auto;
     overflow-x: hidden;
+    margin: 10px;
 }
 
-.login-welcome-text{
+.login-welcome-text {
     font-size: 2rem;
     font-weight: bold;
     margin: 1rem;
 }
 
-.back{
-   position: relative;
-   right: 50%;
-   font-size: 1.5rem;
+.back {
+    position: absolute;
+    right: 50%;
+    font-size: 1.5rem;
 }
 
-.back a{
+.back a {
     color: white;
     text-decoration: none;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
-.back:hover a{
+.back:hover a {
     cursor: pointer;
     color: #1d9bf0;
 }
 
-.button{
+.button {
     display: flex;
-    align-items:center;
+    align-items: center;
     border: 1px solid #1d9bf0;
     border-radius: 24px;
     background-color: #ffffff;
-    padding: .3rem 2rem;
+    padding: 0.3rem 2rem;
     margin: 1rem 0;
 }
 
-.button:hover{
+.button:hover {
     cursor: pointer;
 }
 
-.button .img{
+.button .img {
     padding-right: 1rem;
 }
 
-.button p{
-    font-weight: bolder;
+.button p {
+    font-weight: bold;
 }
 
-.img{
+.img {
     width: 20px;
     height: 20px;
 }
 
-.forms{
+.forms {
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    justify-content: center;
-    text-align: center; */
+    align-items: center; /* Adjusted alignment */
+    justify-content: center; /* Adjusted alignment */
+    text-align: center;
 }
 
-input{
-    margin: .8rem;
+input {
+    margin: 0.8rem;
 }
 
-input[type="text"], input[type="password"]{
+input[type="text"],
+input[type="password"] {
     border: 1px gray solid;
     border-radius: 10px;
-    padding: .8rem 1rem;
+    padding: 0.8rem 1rem;
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus {
     outline: none;
     border: 1px solid #1d9bf0;
-    cursor: pointer;
 }
 
-.signUp-btn{
+.signUp-btn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -109,59 +109,51 @@ input[type="text"]:focus{
     padding: 1.4rem;
 }
 
-#next{
+#next {
     background-color: rgb(20, 66, 193);
     color: white;
     border: 1px rgb(0, 29, 218) solid;
     border-radius: 24px;
-    padding: .5rem 4rem;
+    padding: 0.5rem 4rem;
     font-weight: bold;
-    width: auto;
 }
 
-#next:hover{
+#next:hover {
     cursor: pointer;
 }
 
-span{
+span {
     margin-left: 15px;
     margin-right: 3px;
 }
 
-#forgot{
+#forgot {
     background-color: white;
     border: 1px gray solid;
     border-radius: 24px;
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
+    color: rgb(0, 0, 0);
+    margin: 1rem 1rem;
 }
 
-#forgot:hover{
+#forgot:hover {
     background-color: #f5f5f5;
     cursor: pointer;
 }
 
-#signup{
+#signup {
     color: rgb(255, 255, 255);
     font-size: 14px;
 }
 
-#signup a{
-    color:#0011ff;
+#signup a {
+    color: #0011ff;
     text-decoration: none;
     margin-left: 5px;
 }
 
-#forgot{
-    margin: 1rem 1rem;
-    color: rgb(0, 0, 0);
-    padding: .5rem 2rem;
-}
-
-
-@media(max-width: 1005px){
-    .container{
-        border-radius: 0;
-        max-width: 400px;
+@media (max-width: 1005px) {
+    .container {
         margin: 10px;
         margin-top: 40px;
         padding: 20px;
@@ -169,7 +161,8 @@ span{
         padding-bottom: 40px;
         border-radius: 12px;
     }
-    .login-welcome-text{
+
+    .login-welcome-text {
         font-size: 1.8rem;
     }
 }
