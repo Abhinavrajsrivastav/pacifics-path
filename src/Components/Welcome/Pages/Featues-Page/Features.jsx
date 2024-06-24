@@ -18,13 +18,13 @@ function Features() {
         {/* <span className="Features-Page-SubHeading">Explore our amazing features</span> */}
       </h1>
       <div className="features-body">
-        <FeaturesCard className="features-card" icons={"./Icons/shield.png"} heading={"Read Books"} subheading={"A place where you do authentic, relevance and secure knowledge sharing."}/>
-        <FeaturesCard className="features-card" icons={"./Icons/aisecure.png"} heading={"Find Right Mate"} subheading={"A place where AI will be protector of your chat, resources, and services."}/>
-        <FeaturesCard className="features-card" icons={"./Icons/video-camera.png"} heading={"See your Ranking"} subheading={"A place where you can connect, share and learn together on common topics."}/>
-        <FeaturesCard className="features-card" icons={"./Icons/send.png"} heading={"Learn with Ai"} subheading={"A place where you can share your learning and knowledge with your peers."}/>
-        <FeaturesCard className="features-card" icons={"./Icons/idea.png"} heading={"Learn With community"} subheading={"A place where you can share your ideas openly."}/>
-        <FeaturesCard className="features-card" icons={"./Icons/chat.png"} heading={"Ask with Gemini"} subheading={"A place where you can communicate, share, talk at common points in a secure environment."}/>
-      </div>
+        <FeaturesCard className="features-card" icons={"./Icons/google-books.png"} heading={"Read Books"} subheading={"A hub for avid readers seeking knowledge from books."}/>
+        <FeaturesCard className="features-card" icons={"./Icons/team.png"} heading={"Find Right Mate"} subheading={"A platform to connect with the perfect teammate."}/>
+        <FeaturesCard className="features-card" icons={"./Icons/rank.png"} heading={"See Your Ranking"} subheading={"Track your development ranking among peers."}/>
+        <FeaturesCard className="features-card" icons={"./Icons/artificial-intelligence.png"} heading={"Learn with AI"} subheading={"Enhance your learning experience with AI assistance."}/>
+        <FeaturesCard className="features-card" icons={"./Icons/people.png"} heading={"Learn with Community"} subheading={"Engage and share knowledge within a vibrant community."}/>
+        <FeaturesCard className="features-card" icons={"./Icons/google-gemini-icon.png"} heading={"Ask with Gemini"} subheading={"Interact and collaborate securely with Gemini."}/>
+        </div>
     </div>
   );
 }

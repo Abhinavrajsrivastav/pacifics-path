@@ -7,7 +7,7 @@
   height: 260px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: #060047 5px 0px 6px 0px;
+  box-shadow: #07004ba2 0px 0px 6px 0px;
 }
 
 .wave {
@@ -19,7 +19,7 @@
   top: 0;
   margin-left: -50%;
   margin-top: -70%;
-  background: linear-gradient(744deg,var(--bg-color), var(--bg-color) 60%,#041c3f);
+  background: linear-gradient(744deg,var(--bg-color), var(--bg-color) 60%,#576881);
 }
 
 .feature-icon {
@@ -113,5 +113,9 @@
     margin-left: -30%;
     margin-top: -60%;
     width: 600px;
+  }
+
+  .name{
+    font-size: 15px;
   }
 }
