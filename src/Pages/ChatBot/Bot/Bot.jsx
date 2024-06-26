@@ -13,8 +13,8 @@ const Bot = () => {
 
 
 
-  const API_KEY = 'AIzaSyAwY9jOFq5DpDG-Tp9R1tEbteFvcdv_oAs';
-  const SEARCH_ENGINE_ID = 'd3ec914403b414c71';
+  const API_KEY = process.env.REACT_APP_GEMINI_APP_KEY;
+  const SEARCH_ENGINE_ID = process.env.REACT_APP_SEARCH_ENGINE_KEY;
 
   const handleQuery = (event) => {
     setQuery(event.target.value);
