@@ -9,7 +9,7 @@
   color: white;
   overflow-x: hidden;
   overflow-y: hidden;
-  background-color: rgb(7, 17, 45);
+  background-color: var(--bg-color);
   position: relative;
 }
 
@@ -42,6 +42,8 @@
   background-color: #444;
   color: white;
   width: 250px;
+  position: relative;
+  right: 12px;
 }
 
 /* Button styles */

@@ -15,7 +15,7 @@ const Videos = () => {
   const [videos, setVideos] = useState([]);
   const [activeVideo, setActiveVideo] = useState(null);
   const [showShareButtons, setShowShareButtons] = useState(false);
-  const API_KEY = 'AIzaSyBWWhu9BdpVY_joB0kw2YekEfQ4us8xaxo';
+  const API_KEY = "AIzaSyBWWhu9BdpVY_joB0kw2YekEfQ4us8xaxo";
 
   const handlePromptChange = (event) => {
     setPrompt(event.target.value);

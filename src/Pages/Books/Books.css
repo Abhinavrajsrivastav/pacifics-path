@@ -9,6 +9,8 @@
   color: white;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
+  position: relative;
+  top: 60px;
 }
 
 .book-search-container h1 {

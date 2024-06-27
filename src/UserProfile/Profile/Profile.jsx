@@ -7,7 +7,7 @@ import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
-import { FaSearch, FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem, FaCode } from 'react-icons/fa';
+import { FaSearch, FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem, FaCode, FaFilePdf } from 'react-icons/fa';
 import { FaGooglePlusSquare,FaRegStar, FaUserFriends } from 'react-icons/fa'; // Additional icons
 
 function Profile() {
@@ -115,6 +115,10 @@ function Profile() {
         <div className="joinClass">
           <Link to="/categories"><FaUsers size={50} color='white' /></Link>
           <p className="Join">Join a classroom</p>
+        </div>
+         <div className="joinClass">
+          <Link to="/PdfScanner"><FaFilePdf size={50} color='white' /></Link>
+          <p className="Join">Chat with Pdf</p>
         </div>
         <div className="ressumeClassRoom">
           <FaGlobeAmericas size={50} />
