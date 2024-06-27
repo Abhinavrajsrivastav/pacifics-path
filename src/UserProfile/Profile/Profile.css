@@ -2,45 +2,40 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  align-items: start;
+  align-items: flex-start;
   height: 100vh;
   position: relative;
   top: 60px;
   background-color: var(--bg-color);
-  padding: 10px;
-  padding-top: 25px;
-  gap: 20px; 
+  padding: 20px;
+  gap: 20px;
 }
 
 .profile-details {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the content */
+  align-items: start;
   color: white;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  width: 300px; /* Fixed width for better alignment */
+  width: auto; 
 }
 
 .profile-photo {
   margin-bottom: 20px;
   position: relative;
-  overflow: hidden;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  padding: 10px
 }
 
 .profile-photo img {
-  width: 120px; /* Increased size for better visibility */
+  width: 120px;
   height: 120px;
   border-radius: 50%;
-}
-
-.profile-info{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
 }
 
 .profile-photo input[type="file"] {
@@ -53,20 +48,53 @@
   cursor: pointer;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0px solid black;
+  padding: 8px 13px;
+  background-color: rgb(1, 32, 73);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 9px;
+  top: 90px;
+  transition: .2s ease-in-out;
+  font-size: 10px;
+}
+
+.btn:hover{
+  background-color: #0036b5;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .profile-info h2 {
   margin: 0;
-  font-size: 22px;
-  padding: 15px 0;
+  font-size: 20px;
+  padding: 1px 0;
 }
 
 .profile-info p {
-  margin: 5px 0; 
-  font-size: 14px;
+  margin: 4px 0;
+  font-size: 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.595);
+  border-radius: 2px;
 }
 
 .social-links {
   display: flex;
-  justify-content: space-around;
+  align-items: start;
+  text-align: start;
+  justify-content: space-evenly;
   width: 100%;
   margin-top: 20px;
 }
@@ -74,94 +102,99 @@
 .social-links a {
   color: white;
   font-size: 20px;
-  transform: trabsition .3s ease-in-out;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #0036b5; /* Change color on hover */
-   /* move 10 px up */
-  transform: scaleX(1.1) scaleY(1.1);
+  color: #0036b5;
 }
 
 .classRoom {
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   color: white;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
-  margin: 4px;
   gap: 20px;
-  width: 100%;
-  max-width: 800px;
+  width: auto;
 }
 
-.joinClass, .ressumeClassRoom {
+.ressumeClassRoom, .joinClass {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.ressumeClassRoom:hover, .joinClass:hover {
+  transform: scale(1.04);
 }
 
 .classRoom img, .classRoom .fa-icon {
   height: 80px;
   width: 80px;
-  transition: 0.3s ease-in-out;
 }
 
 .classRoom p {
+  font-size: 10px;
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease;
   font-weight: 400;
 }
 
-
-
-.joinClass:hover p, .ressumeClassRoom:hover p {
+.ressumeClassRoom:hover p, .joinClass:hover p {
   opacity: 1;
 }
 
-@media(max-width: 1005px) {
-
-  .profile-container{
+@media (max-width: 1005px) {
+  .profile-container {
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    gap: 20px;
+    align-items: flex-start;
     padding: 20px;
     padding-top: 30px;
   }
 
-  .profile-details{
+  .profile-details {
     text-align: start;
-    align-items: start;
+    align-items: flex-start;
+    width: 100%;
   }
 
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info h2 {
+    font-size: 20px;
+  }
+
+  .profile-info p {
+    font-size: 14px;
+  }
 
   .classRoom img, .classRoom .fa-icon {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
   }
 
   .classRoom p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
-  .classRoom{
-    width: 300px;
-    background-color: #0b0b0b00;
-    gap: 0px;
+  .classRoom {
+    max-width: 300px;
   }
 
-  .joinClass, .ressumeClassRoom{
-    min-width:77px;
-    padding: 5px;padding: 10px;
+  .ressumeClassRoom, .joinClass {
+    min-width: 77px;
+    padding: 5px;
   }
 }
-

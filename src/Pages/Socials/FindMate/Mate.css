@@ -279,7 +279,7 @@ button:hover .button-text {
 }
 
 .user-rankings h2 {
-  font-size: 24px;
+  font-size: 14px;
   margin-bottom: 20px;
   scroll-behavior: smooth;
   display: flex;
@@ -299,6 +299,12 @@ button:hover .button-text {
   transform: scale(1.1);
   transform: translateY(-5px);
   cursor: pointer;
+}
+
+.navigate-professinal{
+   scroll-behavior: smooth;
+    overflow-x: scroll;
+    position: relative;
 }
 
 .navigate-professinal span {

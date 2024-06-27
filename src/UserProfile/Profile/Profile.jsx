@@ -6,9 +6,8 @@ import { getFirestore } from 'firebase/firestore';
 import { app } from '../../Components/Firebase/Firebase';
 import { storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
-import { v4 } from 'uuid';
-import { FaSearch, FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaCalendarAlt, FaPencilAlt, FaGlobeAmericas, FaBook, FaGem, FaCode, FaFilePdf } from 'react-icons/fa';
-import { FaGooglePlusSquare,FaRegStar, FaUserFriends } from 'react-icons/fa'; // Additional icons
+import { v4 as uuidv4 } from 'uuid';
+import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaCalendarAlt, FaGlobeAmericas, FaBook, FaGem, FaCode, FaFilePdf } from 'react-icons/fa';
 
 function Profile() {
   const authContext = useContext(AuthContext);
@@ -44,7 +43,7 @@ function Profile() {
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
     if (file && name) {
-      const ImgRef = ref(storage, `PIMG/${name}/${v4()}`);
+      const ImgRef = ref(storage, `PIMG/${name}/${uuidv4()}`);
       try {
         await uploadBytes(ImgRef, file);
         const url = await getDownloadURL(ImgRef);
@@ -66,9 +65,15 @@ function Profile() {
             <img src="/path/to/default-profile.png" alt="Default Profile" />
           )}
           <input type="file" accept="image/*" onChange={handleImageChange} />
+          <div className='btn'>
+          <p className="text">Follow</p>
+          </div>
         </div>
         <div className="profile-info">
           <h2>{name}</h2>
+          <p>Status: Single</p>
+          <p>Profession: Software Engineer</p>
+          <p>Address: Ayodhya, Uttar Pradesh</p>
           <p>Email: {email}</p>
         </div>
         <div className="social-links">
@@ -88,44 +93,43 @@ function Profile() {
       </div>
       <div className="classRoom">
         <div className="ressumeClassRoom">
-          <Link to="/selfLearn"><FaPencilAlt size={50} color='white' /></Link>
+          <Link to="/selfLearn"><FaPencilAlt size={30} color='white' /></Link>
           <p className="Join">Learn With Ai</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/read-books"><FaBook size={50} color='white' /></Link>
+          <Link to="/read-books"><FaBook size={30} color='white' /></Link>
           <p className="Join">Read Books</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaRegStar size={50} />
-          <p className="Join">Leaderboard</p> {/* Changed text */}
+          <FaRegStar size={30} />
+          <p className="Join">Leaderboard</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaGooglePlusSquare size={50} />
+          <FaGooglePlusSquare size={30} />
           <p className="Join">Ask to Gemini</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/git-mate" >
-          <FaUserFriends size={50} color='white'/></Link>
+          <Link to="/git-mate"><FaUserFriends size={30} color='white' /></Link>
           <p className="Join">Find Mate</p> 
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/github-profile"><FaGithub size={50} color='white' /></Link>
+          <Link to="/github-profile"><FaGithub size={30} color='white' /></Link>
           <p className="Join">GitHub</p>
         </div>
         <div className="joinClass">
-          <Link to="/categories"><FaUsers size={50} color='white' /></Link>
+          <Link to="/categories"><FaUsers size={30} color='white' /></Link>
           <p className="Join">Join a classroom</p>
         </div>
-         <div className="joinClass">
-          <Link to="/PdfScanner"><FaFilePdf size={50} color='white' /></Link>
+        <div className="joinClass">
+          <Link to="/PdfScanner"><FaFilePdf size={30} color='white' /></Link>
           <p className="Join">Chat with Pdf</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaGlobeAmericas size={50} />
+          <FaGlobeAmericas size={30} />
           <p className="Join">Learn Globally</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaGem size={50} color='white' />
+          <FaGem size={30} color='white' />
           <p className="Join">LeetCode</p>
         </div>
       </div>
