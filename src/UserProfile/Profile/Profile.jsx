@@ -71,9 +71,7 @@ function Profile() {
         </div>
         <div className="profile-info">
           <h2>{name}</h2>
-          <p>Status: Single</p>
           <p>Profession: Software Engineer</p>
-          <p>Address: Ayodhya, Uttar Pradesh</p>
           <p>Email: {email}</p>
         </div>
         <div className="social-links">
