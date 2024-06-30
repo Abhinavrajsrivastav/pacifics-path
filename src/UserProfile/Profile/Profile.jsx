@@ -3,17 +3,14 @@ import './Profile.css';
 import { AuthContext } from '../../Components/Context/AuthProvider';
 import { useNavigate, Link } from 'react-router-dom';
 import { getFirestore } from 'firebase/firestore';
-import { app } from '../../Components/Firebase/Firebase';
-import { storage } from '../../Components/Firebase/Firebase';
+import { app, storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
-import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaCalendarAlt, FaGlobeAmericas, FaBook, FaGem, FaCode, FaFilePdf } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaGlobeAmericas, FaBook, FaGem, FaCode, FaFilePdf } from 'react-icons/fa';
 
 function Profile() {
-  const authContext = useContext(AuthContext);
+  const { setUser, user, data, setData } = useContext(AuthContext);
   const navigate = useNavigate();
-  const { setUser, user, auth, data, setData } = useContext(AuthContext);
-
   const db = getFirestore(app);
 
   const name = user?.displayName;
@@ -22,51 +19,53 @@ function Profile() {
   const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
-    if (name) {
-      const imgListRef = ref(storage, `PIMG/${name}`);
-      listAll(imgListRef).then((img) => {
-        if (img.items.length > 0) {
-          const lastFile = img.items[img.items.length - 1];
-          getDownloadURL(lastFile).then((url) => {
+    const fetchProfileImage = async () => {
+      if (name) {
+        try {
+          const imgListRef = ref(storage, `PIMG/${name}`);
+          const img = await listAll(imgListRef);
+          if (img.items.length > 0) {
+            const lastFile = img.items[img.items.length - 1];
+            const url = await getDownloadURL(lastFile);
             setProfileImage(url);
             setData({ ...data, photoURL: url });
-          }).catch((error) => {
-            console.error("Error getting profile image URL: ", error);
-          });
+          }
+        } catch (error) {
+          console.error("Error fetching profile image: ", error);
         }
-      }).catch((error) => {
-        console.error("Error listing profile images: ", error);
-      });
-    }
+      }
+    };
+
+    fetchProfileImage();
   }, [name, setData, data]);
 
-  const handleImageChange = async (event) => {
-    const file = event.target.files[0];
-    if (file && name) {
+ const handleImageChange = async (event) => {
+  const file = event.target.files[0];
+  if (file && name) {
+    try {
       const ImgRef = ref(storage, `PIMG/${name}/${uuidv4()}`);
-      try {
-        await uploadBytes(ImgRef, file);
-        const url = await getDownloadURL(ImgRef);
-        setProfileImage(url);
-        setData({ ...data, photoURL: url });
-      } catch (error) {
-        console.error("Error uploading profile image: ", error);
-      }
+      await uploadBytes(ImgRef, file);
+      const url = await getDownloadURL(ImgRef);
+      
+      // Immediately update UI with new image
+      setProfileImage(url);
+      setData({ ...data, photoURL: url }); // Update data object with new photoURL
+      
+    } catch (error) {
+      console.error("Error uploading profile image: ", error);
     }
-  };
+  }
+};
+
 
   return (
     <div className="profile-container">
       <div className="profile-details">
         <div className="profile-photo">
-          {profileImage ? (
-            <img src={profileImage} alt="Profile" />
-          ) : (
-            <img src="/path/to/default-profile.png" alt="Default Profile" />
-          )}
+          <img src={profileImage || "/path/to/default-profile.png"} alt="Profile" />
           <input type="file" accept="image/*" onChange={handleImageChange} />
           <div className='btn'>
-          <p className="text">Follow</p>
+            <p className="text">Follow</p>
           </div>
         </div>
         <div className="profile-info">
