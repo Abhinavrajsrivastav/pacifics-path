@@ -9,8 +9,17 @@ export const gsapAnimations = () => {
   const visionBtn = document.querySelector('.vision-btn');
   const categories = document.querySelectorAll('.category');
   const brands = document.querySelectorAll('.brand-names');
+  const cap = document.querySelector('.centered');
 
   // Exclude visioIcons from rotation animation
+
+   gsap.from(cap, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.5,
+  });
+
   gsap.from(visioIcons, {
     opacity: 0,
     duration: 1,
@@ -33,6 +42,7 @@ export const gsapAnimations = () => {
     duration: 1,
     delay: 0.5,
   });
+
 
   gsap.from(brands, {
     opacity: 0,

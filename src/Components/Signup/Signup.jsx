@@ -30,7 +30,7 @@ const GoogleSignIn = () => {
     return (
         <div className="signup-container">
             <div className="container">
-                <span className="login-welcome-text">Welcome at Edubell!</span>
+                <span className="login-welcome-text">Welcome at Educome!</span>
                 <button className="button" onClick={GoogleSignIn}>
                     <img src="https://img.icons8.com/color/48/undefined/google-logo.png" alt="google logo" className="img" />
                     <p>Sign up with Google</p>
