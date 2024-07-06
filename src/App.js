@@ -20,6 +20,8 @@ import Books from './Pages/Books/Books';
 import GitHubProfile from './Pages/Socials/GitHub/GitHubProfile';
 import Mate from './Pages/Socials/FindMate/Mate';
 import ChatRoom from './Categories/ChatRoom';
+import Testimonials from './Components/Welcome/Pages/Working-Features/Testemonials/Testemonials';
+import Developers from './Components/Welcome/Pages/Working-Features/Developers/Developers';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             <>
               <Vision />
               <Features />
+              <Testimonials />
+              <Developers />
               <HowWork />
             </>
           } />
@@ -45,6 +49,7 @@ function App() {
           <Route path="/github-profile" element={<GitHubProfile />} />
           <Route path="/git-mate" element={<Mate />} />
           <Route path="/chat/:topic" element={<ChatRoom />} />
+          {/* <Route path="/Testemonials" element={<Testimonials />} /> */}
         </Routes>
       </AuthProvider>
     </Router>

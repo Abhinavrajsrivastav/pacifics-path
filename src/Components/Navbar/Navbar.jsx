@@ -14,6 +14,7 @@ import UserAuth from '../Api/AuthFunction_Call';
 
 //Importing CSS
 import './Navbar.css';
+import { FaOutdent } from 'react-icons/fa';
 
 
 
@@ -47,8 +48,9 @@ function NavBar() {
         <>
         <Link to="/pacifics-path"><a href="#" className="nav-link" style={{opacity: "1"}}>Home</a></Link>
         <a href="#" className="nav-link">About</a>
-        <a href="#" className="nav-link">Testemonials</a>
-        {email==null?<Link to="/login"><button className="nav-login-btn">login</button></Link>:<a onClick={()=>logout()}>logout</a>}
+       <a href="#Testemonials" className="nav-link">Testimonials</a>
+       <a href="#dev" >Us</a> 
+        {email==null?<Link to="/login"><button className="nav-login-btn">login</button></Link>:<a onClick={()=>logout()} className='nav-logout-btn'>logout</a>}
         </>
         }
         {email==null?<Link to="/signup"><button className="nav-login-btn">SignUp</button></Link>:<img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={()=>navigate("/profile")}></img>}

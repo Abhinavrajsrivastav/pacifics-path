@@ -18,8 +18,9 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.715);
   width: auto; 
+  max-width: 200px;
 }
 
 .profile-photo {
@@ -33,8 +34,8 @@
 }
 
 .profile-photo img {
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
@@ -76,9 +77,9 @@
   justify-content: flex-start;
 }
 
-.profile-info h2 {
+.profile-photo h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 12px;
   padding: 1px 0;
 }
 
@@ -90,13 +91,31 @@
   border-radius: 2px;
 }
 
+.editProfile{
+text-align: center;
+align-items: center;
+ padding: 5px 10px;
+ border-radius: 4px;
+ font-size: 12px;
+ cursor: pointer;
+ transition: transform 0.3s ease;
+ background-color:#ffffffc3;
+ width: 90%;
+ color: rgb(2, 2, 2);
+ font-weight: bold;
+ margin-bottom: 16px;
+}
+
 .social-links {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: start;
   text-align: start;
   justify-content: space-evenly;
   width: 100%;
   margin-top: 20px;
+  gap: 20px;
+  padding: 10px;
 }
 
 .social-links a {
@@ -159,34 +178,36 @@
     align-items: flex-start;
     padding: 20px;
     padding-top: 30px;
+    height: auto;
   }
 
   .profile-details {
     text-align: start;
     align-items: flex-start;
     width: 100%;
+    max-width: 300px;
   }
 
   .profile-photo img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
 
   .profile-info h2 {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .profile-info p {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .classRoom img, .classRoom .fa-icon {
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
   }
 
   .classRoom p {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .classRoom {

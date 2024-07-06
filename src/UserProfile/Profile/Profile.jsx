@@ -6,7 +6,9 @@ import { getFirestore } from 'firebase/firestore';
 import { app, storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
-import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaGlobeAmericas, FaBook, FaGem, FaCode, FaFilePdf } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaGlobeAmericas, FaBook, FaGem, FaFilePdf, FaGoogle, FaLocationArrow } from 'react-icons/fa';
+import Lottie from 'lottie-react';
+import animationData from '../../Components/Animations/LottieAnimatedIcons/Animation - 1720296895562.json';
 
 function Profile() {
   const { setUser, user, data, setData } = useContext(AuthContext);
@@ -39,41 +41,50 @@ function Profile() {
     fetchProfileImage();
   }, [name, setData, data]);
 
- const handleImageChange = async (event) => {
-  const file = event.target.files[0];
-  if (file && name) {
-    try {
-      const ImgRef = ref(storage, `PIMG/${name}/${uuidv4()}`);
-      await uploadBytes(ImgRef, file);
-      const url = await getDownloadURL(ImgRef);
-      
-      // Immediately update UI with new image
-      setProfileImage(url);
-      setData({ ...data, photoURL: url }); // Update data object with new photoURL
-      
-    } catch (error) {
-      console.error("Error uploading profile image: ", error);
-    }
-  }
-};
+  const handleImageChange = async (event) => {
+    const file = event.target.files[0];
+    if (file && name) {
+      try {
+        const ImgRef = ref(storage, `PIMG/${name}/${uuidv4()}`);
+        await uploadBytes(ImgRef, file);
+        const url = await getDownloadURL(ImgRef);
 
+        // Immediately update UI with new image
+        setProfileImage(url);
+        setData({ ...data, photoURL: url }); // Update data object with new photoURL
+
+      } catch (error) {
+        console.error("Error uploading profile image: ", error);
+      }
+    }
+  };
 
   return (
     <div className="profile-container">
+      <div className="profile-header">
+      </div>
       <div className="profile-details">
         <div className="profile-photo">
-          <img src={profileImage || "/path/to/default-profile.png"} alt="Profile" />
-          <input type="file" accept="image/*" onChange={handleImageChange} />
-          <div className='btn'>
-            <p className="text">Follow</p>
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "end", gap: "10px" }}>
+            <img src={profileImage || "/path/to/default-profile.png"} alt="Profile" />
+            <input type="file" accept="image/*" onChange={handleImageChange} />
+            <h2>{name}</h2>
           </div>
         </div>
+        <div className='editProfile'>
+          <button onClick={() => navigate("/edit-profile")}>Edit Profile</button>
+        </div>
         <div className="profile-info">
-          <h2>{name}</h2>
           <p>Profession: Software Engineer</p>
           <p>Email: {email}</p>
         </div>
         <div className="social-links">
+          <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer">
+            <FaLocationArrow />
+          </a>
+          <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer">
+            <FaGoogle />
+          </a>
           <a href="https://www.linkedin.com/in/dummy" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
@@ -87,6 +98,12 @@ function Profile() {
             <FaGlobe />
           </a>
         </div>
+        <Lottie
+          animationData={animationData}
+          loop
+          autoplay
+          style={{ height: '100px', width: '100px' }}
+        />
       </div>
       <div className="classRoom">
         <div className="ressumeClassRoom">
@@ -107,7 +124,7 @@ function Profile() {
         </div>
         <div className="ressumeClassRoom">
           <Link to="/git-mate"><FaUserFriends size={30} color='white' /></Link>
-          <p className="Join">Find Mate</p> 
+          <p className="Join">Find Mate</p>
         </div>
         <div className="ressumeClassRoom">
           <Link to="/github-profile"><FaGithub size={30} color='white' /></Link>

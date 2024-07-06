@@ -73,6 +73,19 @@
     font-weight: bold;
 }
 
+.nav-logout-btn{
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 12px;
+    gap: 2rem;
+    background-color: rgb(47, 87, 250);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+
+}
+
 @media(max-width: 1005px){
     .nav-brand{
         font-size: 1.7rem;
