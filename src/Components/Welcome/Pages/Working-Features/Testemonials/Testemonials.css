@@ -1,20 +1,23 @@
 /* Testimonials.css */
 
-.github-profile {
+.github-profiles {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  padding-top: 120px;
+  padding-top: 80px;
+  padding-bottom: 90px;
   position: relative;
   border: 0px;
   gap: 20px;
+  background-color: var(--bg-color);
+  color: white;
 }
 
 
 
-.user-rankings {
-  width: 90%;
+.user-ranking {
+  width: 100%;
   max-width: 600px;
   padding: 20px;
   border-radius: 10px;
@@ -27,7 +30,7 @@
     right: 14px;
 }
 
-.github-profile span {
+.github-profiles span {
   text-align: start;
   margin-bottom: 20px;
   font-size: 30px;
@@ -57,29 +60,29 @@
   background-color: 1355b2a5;
 }
 
-.ranking-table {
+.ranking-tables {
   width: 100%;
   border-collapse: collapse;
   align-items: start;
   text-align: start;
 }
 
-.ranking-table th, .ranking-table td {
+.ranking-tables th, .ranking-tables td {
   border: 0px solid #ddd;
   padding: 8px;
   text-align: start;
 }
 
-.ranking-table th {
+.ranking-tables th {
   background-color: 1355b2a5;
   color: #fdfdfd;
 }
 
-.ranking-table tr:nth-child(even) {
+.ranking-tablse tr:nth-child(even) {
   background-color: 1355b2a5;
 }
 
-.ranking-table tr:hover {
+.ranking-tables tr:hover {
   background-color: 1355b2a5;
 }
 

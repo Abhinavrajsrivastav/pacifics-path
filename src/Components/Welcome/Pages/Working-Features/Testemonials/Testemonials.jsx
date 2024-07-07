@@ -38,10 +38,10 @@ const Testemonials = () => {
   };
 
   return (
-    <div className="github-profile" id="Testemonials">
+    <div className="github-profiles" id="Testemonials">
       <span>Here are some of our recent <span className='testemonial-user'>users</span></span>
-      <div className="user-rankings">
-        <table className="ranking-table">
+      <div className="user-ranking">
+        <table className="ranking-tables">
           <thead>
             <tr>
               {/* <th>Rank</th> */}

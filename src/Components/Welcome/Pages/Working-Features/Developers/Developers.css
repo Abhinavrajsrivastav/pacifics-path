@@ -12,9 +12,9 @@
 }
 
 .developers-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
-  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-self: center;
   text-align: center;
 }
@@ -28,6 +28,7 @@
   background-color: #02153c;
   align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 .developer-card:hover {

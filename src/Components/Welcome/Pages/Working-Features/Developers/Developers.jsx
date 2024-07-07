@@ -4,8 +4,8 @@ import './Developers.css';
 const developers = [
   {
     id: 1,
-    name: 'John Doe',
-    img: 'https://via.placeholder.com/20', // Replace with actual image URL
+    name: 'Abhinav Raj',
+    img: 'profile.jpg', 
     quote: 'Passionate about building meaningful software.',
     contribution: 'Frontend Development',
     github: 'johndoe',
@@ -14,7 +14,7 @@ const developers = [
   {
     id: 2,
     name: 'Jane Smith',
-    img: 'https://via.placeholder.com/20', // Replace with actual image URL
+    img: './Icons/user.png', // Replace with actual image URL
     quote: 'Turning ideas into reality, one line of code at a time.',
     contribution: 'Backend Development',
     github: 'janesmith',
@@ -23,30 +23,12 @@ const developers = [
   {
     id: 3,
     name: 'Alex Johnson',
-    img: 'https://via.placeholder.com/20', // Replace with actual image URL
+    img: './Icons/user.png', // Replace with actual image URL
     quote: 'Coding is my passion; excellence is my goal.',
     contribution: 'Full Stack Development',
     github: 'alexjohnson',
     linkedin: 'alexjohnson',
-  },
-  {
-    id: 4,
-    name: 'Emily Brown',
-    img: 'https://via.placeholder.com/20', // Replace with actual image URL
-    quote: 'Innovating and iterating with code.',
-    contribution: 'UI/UX Design',
-    github: 'emilybrown',
-    linkedin: 'emilybrown',
-  },
-  {
-    id: 5,
-    name: 'Michael Davis',
-    img: 'https://via.placeholder.com/20', // Replace with actual image URL
-    quote: 'Creating software solutions that make a difference.',
-    contribution: 'DevOps Engineering',
-    github: 'michaeldavis',
-    linkedin: 'michaeldavis',
-  },
+  }
 ];
 
 const Developers = () => {
@@ -59,6 +41,7 @@ const Developers = () => {
   <div className="card-border-top">
   </div>
   <div className="img">
+    <img src={developer.img} alt="profile" />
   </div>
   <span>{developer.name}</span>
   <p className="job">{developer.contribution}</p>
