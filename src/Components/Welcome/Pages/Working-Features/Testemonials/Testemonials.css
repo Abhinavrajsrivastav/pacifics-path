@@ -91,3 +91,27 @@
   height: 40px;
   border-radius: 50%;
 }
+
+@media(max-width: 1005px) {
+  .github-profiles {
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-top: 30px;
+    gap: 0px;
+  }
+
+  .github-profiles span {
+    font-size: 20px;
+  }
+
+  .user-ranking {
+    padding: 10px;
+
+  }
+
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+  }
+}
