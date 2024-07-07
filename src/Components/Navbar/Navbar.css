@@ -74,10 +74,11 @@
 }
 
 .nav-logout-btn{
+    display: flex;
     align-items: center;
-    padding: 5px 15px;
-    font-size: 12px;
-    gap: 2rem;
+    padding: 5px 12px;
+    font-size: 10px;
+    gap: 5px;
     background-color: rgb(47, 87, 250);
     border-radius: 10px;
     border: none;
@@ -85,6 +86,19 @@
     font-weight: bold;
 
 }
+.nav-compare-btn{
+    display: flex;
+    align-items: center;
+    padding: 5px 12px;
+    font-size: 10px;
+    gap: 5px;
+    background-color: rgb(47, 87, 250);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
 
 @media(max-width: 1005px){
     .nav-brand{

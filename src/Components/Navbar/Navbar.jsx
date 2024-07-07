@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 //Importing Icon from Material UI
-import { Google } from '@mui/icons-material'; 
+import { Compare, Google, Leaderboard, Logout } from '@mui/icons-material'; 
 
 //Importing routing functions
 import { Link, useNavigate } from 'react-router-dom';
@@ -50,7 +50,7 @@ function NavBar() {
         <a href="#" className="nav-link">About</a>
        <a href="#Testemonials" className="nav-link">Testimonials</a>
        <a href="#dev" >Us</a> 
-        {email==null?<Link to="/login"><button className="nav-login-btn">login</button></Link>:<a onClick={()=>logout()} className='nav-logout-btn'>logout</a>}
+        {email==null?<Link to="/login"><button className="nav-login-btn">login</button></Link>:<div className='log-out-btns'style={{display:"flex", gap: "8px"}}><a  className='nav-compare-btn'><Leaderboard />Compare</a><a onClick={()=>logout()} className='nav-logout-btn'><Logout /> logout</a></div>}
         </>
         }
         {email==null?<Link to="/signup"><button className="nav-login-btn">SignUp</button></Link>:<img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={()=>navigate("/profile")}></img>}

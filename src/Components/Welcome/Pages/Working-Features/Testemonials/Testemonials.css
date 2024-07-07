@@ -91,17 +91,3 @@
   height: 40px;
   border-radius: 50%;
 }
-
-button {
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #1355b2a5;
-  color: white;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #1355b2a5
-}
