@@ -127,7 +127,6 @@ function Profile() {
           <p className="Join">Find Mate</p>
         </div>
         <div className="ressumeClassRoom">
-          <Link to="/github-profile"><FaGithub size={30} color='white' /></Link>
           <p className="Join">GitHub</p>
         </div>
         <div className="joinClass">

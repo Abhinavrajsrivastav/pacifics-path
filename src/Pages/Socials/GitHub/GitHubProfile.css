@@ -305,14 +305,6 @@ button:hover .button-text {
   cursor: pointer;
 }
 
-.navigate-professinals span {
-  background-color: #25409f;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 10px;
-  transition: 0.2s ease-in-out;
-}
-
 .ranking-lists {
   display: flex;
   flex-wrap: wrap;

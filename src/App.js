@@ -22,7 +22,6 @@ import Mate from './Pages/Socials/FindMate/Mate';
 import ChatRoom from './Categories/ChatRoom';
 import Testimonials from './Components/Welcome/Pages/Working-Features/Testemonials/Testemonials';
 import Developers from './Components/Welcome/Pages/Working-Features/Developers/Developers';
-import Compare from './Components/Welcome/Pages/Working-Features/Compare/Compare';
 
 function App() {
   return (
@@ -50,7 +49,6 @@ function App() {
           <Route path="/github-profile" element={<GitHubProfile />} />
           <Route path="/git-mate" element={<Mate />} />
           <Route path="/chat/:topic" element={<ChatRoom />} />
-          <Route path="/Compare" element={<Compare />} />
         </Routes>
       </AuthProvider>
     </Router>

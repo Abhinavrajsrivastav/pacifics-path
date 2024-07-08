@@ -18,7 +18,6 @@ const GitHubProfile = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
   const db = getFirestore(app);
-
   const accessToken = process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN;
 
   const calculateDevScore = (userData, repos) => {
@@ -154,7 +153,7 @@ const GitHubProfile = () => {
 
   return (
     <div className="github-profile">
-      <div className="app-container">
+      <div className="app-containers">
         <header className="brand-header">
           <h1 className="brand-name">Educome</h1>
           <p className="search-description">Find the best developers on GitHub</p>
