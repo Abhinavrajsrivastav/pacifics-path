@@ -1,32 +1,35 @@
-
-.nav-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.nav-container {
     background-color: var(--bg-color);
     color: white;
-    padding: 5px;
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    overflow-x: hidden;
-    gap: 464px;
-}
-
-.nav-brand{
+    padding: 8px;
     display: flex;
     flex-direction: row;
-    align-items: start;
-    text-align: start;
     justify-content: space-around;
+        font-size: 10px;
+}
+
+.nav-elements{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin: 5px;
-    margin-left: 8px;
-    margin-top: 15px;
+    gap: 170px;
+}
+
+.navbrand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
-    font-size: 1.3rem;
-    color: white;
+}
+
+.nav-brand-name {
     font-weight: 700;
 }
 
@@ -100,12 +103,15 @@
 }
 
 
-@media(max-width: 1005px){
-    .nav-brand{
-        font-size: 1.7rem;
-    }
+.drawer-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
 
-    .nav-login-btn{
-        font-size: 1.0rem;
+
+@media (max-width: 1005px) {
+    .nav-links {
+        display: none;
     }
 }

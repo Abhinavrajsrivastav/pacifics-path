@@ -8,6 +8,7 @@
   top: 60px;
   background-color: var(--bg-color);
   padding: 20px;
+  padding-top: 50px;
   gap: 20px;
 }
 

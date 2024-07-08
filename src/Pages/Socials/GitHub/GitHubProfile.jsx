@@ -29,7 +29,6 @@ const GitHubProfile = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log(process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN);
     
     e.preventDefault();
     setError('');
@@ -239,7 +238,7 @@ const GitHubProfile = () => {
         </div>
       )}
       {username && (
-        <div className="user-ranking">
+        <div className="user-rankings">
           <h2>
             User Rankings 
             <div className='navigate-professinals'>

@@ -1,0 +1,141 @@
+.compare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.Compare-Box {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+}
+
+.Compare-Box h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-align: center;
+}
+
+.Compare-Box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.Compare-Box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Compare-Box button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Compare-Box button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.comparisons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  padding: 100px;
+}
+
+.userprofile {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.userprofile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.userprofile h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #007bff;
+}
+
+.userprofile p {
+  margin-bottom: 5px;
+}
+
+.userprofile .metric {
+  font-weight: bold;
+}
+
+.vs-icon {
+  font-size: 24px;
+  margin: 0 20px;
+}
+
+@media(max-width: 1005px){
+
+  .compare{
+    padding-top: 150px;
+  }
+
+  .Compare-Box{
+    padding: 0px;
+  }
+  .Compare-Box h1{
+    font-size: 14px;
+  }
+  .Compare-Box form{
+    margin-top: 30px;
+  }
+  .Compare-Box input[type="text"]{
+    padding: 8px;
+  }
+  .Compare-Box button{
+    padding: 8px 16px;
+  }
+
+  .comparisons{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .userprofile img{
+    width: 60px;
+    height: 60px;
+  }
+  .userprofile h2{
+    font-size: 14px;
+  }
+  .userprofile p{
+    font-size: 14px;
+  }
+  .vs-icon{
+    font-size: 15px;
+  }
+}

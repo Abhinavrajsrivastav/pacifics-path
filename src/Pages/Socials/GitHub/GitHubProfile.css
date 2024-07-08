@@ -272,7 +272,7 @@ button:hover .button-text {
   transition: background-color 0.3s;
 }
 
-.user-ranking {
+.user-rankings {
   margin-top: 0px;
   width: 93%;
   position: relative;
@@ -285,7 +285,7 @@ button:hover .button-text {
   top: 20px
 }
 
-.user-ranking h2 {
+.user-rankings h2 {
   font-size: 15px;
   margin-bottom: 20px;
   scroll-behavior: smooth;
@@ -294,11 +294,11 @@ button:hover .button-text {
   width: 100%;
 }
 
-.user-ranking span {
+.user-rankings span {
   transition: 0.1s ease-in-out;
 }
 
-.user-ranking span:hover {
+.user-rankings span:hover {
   background-color: #0336c3;
   transform: scale(1.1);
   transform: translateY(-5px);
@@ -552,13 +552,12 @@ button:hover .button-text {
     min-width: 300px;
   }
 
-  .user-ranking {
+  .user-rankings {
     padding: 15px;
     margin: 20px;
     width: 88%;
     position: relative;
     right: 10px;
-
   }
 
   .navigate-professinal {
