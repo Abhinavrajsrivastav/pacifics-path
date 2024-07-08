@@ -27,8 +27,7 @@ const GitHubProfile = () => {
     return totalScore;
   };
 
-  const handleSubmit = async (e) => {
-    
+  const handleSubmit = async (e) => {  
     e.preventDefault();
     setError('');
     setUserData(null);
