@@ -220,3 +220,13 @@ align-items: center;
     padding: 5px;
   }
 }
+
+.withoutlogin{
+  position: absolute;
+  top: 90%;
+  left: 35%;
+  color: white;
+  font-style: 80px;
+  text-align: center;
+  align-items: center;
+}

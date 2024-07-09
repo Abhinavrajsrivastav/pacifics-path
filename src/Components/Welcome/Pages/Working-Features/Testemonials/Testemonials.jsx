@@ -23,7 +23,6 @@ const Testemonials = () => {
       rankings.sort((a, b) => b.devScore - a.devScore);
       // Slice to show only the first 5 users
       setUserRankings(rankings.slice(0, 5));
-      console.log('User Rankings:', rankings);
     } catch (error) {
       console.error('Error fetching user rankings:', error);
     }

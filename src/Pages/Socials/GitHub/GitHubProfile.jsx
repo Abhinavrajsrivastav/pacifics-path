@@ -7,6 +7,8 @@ import { getFirestore, collection, addDoc, getDocs, query, where } from 'firebas
 import { app } from '../../../Components/Firebase/Firebase';
 
 const GitHubProfile = () => {
+
+//----States GitHub Profile
   const [username, setUsername] = useState('');
   const [userData, setUserData] = useState(null);
   const [repos, setRepos] = useState([]);
@@ -17,16 +19,18 @@ const GitHubProfile = () => {
   const [bestLanguage, setBestLanguage] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
+//--Firebase Instance
   const db = getFirestore(app);
-  const accessToken = process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN;
 
-  const calculateDevScore = (userData, repos) => {
+//--dev score calculate
+    const calculateDevScore = (userData, repos) => {
     const reposCountScore = repos.length / 10;
     const followersScore = userData.followers / 100;
     const totalScore = Math.round((reposCountScore + followersScore) * 10) / 10;
     return totalScore;
   };
 
+//--user profile search button
   const handleSubmit = async (e) => {  
     e.preventDefault();
     setError('');
@@ -37,18 +41,10 @@ const GitHubProfile = () => {
     setBestLanguage('');
 
     try {
-      const userResponse = await axios.get(`https://api.github.com/users/${username}`, {
-        headers: {
-          Authorization: `token ${accessToken}`
-        }
-      });
+      const userResponse = await axios.get(`https://api.github.com/users/${username}`);
       setUserData(userResponse.data);
 
-      const reposResponse = await axios.get(userResponse.data.repos_url, {
-        headers: {
-          Authorization: `token ${accessToken}`
-        }
-      });
+      const reposResponse = await axios.get(userResponse.data.repos_url);
       const sortedRepos = reposResponse.data.sort((a, b) => b.stargazers_count - a.stargazers_count);
       setRepos(sortedRepos.slice(0, 5));
 
@@ -56,11 +52,7 @@ const GitHubProfile = () => {
       await Promise.all(
         reposResponse.data.map(async (repo) => {
           try {
-            const repoLanguages = await axios.get(repo.languages_url, {
-              headers: {
-                Authorization: `token ${accessToken}`
-              }
-            });
+            const repoLanguages = await axios.get(repo.languages_url);
             for (const [language, lines] of Object.entries(repoLanguages.data)) {
               if (languagesData[language]) {
                 languagesData[language] += lines;
@@ -106,6 +98,7 @@ const GitHubProfile = () => {
     }
   };
 
+//--Fetch user Rank
   const fetchUserRankings = async (language = '') => {
     try {
       const q = language
@@ -131,6 +124,7 @@ const GitHubProfile = () => {
     setSelectedLanguage(language);
   };
 
+
   const renderLanguageIcon = (language) => {
     switch (language) {
       case 'Java':
@@ -146,6 +140,7 @@ const GitHubProfile = () => {
     }
   };
 
+//--see profile on github
   const handleSeeProfileClick = (username) => {
     window.open(`https://github.com/${username}`, '_blank');
   };
@@ -224,7 +219,7 @@ const GitHubProfile = () => {
             ))}
           </div>
           <div className="languages-card">
-            <h2>Most Used Languages 🔥</h2>
+            <h2>Most Used Tech 🔥</h2>
             <ul>
               {Object.keys(languages).map((language) => (
                 <li key={language}>
@@ -252,7 +247,7 @@ const GitHubProfile = () => {
               <div className="ranking-items" key={index}>
                 <div className="profile-infos">
                   <div className="user-profile">
-                    <img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pic" />
+                    <img src={`https://github.com/${user.username}.png`} alt="Profile" style={{height: "50px", width: "50px", borderRadius: "50%"}}/>
                     <p className="username">{user.username}</p>
                   </div>
                   <div className="user-details">

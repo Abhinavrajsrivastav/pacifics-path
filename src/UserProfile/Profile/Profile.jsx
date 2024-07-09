@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaGlobeAmericas, FaBook, FaGem, FaFilePdf, FaGoogle, FaLocationArrow } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import animationData from '../../Components/Animations/LottieAnimatedIcons/Animation - 1720296895562.json';
+import animationData1 from '../../Components/Animations/LottieAnimatedIcons/Animation - 1720537831753.json';
 
 function Profile() {
   const { setUser, user, data, setData } = useContext(AuthContext);
@@ -59,7 +60,7 @@ function Profile() {
     }
   };
 
-  return (
+  return user!=null?(
     <div className="profile-container">
       <div className="profile-header">
       </div>
@@ -98,12 +99,12 @@ function Profile() {
             <FaGlobe />
           </a>
         </div>
-        <Lottie
+        {/* <Lottie
           animationData={animationData}
           loop
           autoplay
           style={{ height: '100px', width: '100px' }}
-        />
+        /> */}
       </div>
       <div className="classRoom">
         <div className="ressumeClassRoom">
@@ -148,7 +149,15 @@ function Profile() {
         </div>
       </div>
     </div>
-  );
+  ):<>
+  <h1 className='withoutlogin'>Please First Login or Signup yourself</h1>
+  <Lottie
+          animationData={animationData1}
+          loop
+          autoplay
+          style={{ height: '100vh', width: '100%', backgroundColor: "black" }}
+        />
+  </>;
 }
 
 export default Profile;
