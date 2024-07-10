@@ -24,3 +24,7 @@ body{
 :root{
   --bg-color: rgb(3, 12, 37);
 }
+
+:root{
+  --footer-color: rgb(3, 22, 41);
+}
