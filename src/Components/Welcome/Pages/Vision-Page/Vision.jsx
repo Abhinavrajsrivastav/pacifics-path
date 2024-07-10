@@ -17,7 +17,7 @@ function Vision() {
         <div className="icon-container">
           <FaGraduationCap className="vision-icon" />
         </div>
-        <p className="brand-names">Educome</p>
+        <p className="brand-names">Edukom</p>
          <p className="vision-heading">
         <AnimatedGradientText>
           A Platform For Engineers

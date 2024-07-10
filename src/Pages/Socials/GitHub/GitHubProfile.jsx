@@ -149,7 +149,7 @@ const GitHubProfile = () => {
     <div className="github-profile">
       <div className="app-containers">
         <header className="brand-header">
-          <h1 className="brand-name">Educome</h1>
+          <h1 className="brand-name">Edukom</h1>
           <p className="search-description">Find the best developers on GitHub</p>
         </header>
         <form onSubmit={handleSubmit}>
