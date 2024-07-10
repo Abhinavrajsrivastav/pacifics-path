@@ -102,20 +102,21 @@
 @media(max-width: 1005px){
 
   .compare{
-    padding-top: 150px;
+    padding-bottom: 0px;
   }
 
   .Compare-Box{
     padding: 0px;
   }
   .Compare-Box h1{
-    font-size: 14px;
+    font-size: 40px;
   }
   .Compare-Box form{
     margin-top: 30px;
   }
   .Compare-Box input[type="text"]{
     padding: 8px;
+    width: 60%;
   }
   .Compare-Box button{
     padding: 8px 16px;

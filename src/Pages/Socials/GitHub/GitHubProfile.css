@@ -414,6 +414,10 @@ button:hover .button-text {
   text-decoration: underline;
 }
 
+.brand-name {
+    color: var(--second-color);
+  }
+
 /* Languages card styles */
 .languages-card {
   display: flex;
@@ -467,7 +471,7 @@ button:hover .button-text {
   .app-container {
    position: relative;
    top: 0px;
-   left: 20px
+   left: 0px
   }
 
   .github-profile {
@@ -488,11 +492,13 @@ button:hover .button-text {
     font-size: 50px;
     position: relative;
     top: 50px;
-    right: 25px;
+    right: 35px;
+    margin: 20px;
+    color: var(--second-color);
   }
 
   .github-profile input {
-    width: 60%;
+    width: 70%;
     margin-bottom: 20px;
   }
 
@@ -551,18 +557,19 @@ button:hover .button-text {
     margin: 20px;
     width: 88%;
     position: relative;
-    right: 10px;
   }
 
-  .navigate-professinal {
+  .navigate-professinals {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 400px;
-    scroll-behavior: smooth;
+    width: auto;
     overflow-x: scroll;
+    scroll-behavior: smooth;
     position: relative;
-    right: -15px;
+    right: 0px;
+    margin: 10px 0px 10px;
+    padding: 5px 0px 5px 0px;
   }
 
   .ranking-lists {
@@ -570,12 +577,11 @@ button:hover .button-text {
     justify-content: start;
     align-items: start;
     text-align: start;
-    gap: 10px;
+    gap: 0px;
   }
 
   .ranking-items {
-    min-width: 320px;
-    width: auto;
+    width: 95%;
   }
 
   .profile-infos {

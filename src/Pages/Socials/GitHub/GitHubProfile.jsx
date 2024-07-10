@@ -232,8 +232,7 @@ const GitHubProfile = () => {
       )}
       {username && (
         <div className="user-rankings">
-          <h2>
-            User Rankings 
+          <h2>User Rankings</h2> 
             <div className='navigate-professinals'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 
             <span onClick={() => handleLanguageClick('Python')}> Python</span> 
@@ -241,7 +240,6 @@ const GitHubProfile = () => {
             <span onClick={() => handleLanguageClick('React')}> React</span>
             <span onClick={() => handleLanguageClick('')}> All</span>
             </div>
-          </h2>
           <div className="ranking-lists">
             {userRankings.map((user, index) => (
               <div className="ranking-items" key={index}>

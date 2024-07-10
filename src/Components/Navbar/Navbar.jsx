@@ -29,7 +29,7 @@ function NavBar() {
                     <div className='navbrand'>
                         <img src="./Icons/google (1).png" alt="" style={{ height: '30px', width: '30px' }} className='m-3' />
                         <Typography variant="h6" className="nav-brand-name">
-                            Educome
+                            Edukom
                         </Typography>
                     </div>
                      <div>

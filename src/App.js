@@ -23,7 +23,7 @@ import ChatRoom from '../src/Categories/ChatRoom';
 import Testimonials from './Components/Welcome/Pages/Working-Features/Testemonials/Testemonials';
 import Developers from './Components/Welcome/Pages/Working-Features/Developers/Developers';
 import Compare from './Components/Welcome/Pages/Working-Features/Compare/Compare';
-
+import Footer from './Components/Welcome/Pages/Footer-Page/Footer';
 
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
               <Features />
               <Testimonials />
               <Developers />
-              <HowWork />
+              <Footer />      
             </>
           } />
           <Route path="/login" element={<Login />} />
