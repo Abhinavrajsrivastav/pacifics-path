@@ -36,7 +36,7 @@ const Footer = () => {
         <Grid item xs={12} sm={3} justify="space-evenly" style={{position: "relative", right: "15px"}}>
           <div className={classes.logo}>
             <img src="./Icons/cat.png" alt="Logo" className={classes.logoImg} />
-            <Typography variant="h6">Edukom</Typography>
+            <Typography variant="h6">Educome</Typography>
           </div>
           <Typography variant="body2">
             A Modern Right Dev Partner Finding Platform.
@@ -83,7 +83,7 @@ const Footer = () => {
             Contact Us
           </Typography>
           <Typography variant="body2">
-            Email: contact@Edukom.com
+            Email: contact@Educome.com
           </Typography>
           <Typography variant="body2">
             Phone: +1-123-456-7890
@@ -91,7 +91,7 @@ const Footer = () => {
         </Grid>
       </Grid>
       <Typography variant="body2" align="center" style={{ marginTop: 50, marginBottom: -30 }}className="footer-bottom">
-        &copy; {new Date().getFullYear()} Edukom. All rights reserved. developed by Abhinav
+        &copy; {new Date().getFullYear()} Educome. All rights reserved. developed by Abhinav
       </Typography>
     </footer>
   );
