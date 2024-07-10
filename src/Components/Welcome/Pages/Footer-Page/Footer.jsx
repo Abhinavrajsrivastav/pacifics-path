@@ -35,7 +35,7 @@ const Footer = () => {
       <Grid container spacing={3} justify="space-between">
         <Grid item xs={12} sm={3} justify="space-evenly" style={{position: "relative", right: "15px"}}>
           <div className={classes.logo}>
-            <img src="./Icons/Cat.png" alt="Logo" className={classes.logoImg} />
+            <img src="./Icons/cat.png" alt="Logo" className={classes.logoImg} />
             <Typography variant="h6">Edukom</Typography>
           </div>
           <Typography variant="body2">
