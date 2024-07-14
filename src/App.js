@@ -24,6 +24,7 @@ import Testimonials from './Components/Welcome/Pages/Working-Features/Testemonia
 import Developers from './Components/Welcome/Pages/Working-Features/Developers/Developers';
 import Compare from './Components/Welcome/Pages/Working-Features/Compare/Compare';
 import Footer from './Components/Welcome/Pages/Footer-Page/Footer';
+import Projects from './Pages/Projects/Projects';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/git-mate" element={<Mate />} />
           <Route path="/chat/:topic" element={<ChatRoom />} />
           <Route path="/Compare" element={<Compare />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </AuthProvider>
     </Router>

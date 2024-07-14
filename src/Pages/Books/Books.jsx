@@ -47,7 +47,8 @@ const Books = () => {
   ];
 
   const handleSearch = async (searchQuery) => {
-    const apiKey = process.env.REACT_APP_GOOGLE_BOOK_API;
+    // const apiKey = process.env.REACT_APP_GOOGLE_BOOK_API;
+    const apiKey = 12345;
     const refinedQuery = `${searchQuery} subject:education`;
     const url = `https://www.googleapis.com/books/v1/volumes?q=${refinedQuery}&key=${apiKey}`;
 

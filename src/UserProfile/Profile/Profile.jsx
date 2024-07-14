@@ -6,7 +6,7 @@ import { getFirestore } from 'firebase/firestore';
 import { app, storage } from '../../Components/Firebase/Firebase';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
-import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaGlobeAmericas, FaBook, FaGem, FaFilePdf, FaGoogle, FaLocationArrow } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaGlobe, FaUsers, FaPencilAlt, FaGooglePlusSquare, FaRegStar, FaUserFriends, FaGlobeAmericas, FaBook, FaGem, FaFilePdf, FaGoogle, FaLocationArrow, FaCode } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import animationData from '../../Components/Animations/LottieAnimatedIcons/Animation - 1720296895562.json';
 import animationData1 from '../../Components/Animations/LottieAnimatedIcons/Animation - 1720537831753.json';
@@ -120,8 +120,8 @@ function Profile() {
           <p className="Join">Leaderboard</p>
         </div>
         <div className="ressumeClassRoom">
-          <FaGooglePlusSquare size={30} />
-          <p className="Join">Ask to Gemini</p>
+          <Link to="/projects"><FaCode size={30} color="white"/></Link>
+          <p className="Join">Projects</p>
         </div>
         <div className="ressumeClassRoom">
           <Link to="/git-mate"><FaUserFriends size={30} color='white' /></Link>

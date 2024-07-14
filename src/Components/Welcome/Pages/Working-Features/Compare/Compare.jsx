@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Compare.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBalanceScale, faCodeCompare, faFire } from '@fortawesome/free-solid-svg-icons';
+import { faFire } from '@fortawesome/free-solid-svg-icons';
 
 const Compare = () => {
   const [username1, setUsername1] = useState('');
@@ -11,37 +11,19 @@ const Compare = () => {
   const [userData2, setUserData2] = useState(null);
   const [error, setError] = useState('');
 
-  const accessToken = process.env.REACT_APP_GIT_HUB_ACCESS_TOKEN;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     try {
       const [user1Response, user2Response] = await Promise.all([
-        axios.get(`https://api.github.com/users/${username1}`, {
-          headers: {
-            Authorization: `token ${accessToken}`
-          }
-        }),
-        axios.get(`https://api.github.com/users/${username2}`, {
-          headers: {
-            Authorization: `token ${accessToken}`
-          }
-        })
+        axios.get(`https://api.github.com/users/${username1}`),
+        axios.get(`https://api.github.com/users/${username2}`)
       ]);
 
       const [repos1Response, repos2Response] = await Promise.all([
-        axios.get(user1Response.data.repos_url, {
-          headers: {
-            Authorization: `token ${accessToken}`
-          }
-        }),
-        axios.get(user2Response.data.repos_url, {
-          headers: {
-            Authorization: `token ${accessToken}`
-          }
-        })
+        axios.get(user1Response.data.repos_url),
+        axios.get(user2Response.data.repos_url)
       ]);
 
       const devScore1 = calculateDevScore(user1Response.data, repos1Response.data);

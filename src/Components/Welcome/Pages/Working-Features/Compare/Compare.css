@@ -1,44 +1,48 @@
+/* Compare.css */
+
 .compare {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--bg-color);
-  color: white;
-}
-
-.Compare-Box {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: var(--bg-color);
-}
-
-.Compare-Box h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #007bff;
-  text-align: center;
-}
-
-.Compare-Box form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+  min-height: 100vh;
 }
 
-.Compare-Box input[type="text"] {
-  width: 100%;
+.Compare-Box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.Compare-Box h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input {
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
 }
 
-.Compare-Box button {
+form button {
   padding: 10px 20px;
+  margin-top: 10px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -47,13 +51,12 @@
   transition: background-color 0.3s ease;
 }
 
-.Compare-Box button:hover {
+form button:hover {
   background-color: #0056b3;
 }
 
 .error {
   color: red;
-  font-size: 14px;
   margin-top: 10px;
 }
 
@@ -61,82 +64,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 70px;
-  padding: 100px;
+  margin-top: 20px;
 }
 
 .userprofile {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
-  padding: 10px;
-  background-color: var(--bg-color);
-  border-radius: 5px;
-  margin: 0 20px;
+  margin: 10px;
 }
 
 .userprofile img {
+  border-radius: 50%;
   width: 100px;
   height: 100px;
-  border-radius: 50%;
   margin-bottom: 10px;
 }
 
 .userprofile h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
-  color: #007bff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .userprofile p {
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 
-.userprofile .metric {
+.metric {
   font-weight: bold;
+  color: #333;
 }
 
 .vs-icon {
-  font-size: 24px;
+  font-size: 2rem;
   margin: 0 20px;
 }
 
-@media(max-width: 1005px){
-
-  .compare{
-    padding-bottom: 0px;
-  }
-
-  .Compare-Box{
-    padding: 0px;
-  }
-  .Compare-Box h1{
-    font-size: 40px;
-  }
-  .Compare-Box form{
-    margin-top: 30px;
-  }
-  .Compare-Box input[type="text"]{
-    padding: 8px;
-    width: 60%;
-  }
-  .Compare-Box button{
-    padding: 8px 16px;
-  }
-
-  .comparisons{
+@media (max-width: 600px) {
+  .comparisons {
     flex-direction: column;
-    justify-content: space-around;
   }
-  .userprofile img{
-    width: 60px;
-    height: 60px;
-  }
-  .userprofile h2{
-    font-size: 14px;
-  }
-  .userprofile p{
-    font-size: 14px;
-  }
-  .vs-icon{
-    font-size: 15px;
+
+  .vs-icon {
+    margin: 20px 0;
   }
 }
