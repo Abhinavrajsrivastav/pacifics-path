@@ -1,202 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
-
 .app-container {
-  width: auto;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  padding: 30px;
+  background-color: #1e2a7d57;
+  border-radius: 30px;
   gap: 50px;
-  background-color: var(--bg-color);
 }
 
-.brand-container{
-  width: 100%;
-  height: 100px;
+.brand-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-direction: column;
+  align-items: center;
   color: white;
   gap: 20px;
-  position: relative;
-  bottom: 40px;
 }
 
-.brand-name{
-  color: white;
+.brand-name {
+  font-family: 'Poetsen One', sans-serif;
   font-size: 50px;
-  font-family: "Poetsen One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  position: relative;
-  top: 30px;
-  right: 20px;
+  margin-bottom: 20px;
 }
 
-.messageBox {
-  width: 370px;
-  height: 50px;
+.search-suggestion {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  margin-top: -20px;
+}
+
+.message-boxi {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #2d2d2d;
   padding: 0 15px;
   border-radius: 14px;
   border: 1px solid rgb(63, 63, 63);
-  position: relative;
-  top: -40px;
-  left: -8px;
-}
-.messageBox:focus-within {
-  border: 2px solid var(--main-color);;
-}
-.fileUploadWrapper {
-  width: fit-content;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Play;
+  gap: 10px;
 }
 
-#file {
-  display: none;
+.message-boxi:focus-within {
+  border: 2px solid var(--main-color);
 }
-.fileUploadWrapper label {
-  cursor: pointer;
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.fileUploadWrapper label svg {
-  height: 20px;
-}
-.fileUploadWrapper label svg path {
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.fileUploadWrapper label svg circle {
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.fileUploadWrapper label:hover svg path {
-  stroke: #fff;
-}
-.fileUploadWrapper label:hover svg circle {
-  stroke: #fff;
-  fill: #3c3c3c;
-}
-.fileUploadWrapper label:hover .tooltip {
-  display: block;
-  opacity: 1;
-}
-.tooltip {
-  position: absolute;
-  top: -40px;
-  display: none;
-  opacity: 0;
-  color: white;
-  font-size: 12px;
-  text-wrap: nowrap;
-  background-color: #000;
-  padding: 6px 10px;
-  border: 1px solid #3600b4;
-  border-radius: 8px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
+
 #messageInput {
-  width: 405px;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
+  width: 100%;
+  padding: 10px;
   border: none;
-  padding-left: 0px;
+  border-radius: 14px;
+  outline: none;
+  background-color: transparent;
   color: white;
-  font-family: Play;
-  font-size: 10px;
-}
-#messageInput:focus ~ #sendButton svg path,
-#messageInput:valid ~ #sendButton svg path {
-  fill: #3c3c3c;
-  stroke: var(--main-color);
 }
 
 #sendButton {
-  width: fit-content;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-#sendButton svg {
-  height: 20px;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-#sendButton svg path {
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-#sendButton:hover svg path {
-  fill: #3c3c3c;
-  stroke: var(--main-color);
-}
-
-.search-suggestion{
-  font-size: 15px;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  background-color: #1c68cc;
   color: white;
-  position: relative;
-  top: 8px;
-  right: 30px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 14px;
 }
 
-@media(max-width: 1005px){
-
-  .brand-name{
+@media (max-width: 1005px) {
+  .brand-name {
     font-size: 4rem;
   }
-  .messageBox {
-    width: 330px;
+  .message-boxi {
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
   }
-
-  .messageBox{
-    width: 100px;
-    top: -60px;
-    right: 60px;
-  }
-
-  .search-suggestion{
-    top: 20px;
-    left: -25px;
+  #messageInput {
+    width: calc(100% - 40px);
   }
 }

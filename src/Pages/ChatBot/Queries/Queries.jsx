@@ -1,36 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Queries.css';
-import {OpenApi,fetchSearchResults} from '../../../Components/Api/OpenApi';
+import { OpenApi, fetchSearchResults } from '../../../Components/Api/OpenApi';
 
 const Queries = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [geminiResponse, setGeminiResponse] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleQuery = (event) => {
     setQuery(event.target.value);
   };
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+    setError(null);
 
     try {
-      // Fetch search results
       const searchResults = await fetchSearchResults(query);
       const geminiResponse = await OpenApi(query);
       const serializableGeminiResponse = JSON.parse(JSON.stringify(geminiResponse));
 
-      // Update states
       setSearchResults(searchResults);
       setGeminiResponse(serializableGeminiResponse);
-
-      // Navigate with state
-      navigate('/self-learn/response', { state: { searchResults, geminiResponse: serializableGeminiResponse, query} });
+      navigate('/self-learn/response', { state: { searchResults, geminiResponse: serializableGeminiResponse, query } });
     } catch (error) {
+      setError('An error occurred while processing your request.');
       console.error('Error handling submit:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,18 +42,7 @@ const Queries = () => {
         <span className="brand-name">Educome</span>
         <span className="search-suggestion">Have a question? Ask it!</span>
       </div>
-      <div className="messageBox">
-        <div className="fileUploadWrapper">
-          <label htmlFor="file">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
-              <circle strokeWidth="20" stroke="#6c6c6c" fill="none" r="158.5" cy="168.5" cx="168.5"></circle>
-              <path strokeLinecap="round" strokeWidth="25" stroke="#6c6c6c" d="M167.759 79V259"></path>
-              <path strokeLinecap="round" strokeWidth="25" stroke="#6c6c6c" d="M79 167.138H259"></path>
-            </svg>
-            <span className="tooltip">Add an image</span>
-          </label>
-          <input type="file" id="file" name="file" />
-        </div>
+      <div className="message-boxi">
         <input
           required
           placeholder="Write here..."
@@ -59,20 +50,13 @@ const Queries = () => {
           id="messageInput"
           value={query}
           onChange={handleQuery}
+          disabled={loading}
         />
-        <button id="sendButton" onClick={handleSubmit}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
-            <path fill="none" d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"></path>
-            <path
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="33.67"
-              stroke="#6c6c6c"
-              d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
-            ></path>
-          </svg>
+        <button id="sendButton" onClick={handleSubmit} disabled={loading}>
+          {loading ? 'Searching...' : 'Search'}
         </button>
       </div>
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };

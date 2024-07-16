@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import './Bot.css';
-import { useEffect } from 'react';
+import { fetchSearchResults, OpenApi } from '../../../Components/Api/OpenApi';
 
 const Bot = () => {
   const navigate = useNavigate();
@@ -11,60 +11,15 @@ const Bot = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [geminiResponse, setGeminiResponse] = useState('');
 
-
-
-  // const API_KEY = process.env.REACT_APP_GEMINI_APP_KEY;
-    const API_KEY = 12345;
-
-  // const SEARCH_ENGINE_ID = process.env.REACT_APP_SEARCH_ENGINE_KEY;
-  const SEARCH_ENGINE_ID = 123456;
-
   const handleQuery = (event) => {
     setQuery(event.target.value);
   };
 
-
-  const fetchSearchResults = async (query) => {
-    try {
-      const response = await axios.get(
-        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${query}`
-      );
-      return response.data.items;
-    } catch (error) {
-      console.error('Error fetching search results:', error);
-      return [];
-    }
-  };
-
-  const fetchGeminiResponse = async (query) => {
-    try {
-      const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-      const result = await model.generateContentStream(query+"the response should be effective and efficient and do not use * or # symbols in the response");
-      const response = await result.response;
-      // const text = await response.text();
-      let text = '';
-      for await (const chunk of result.stream) {
-      const chunkText = chunk.text();
-      console.log(chunkText);
-      text += chunkText;
-      }
-      return text;
-    } catch (error) {
-      console.error('Error generating content:', error.response ? error.response.data : error.message);
-      return 'Failed to generate content';
-    }
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Query:', query);
 
     const searchResults = await fetchSearchResults(query);
-    const geminiResponse = await fetchGeminiResponse(query);
-
-    console.log('Search Results:', searchResults);
-    console.log('Gemini Response:', geminiResponse);
+    const geminiResponse = await OpenApi(query);
 
     setSearchResults(searchResults);
     setGeminiResponse(geminiResponse);
@@ -73,7 +28,6 @@ const Bot = () => {
   };
 
   return (
-    <div className="app-container">
       <div className="messageBox">
         <div className="fileUploadWrapper">
           <label htmlFor="file">
@@ -87,7 +41,7 @@ const Bot = () => {
           <input type="file" id="file" name="file" />
         </div>
         <input
-          required=""
+          required
           placeholder="Write here..."
           type="text"
           id="messageInput"
@@ -107,7 +61,6 @@ const Bot = () => {
           </svg>
         </button>
       </div>
-    </div>
   );
 };
 

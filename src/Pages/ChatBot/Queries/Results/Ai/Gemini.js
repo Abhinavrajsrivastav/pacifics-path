@@ -7,14 +7,14 @@ function Gemini() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const geminiResponse = location.state?.geminiResponse || ''; // Provide a default empty string if geminiResponse is undefined
-  const query = location.state?.query || ''; // Provide a default empty string if query is undefined
-  const sanitizedResponse = geminiResponse.replace(/[*#]/g, ''); // Remove * and # symbols
+  const geminiResponse = location.state?.geminiResponse || ''; 
+  const query = location.state?.query || ''; 
+  const sanitizedResponse = geminiResponse.replace(/[*#]/g, ''); 
 
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [queryHistory, setQueryHistory] = useState([]);
-  const [responseHandled, setResponseHandled] = useState(false); // New flag to track if response is handled
+  const [responseHandled, setResponseHandled] = useState(false);
 
   const splitTextIntoLines = (text, maxWordsPerLine) => {
     const words = text.split(' ');
@@ -44,11 +44,10 @@ function Gemini() {
       ]);
       setDisplayedText('');
       setCurrentIndex(0);
-      setResponseHandled(true); // Mark response as handled
+      setResponseHandled(true);
     }
   }, [sanitizedResponse, query, responseHandled]);
 
-  // Reset responseHandled when query changes
   useEffect(() => {
     setResponseHandled(false);
   }, [query]);

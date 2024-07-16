@@ -103,7 +103,7 @@ const Books = () => {
       <h2>{title}</h2>
       <div className="suggested-themes">
         {themes.map((theme) => (
-          <button key={theme.name} className="theme-button" onClick={() => handleThemeClick(theme)}>
+          <button key={theme.name} className="theme-buttoni" onClick={() => handleThemeClick(theme)}>
             {theme.emoji} {theme.name}
           </button>
         ))}

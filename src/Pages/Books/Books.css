@@ -31,7 +31,7 @@
   background-color: rgba(16, 31, 83, 0.578);
 }
 
-.theme-button {
+.theme-buttoni {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
@@ -43,7 +43,7 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.theme-button:hover {
+.theme-buttoni:hover {
   background-color: #103c7e91;
 }
 
@@ -148,4 +148,23 @@
 .books-box h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+}
+
+.search-container button{
+  background-color: rgb(7, 17, 45);
+  padding: 10px 15px;
+  border-radius: 7px;
+  color: white;
+}
+
+ .search-container button:hover{
+  background-color: rgb(11, 34, 95);
+ }
+
+@media(max-width: 1005px){
+      .theme-buttoni {
+        padding: 4px 8px;
+        width: 133px;
+        font-size: 10px;
+    }
 }

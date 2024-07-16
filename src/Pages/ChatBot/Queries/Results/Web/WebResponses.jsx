@@ -3,14 +3,15 @@ import { useLocation } from 'react-router-dom';
 import './WebResponses.css';
 
 function WebResponses({
-    searchResult
+    searchResult,
 }) {
     const location = useLocation();
     // const searchResults = location.state.searchResults || [];
-    const [searchResults, setSearchResults] = useState(searchResult || []); // Add this line
+    const [searchResults, setSearchResults] = useState(searchResult || []); 
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 3;
     const totalPages = Math.ceil(searchResults.length / resultsPerPage);
+    console.log(searchResult);
 
     const nextPage = () => {
         setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
@@ -22,7 +23,7 @@ function WebResponses({
 
     const startIndex = (currentPage - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
-    const currentResults = searchResults.slice(startIndex, endIndex);
+    const currentResults = searchResult.slice(startIndex, endIndex);
 
 
 

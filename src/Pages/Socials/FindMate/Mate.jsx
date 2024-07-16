@@ -60,7 +60,7 @@ const Mate = () => {
       <div className="user-rankings">
         <h2>
           User Rankings 
-          <div className='navigate-professional'>
+          <div className='navigate-professionali'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 
             <span onClick={() => handleLanguageClick('Python')}> Python</span> 
             <span onClick={() => handleLanguageClick('JavaScript')}> JavaScript</span> 

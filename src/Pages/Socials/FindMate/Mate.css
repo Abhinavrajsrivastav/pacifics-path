@@ -81,22 +81,27 @@
   border-radius: 5px;
 }
 
-.navigate-professinals{
+.navigate-professionali{
   margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
-.navigate-professinal span {
+.navigate-professionali span {
   background-color: #25409f;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 15px;
   transition: 0.2s ease-in-out;
 }
 
 .ranking-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: start;
   align-items: start;
   text-align: start;
@@ -105,6 +110,7 @@
 .ranking-item {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: start;
   background-color: #040303;
   border-radius: 10px;
@@ -307,8 +313,8 @@
     gap: 0px;
   }
 
-   .ranking-items {
-    width: 95%;
+   .ranking-item {
+    width: 146px;
   }
 
   .profile-infos {
@@ -322,12 +328,15 @@
   }
 
   .user-profile img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height:40px;
   }
 
+  .user-rankings{
+    margin: 10px;
+  }
   .username {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   .user-details {

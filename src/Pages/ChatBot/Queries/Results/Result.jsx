@@ -8,6 +8,7 @@ function Result() {
 
   const location = useLocation();
   const searchResult = location.state.searchResults;
+  const geminiResponses = location.state.geminiResponse;
   const query  = location.state.query;
 
   return (

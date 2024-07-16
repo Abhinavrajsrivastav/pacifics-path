@@ -14,7 +14,7 @@ const OpenApi = async (query) => {
     let text = '';
     for await (const chunk of result.stream) {
       const chunkText = chunk.text();
-      console.log(chunkText);
+      // console.log(chunkText);
       text += chunkText;
     }
     return text;

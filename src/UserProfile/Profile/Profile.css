@@ -212,7 +212,7 @@ align-items: center;
   }
 
   .classRoom {
-    max-width: 300px;
+    width: auto;
   }
 
   .ressumeClassRoom, .joinClass {

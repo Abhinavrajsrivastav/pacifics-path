@@ -105,7 +105,7 @@ const Compare = () => {
             value={username2}
             onChange={(e) => setUsername2(e.target.value)}
           />
-          <button type="submit">Compare</button>
+          <button className='compare-btn' type="submit">Compare</button>
         </form>
         {error && <p className="error">{error}</p>}
         {renderComparison()}
