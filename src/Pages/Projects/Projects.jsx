@@ -10,40 +10,35 @@ const Projects = () => {
   const projectsSectionRef = useRef(null);
 
   const webDevelopmentProjects = [
-    { name: 'E-commerce Website', emoji: '🛒' },
-    { name: 'Currency Converter', emoji: '💱' },
-    { name: 'Music Application', emoji: '🎵' },
-    { name: 'Blog Platform', emoji: '✍️' },
-    { name: 'Social Media Dashboard', emoji: '📊' },
-    { name: 'Project Management Tool', emoji: '📋' },
-    { name: 'Real-time Chat Application', emoji: '💬' },
+    { name: 'E-commerce App', emoji: '🛒' },
+    { name: 'LMS', emoji: 'Ⓜ️' },
+    { name: 'News App', emoji: '📰' },
+    { name: 'Music player', emoji: '📻' },
+    { name: 'Digital Co2 Footprint', emoji: '♻️' },
+    { name: 'Global Warning', emoji: '🌤️' },
+    { name: 'Real-time Chat App', emoji: '💬' },
     { name: 'Travel Booking Website', emoji: '🌍' },
     { name: 'Job Portal', emoji: '💼' },
-    { name: 'Weather App', emoji: '🌤️' },
-    { name: 'Online Learning Platform', emoji: '📚' },
-    { name: 'Event Management System', emoji: '🎉' },
-    { name: 'Recipe App', emoji: '🍽️' },
+    { name: 'Project Searching', emoji: '🔎' },
+    { name: 'Event Management App', emoji: '🎉' },
+    { name: 'Recipe suggestion', emoji: '🍽️' },
     { name: 'Fitness Tracker', emoji: '🏃' },
-    { name: 'Inventory Management System', emoji: '📦' },
   ];
 
   const programmingLanguagesProjects = [
-    { name: 'Java Banking System', emoji: '🏦' },
-    { name: 'Python Web Scraper', emoji: '🕷️' },
+    { name: 'Banking System', emoji: '🏦' },
+    { name: 'Web Scraper', emoji: '🕷️' },
     { name: 'JavaScript Game Engine', emoji: '🎮' },
     { name: 'C++ Algorithm Visualizer', emoji: '🔧' },
     { name: 'Ruby Inventory Management', emoji: '📦' },
     { name: 'Go REST API', emoji: '🔗' },
     { name: 'Rust Blockchain', emoji: '⛓️' },
-    { name: 'Kotlin Weather App', emoji: '🌦️' },
     { name: 'Swift iOS App', emoji: '📱' },
     { name: 'PHP Content Management System', emoji: '🖥️' },
     { name: 'TypeScript React Components Library', emoji: '⚛️' },
     { name: 'Scala Finance Application', emoji: '💸' },
     { name: 'Perl Automation Script', emoji: '🤖' },
-    { name: 'Haskell AI Algorithm', emoji: '🧠' },
-    { name: 'Elixir Real-time Chat App', emoji: '💬' },
-  ];
+    ];
 
   const dataScienceProjects = [
     { name: 'ML Stock Predictor', emoji: '📈' },
@@ -60,7 +55,8 @@ const Projects = () => {
     { name: 'Computer Vision Application', emoji: '👁️' },
     { name: 'Reinforcement Learning Agent', emoji: '🤖' },
     { name: 'Bioinformatics Tool', emoji: '🧬' },
-    { name: 'AI-driven Recommendation System', emoji: '📚' },
+    { name: 'Sign Language Detection', emoji: '🔎' },
+    
   ];
 
   const otherDomainsProjects = [
@@ -119,7 +115,7 @@ const Projects = () => {
   };
 
   const renderThemes = (themes, title) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+    <div className='projects-box'>
       <h2>{title}</h2>
       <div className="suggested-themes">
         {themes.map((theme) => (
@@ -195,7 +191,7 @@ const Projects = () => {
         {projects.map((project) => (
           <div key={project.id} className="project-item">
             <h2>{project.name}</h2>
-            <p>{project.description}</p>
+            {/* <p>{project.description}</p> */}
             <div className="project-links">
               <a href={project.html_url} target="_blank" rel="noopener noreferrer">
                 <FaGithub />
