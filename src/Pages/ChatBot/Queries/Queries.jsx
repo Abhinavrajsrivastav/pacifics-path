@@ -52,7 +52,7 @@ const Queries = () => {
           onChange={handleQuery}
           disabled={loading}
         />
-        <button id="sendButton" onClick={handleSubmit} disabled={loading}>
+        <button id="sendButton" onClick={handleSubmit} disabled={loading} style={{backgroundColor: "#176cda"}}>
           {loading ? 'Searching...' : 'Search'}
         </button>
       </div>

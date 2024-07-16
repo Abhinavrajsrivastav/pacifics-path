@@ -106,7 +106,8 @@
 @media(max-width: 1005px) {
   .messageBox {
     width: 330px;
-    top: 60px;
-    left: -20px;
+    top: 0px;
+    left: 0px;
+    justify-content: space-between;
   }
 }

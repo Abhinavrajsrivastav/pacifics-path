@@ -20,7 +20,7 @@
   margin: 0px;
   font-family: 'Arial', sans-serif;
   position: relative;
-  left: 10px;
+  left: 0px;
   color: white;
 }
 
@@ -28,12 +28,12 @@
   text-align: center;
   color: #2b86ee;
   font-size: 1.3em;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .bgblue span {
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   cursor: pointer;
   color: rgba(53, 131, 248, 0.535);
   transition: .3s ease-in-out;
@@ -44,7 +44,7 @@
 }
 
 .response-content {
-  line-height: 1.6;
+  line-height: 1.8;
   color: #ffffff;
   background-color: #3b3d3e83;
 }
@@ -73,20 +73,20 @@
 }
 
 .card::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar */
+  width: 5px; 
 }
 
 .card::-webkit-scrollbar-track {
-  background: #f1f1f100; /* Background color of the scrollbar track */
+  background: #f1f1f100; 
 }
 
 .card::-webkit-scrollbar-thumb {
-  background: #2b95ff00; /* Color of the scrollbar thumb */
-  border-radius: 6px; /* Radius of the scrollbar thumb */
+  background: #2b95ff00; 
+  border-radius: 6px;
 }
 
 .card::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color of the scrollbar thumb on hover */
+  background: #555; 
 }
 
 .history-entry, .current-entry {
@@ -112,14 +112,6 @@
   background-color: #0f12157d;
 }
 
-.response-left img {
-  height: 20px;
-  width: auto;
-  border-radius: 50%;
-  position: absolute;
-  top: 10%;
-}
-
 .query-right {
   text-align: right;
   color: #ffffff;
@@ -132,9 +124,6 @@
   margin-bottom: 10px;
 }
 
-.query-right p {
-  /* background-color: var(--bg-color); */
-}
 
 @media (max-width: 1005px) {
   .bgblue {
@@ -142,10 +131,10 @@
     margin-top: 30px;
     margin-left: 0;
     padding: 10px;
+    overflow-x: hidden;
   }
 
   .Gemini-response {
-    width: 100%;
     padding: 0px;
   }
 
@@ -153,23 +142,32 @@
     font-size: 0.9rem;
     padding: 5px;
     max-height: 500px;
-    width: 100%;
+    justify-items: start;
+    text-align: start;
+    align-items: start;
+    width: auto;
     position: relative;
-    right: 15px;
+    right: 30px;
     max-height: 600px;
   }
 
   .response-left {
-    font-size: 1.5rem;
-    padding: 10px;
+    font-size:12px;
+    padding: 19px;
     border: none;
-
+    width: auto;
+    min-width: 250px;
+    max-width: 300px;
+    margin-top: 0px;
   }
 
   .query-right {
     font-size: 0.9rem;
     position: relative;
     margin-left: 0;
+    position: relative;
+    right: 0px;
+    margin-bottom: 0px;
   }
 
   .query-right p {
@@ -179,8 +177,8 @@
   .chat-bot{
     background-color: var(--bg-color);
     position: fixed;
-    top:100%;
-    left: 12%;
+    top: 85%;
+    left: 2%;
     z-index: 1000;
   }
 }
