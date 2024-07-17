@@ -1,16 +1,100 @@
-.footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 90px;
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: var(--bg-color);
+  color: white;
+  align-items: center;
+  gap: 700px;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-copy p {
+  margin: 10px 0;
+}
+
+.footer-github-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-github-button:hover {
+  background-color: #005bb5;
+}
+
+.footer-right h4 {
+  margin-bottom: 10px;
+  color: #005bb5;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.footer-right ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-right ul li {
+  margin: 5px 0;
+}
+
+.footer-right ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-social-icons a {
+  color: white;
+  font-size: 20px;
 }
 
 
 @media(max-width: 1005px){
     .footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 80px;
-}
+        gap: 50px;
+        justify-content: start;
+        text-align: start;
+        align-items: start;
+        padding: 40px 10px;
+    }
 }

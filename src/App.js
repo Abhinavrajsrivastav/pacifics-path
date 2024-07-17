@@ -25,7 +25,8 @@ import Developers from './Components/Welcome/Pages/Working-Features/Developers/D
 import Compare from './Components/Welcome/Pages/Working-Features/Compare/Compare';
 import Footer from './Components/Welcome/Pages/Footer-Page/Footer';
 import Projects from './Pages/Projects/Projects';
-
+import FAQ from './Components/Welcome/Pages/Working-Features/FAQ/FAQ';
+import useSmoothScroll from './useSmoothScroll';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Vision />
               <Features />
               <Testimonials />
+              <FAQ />
               <Developers />
               <Footer />      
             </>
