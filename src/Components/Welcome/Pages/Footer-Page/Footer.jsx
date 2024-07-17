@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-left">
         <div className="footer-logo">
-          <img src="./Icons/Cat.png" alt="Logo" />
+          <img src="./Icons/cat.png" alt="Logo" />
           {/* <FaGoogle  size='25'/> */}
           <span>Educome</span>
         </div>
@@ -28,13 +28,12 @@ const Footer = () => {
         <h4>Important Links</h4>
         <ul>
           <li><a href="#contribute">Contribute</a></li>
-          <li><a href="#product-hunt">Vote on Product Hunt</a></li>
+          <li><a href="#product-hunt">Like on Github</a></li>
         </ul>
         <div className="footer-social-icons">
-          <a href="https://dribbble.com" aria-label="Dribbble"><FaGithub /></a>
-          <a href="https://linkedin.com" aria-label="LinkedIn"><FaLinkedin /></a>
-          <a href="https://github.com" aria-label="GitHub"><FaGithub /></a>
-          <a href="https://xing.com" aria-label="Xing"><FaXing /></a>
+          <a href="https://www.linkedin.com/in/abhinav-raj-srivastava-599aaa1b2/" aria-label="LinkedIn"><FaLinkedin /></a>
+          <a href="https://github.com/Abhinavrajsrivastav" aria-label="GitHub"><FaGithub /></a>
+          <a href="https://twitter.com/srivast254" aria-label="Xing"><FaXing /></a>
         </div>
       </div>
     </footer>

@@ -10,12 +10,12 @@ const FAQ = () => {
   };
 
   const faqs = [
-    "What is Git-Re?",
-    "Is Git-Re free to use?",
-    "How do I create a dynamic resume on Git-Re?",
+    "What is Educome?",
+    "Is Educome free to use?",
+    "How do I create a dynamic resume on Educome?",
     "What is the Leaderboard feature?",
     "How is the ranking determined on the Leaderboard?",
-    "How can I compare my performance with other users on Git-Re?",
+    "How can I compare my performance with other users on Educome?",
     "How do I provide feedback or suggest features?",
   ];
 
