@@ -39,6 +39,7 @@ const Testemonials = () => {
   return (
     <div className="github-profiles" id="Testemonials">
       <span>Here are some of our recent <span className='testemonial-user'>users</span></span>
+        {/* <img src=".Icons/Cat.png" className='profile-pic'/> */}
       <div className="user-ranking">
         <table className="ranking-tables">
           <thead>

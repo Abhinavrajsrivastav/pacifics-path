@@ -19,9 +19,12 @@
 .user-ranking {
   width: 100%;
   max-width: 600px;
-  padding: 20px;
+  padding: 100px 120px;
   border-radius: 10px;
-  border: 0px solid #1355b2a5;
+  background: rgba(13, 35, 69, 0.262);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0061ff", endColorstr="#E5C0EE", GradientType=1 );
+  color: rgb(255, 255, 255);
+  border: 1px hsla(217, 100%, 50%, 1) solid;
 }
 
 .testemonial-user{
@@ -52,7 +55,7 @@
   border-radius: 5px;
   background-color: 1355b2a5;
   color: white;
-  font-size: 14px;
+  font-size: 20px;
   transition: background-color 0.3s ease;
 }
 
@@ -87,8 +90,8 @@
 }
 
 .profile-pic {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
@@ -106,7 +109,7 @@
   }
 
   .user-ranking {
-    padding: 10px;
+    padding: 60px 10px;
 
   }
 

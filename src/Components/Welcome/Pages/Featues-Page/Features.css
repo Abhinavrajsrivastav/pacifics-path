@@ -58,19 +58,72 @@
 
 .features-body {
   display: flex;
-  flex-wrap: wrap;
-  padding: 80px;
-  margin-top: 30px;
-  justify-content: space-evenly;
-  border-radius: 10px;
-  background-color: var(--bg-color); /* Ensure background color consistency */
+  flex-direction: column;
+  padding: 0px 0px;
+  margin-top: 100px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-radius: 0px;
+  background-color: var(--bg-color);
 }
 
 .features-card {
-  width: calc(30% - 20px); /* Adjusted width and added margin */
-  margin-right: 20px; /* Added margin between cards */
+  width: 300px;
   margin-bottom: 30px;
+  padding: 6px;
+  border-radius: 20px; /* Added border-radius for rounded corners */
+  border: 1px hsla(217, 100%, 50%, 1) solid; /* Added solid border for clarity */
+  transition: transform 0.3s, box-shadow 0.3s; 
+  transition: .3s ease-in-out;
+  /* box-shadow: 0 0px 20px 1px var(--main-color, .5); */
 }
+
+/* Add hover effect */
+.features-card:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+   box-shadow: 0 0px 20px 1px var(--main-color)
+}
+
+
+.feature-card-1{
+   display: flex;
+   justify-content: end;
+   align-items: end;
+   width: 100%;
+   padding-right: 350px;
+}
+
+.feature-card-2{
+   width: 100%;
+   padding-left: 350px;
+}
+
+.feature-card-3{
+   display: flex;
+   justify-content: end;
+   align-items: end;
+   width: 100%;
+   padding-right: 350px;
+}
+
+.feature-card-4{
+   width: 100%;
+   padding-left: 350px;
+}
+.feature-card-5{
+   display: flex;
+   justify-content: end;
+   align-items: end;
+   width: 100%;
+   padding-right: 350px;
+}
+
+.feature-card-6{
+   width: 100%;
+   padding-left: 350px;
+}
+
 
 @media (max-width: 1005px) {
   .features-page {
@@ -78,7 +131,7 @@
   }
 
   .features-card {
-    width: 100%; /* Full width on smaller screens */
+    width: 300px; /* Full width on smaller screens */
     margin-right: 0; /* Remove margin on smaller screens */
     margin-bottom: 20px; /* Adjusted margin */
   }
@@ -96,4 +149,6 @@
   .features-body {
     padding: 20px; /* Adjusted padding for smaller screens */
   }
+
+
 }
