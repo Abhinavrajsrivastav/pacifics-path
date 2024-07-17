@@ -12,6 +12,11 @@ body{
     font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 :root {
   --main-color: rgba(32, 81, 127, 0.995);
