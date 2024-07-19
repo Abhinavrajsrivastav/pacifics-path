@@ -8,6 +8,7 @@ import './Navbar.css';
 
 function NavBar() {
     const [menuActive, setMenuActive] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const authContext = useContext(AuthContext); 
     const { setUser, user, auth, data, setData } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -32,25 +33,52 @@ function NavBar() {
                             Educome
                         </Typography>
                     </div>
-                     <div>
+                    <div>
                         {window.innerWidth <= 1005 ? (
-                        <IconButton edge="end" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-                            <MenuIcon />
-                        </IconButton>
-                    ) : null}
-                     </div>
+                            <IconButton edge="end" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+                                <MenuIcon />
+                            </IconButton>
+                        ) : null}
+                    </div>
                 </div>
                 <div className="nav-links">
                     {window.innerWidth > 1005 && 
-        <>
-        <Link to="/pacifics-path"><a href="#" className="nav-link" style={{opacity: "1"}}>Home</a></Link>
-        <a href="#" className="nav-link">About</a>
-       <a href="#Testemonials" className="nav-link">Testimonials</a>
-       <a href="#dev" >Us</a> 
-        {email==null?<Link to="/login"><button className="nav-login-btn">login</button></Link>:<div className='log-out-btns'style={{display:"flex", gap: "8px"}}><Link to="Compare"><a  className='nav-compare-btn'><Leaderboard /></a></Link><a onClick={()=>logout()} className='nav-logout-btn'><Logout /></a></div>}
-        </>
-        }
-        {email==null?<Link to="/signup"><button className="nav-login-btn">SignUp</button></Link>:<img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={()=>navigate("/profile")}></img>}
+                        <>
+                            <Link to="/pacifics-path"><a href="#" className="nav-link">Home</a></Link>
+                            <a href="#" className="nav-link">About</a>
+                            <a href="#Testemonials" className="nav-link">Testimonials</a>
+                            <a href="#dev" className="nav-link">Us</a>
+                            <div className="nav-dropdown" >
+                                <button className="nav-dropdown-button nav-link" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                                    Explore
+                                </button>
+                                <div className={`nav-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                                    <Link to="/github-profile" className="nav-dropdown-item">GitHub</Link>
+                                    <Link to="/projects" className="nav-dropdown-item">Projects</Link>
+                                    <Link to="/read-books" className="nav-dropdown-item">Read Books</Link>
+                                    <Link to="/git-mate" className="nav-dropdown-item">Find Mates</Link>
+                                    <Link to="/read-books" className="nav-dropdown-item">LeaderBoard</Link>
+                                    <Link to="/selfLearn" className="nav-dropdown-item">Learn With Ai</Link>
+                                </div>
+                            </div>
+                            {email == null ? (
+                                <>
+                                    <Link to="/login"><button className="nav-login-btn">login</button></Link>
+                                    {/* <Link to="/signup"><button className="nav-login-btn">SignUp</button></Link> */}
+                                </>
+                            ) : (
+                                <div className='log-out-btns' style={{display:"flex", gap: "8px"}}>
+                                    <Link to="Compare"><a className='nav-compare-btn'><Leaderboard /></a></Link>
+                                    <a onClick={() => logout()} className='nav-logout-btn'><Logout /></a>
+                                </div>
+                            )}
+                        </>
+                    }
+                    {email == null ? (
+                        <Link to="/signup"><button className="nav-login-btn">SignUp</button></Link>
+                    ) : (
+                        <img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={() => navigate("/profile")} alt="Profile" />
+                    )}
                 </div>
             </Toolbar>
             <Drawer
@@ -61,6 +89,8 @@ function NavBar() {
                     '& .MuiDrawer-paper': {
                         backgroundColor: 'black',
                         color: 'white',
+                        textAlign: 'end',
+                        
                     },
                 }}
             >
@@ -69,8 +99,11 @@ function NavBar() {
                         <CloseIcon style={{ color: 'white' }} />
                     </IconButton>
                 </div>
-                <List>
-                    {email&&<ListItem button component={Link} to="/profile">
+                <List style={{justifyContent: 'end', textAlign:'end',alignItems: 'end'}}>
+                    <ListItem button component="a" href="#dev">
+                        <ListItemText primary="Us" />
+                    </ListItem>
+                    {email && <ListItem button component={Link} to="/profile">
                         <ListItemText primary="Profile" />
                     </ListItem>}
                     <ListItem button component={Link} to="/pacifics-path">
@@ -81,9 +114,6 @@ function NavBar() {
                     </ListItem>
                     <ListItem button component="a" href="#Testemonials">
                         <ListItemText primary="Testimonials" />
-                    </ListItem>
-                    <ListItem button component="a" href="#dev">
-                        <ListItemText primary="Us" />
                     </ListItem>
                     {email == null ? (
                         <>
@@ -100,11 +130,11 @@ function NavBar() {
                                 <ListItemText primary="Compare" />
                             </ListItem>
                             <ListItem button onClick={() => logout()}>
-                                <ListItemText primary="Logout" />
+                                <Logout />
                             </ListItem>
-                            <ListItem>
+                            {/* <ListItem>
                                 <Avatar src={data.photoURL} onClick={() => navigate("/profile")} alt="Profile" />
-                            </ListItem>
+                            </ListItem> */}
                         </>
                     )}
                 </List>
