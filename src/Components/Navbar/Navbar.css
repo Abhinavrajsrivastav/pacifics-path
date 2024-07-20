@@ -156,6 +156,8 @@
     text-align: end;
 }
 
+
+
 @media (max-width: 1005px) {
     .nav-links {
         display: none;

@@ -103,9 +103,30 @@ function NavBar() {
                     <ListItem button component="a" href="#dev">
                         <ListItemText primary="Us" />
                     </ListItem>
-                    {email && <ListItem button component={Link} to="/profile">
+                    {email &&<>
+                    <ListItem button component={Link} to="/profile">
                         <ListItemText primary="Profile" />
-                    </ListItem>}
+                    </ListItem>
+                    <ListItem button component={Link} to="/gitbub-profile">
+                        <ListItemText primary="GitHub" />
+                    </ListItem>
+                     <ListItem button component={Link} to="/projects">
+                        <ListItemText primary="Projects" />
+                    </ListItem>
+                     <ListItem button component={Link} to="/read-books">
+                        <ListItemText primary="Read Books" />
+                    </ListItem>
+                     <ListItem button component={Link} to="/git-mate">
+                        <ListItemText primary="Finds Mates" />
+                    </ListItem>
+                     <ListItem button component={Link} to="/Leader-board">
+                        <ListItemText primary="Learder Board" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/self-Learn">
+                        <ListItemText primary="Learn With Ai" />
+                    </ListItem>
+                    </> 
+                    }
                     <ListItem button component={Link} to="/pacifics-path">
                         <ListItemText primary="Home" />
                     </ListItem>
