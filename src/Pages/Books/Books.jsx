@@ -150,8 +150,7 @@ const Books = () => {
 
   return (
     <div className="book-search-container">
-      <h1>Book Library</h1>
-      
+      <h1>Book Library</h1>    
       {renderThemes(webDevelopmentBooks, 'Web Development')}
       {renderThemes(programmingLanguagesBooks, 'Programming Languages')}
       {renderThemes(dataScienceBooks, 'Data Science')}

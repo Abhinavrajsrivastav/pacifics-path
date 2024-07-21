@@ -5,13 +5,12 @@
   flex-direction: column;
   align-items: center;
   text-align: start;
-  padding: 50px 30px;
+  padding: 100px 30px  20px 30px;
   background-color: var(--bg-color);
   color: white;
-  min-height: 100vh;
+  height: 100%;
   font-family: 'Arial', sans-serif;
   position: relative;
-  top: 60px;
   justify-content: center;
 }
 
@@ -29,15 +28,18 @@
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 20px;
-  width: 800px;
+  width: 100%;
   border-radius: 10px;
 }
 
 .theme-button {
-  padding: 10px 20px;
+  padding: 15px 20px;
   border: none;
+  width: 49%;
   border-radius: 5px;
-  /* border: .1px solid #9e9e9e; */
+  justify-content: start;
+  align-items: start;
+  text-align: start;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -56,6 +58,8 @@
   border-radius: 5px;
   font-size: 1rem;
   margin-bottom: 10px;
+  position: relative;
+  left: 15px;
 }
 
 .project-search-button {
@@ -67,6 +71,8 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: relative;
+  left: 15px;
 }
 
 .project-search-button:hover {
@@ -96,9 +102,9 @@
 }
 
 .project-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
   scale: 1.05;
+  background-color: #28282be4;
 }
 
 .project-item h2 {
@@ -150,9 +156,10 @@
 .projects-box{
   display: flex;
   flex-direction: column;
+  text-align: start;
+  align-items: start;
   width: 100%;
   max-width: 1000px;
-  border: 1px solid #f8f8f8;
   padding: 20px;
   border-radius: 10px;
 }
@@ -166,22 +173,18 @@
 
 @media(max-width: 1005px) {
   .projects-container {
-    justify-content: center;
-    gap: 0px;
-    width: 320px;
+    justify-content: start;
     position: relative;
     left: 20px;
   }
 
   .project-item {
-    width: 100%;
     padding: 10px;
   }
 
   .Project-con{
    max-width: auto;
    padding: 50px 0px;
-   /* overflow-x: hidden; */
   }
 
   .Project-con h1{
@@ -201,12 +204,13 @@
   }
 
   .suggested-themes {
-    width: auto;
+    width: 100%;
   }
 
   .theme-button {
-    padding: 4px 8px;
-    width: 102px;
+    padding: 10px 15px;
+    width: 49%;
+    max-width: 170px;
     font-size: 10px;
   }
 
@@ -217,6 +221,6 @@
   .projects-box{
     display: flex;
     flex-wrap: wrap;
-    width: 330px;
+    padding: 0px;
   }
 }

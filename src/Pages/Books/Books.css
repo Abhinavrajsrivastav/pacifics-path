@@ -3,44 +3,48 @@
 .book-search-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  padding: 50px 20px;
-  padding-left: 200px;
+  align-items: center;
+  text-align: start;
+  padding: 100px 30px  20px 30px;
   background-color: var(--bg-color);
   color: white;
-  min-height: 100vh;
+  height: 100%;
   font-family: 'Arial', sans-serif;
   position: relative;
-  top: 60px;
+  justify-content: start;
 }
 
 .book-search-container h1 {
   font-size: 2.5rem;
   color: #f5f5f5;
   margin-bottom: 30px;
+  text-align: start;
+  align-items: start;
+  /* justify-content: start; */
 }
 
 .suggested-themes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 6px;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 1200px;
-  /* box-shadow: -1px -1px 93px 105px rgba(16, 31, 83, 0.578); */
   border-radius: 10px;
-  background-color: var(--bg-color));
 }
 
 .theme-buttoni {
-  padding: 10px 20px;
+  padding: 15px 20px;
   border: none;
+  width: 49%;
   border-radius: 5px;
-  background-color: #2626275d;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
   color: white;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.334);
 }
 
 .theme-buttoni:hover {
@@ -48,16 +52,18 @@
 }
 
 .book-search-input {
-  width: 300px;
+ width: 300px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
   margin-bottom: 10px;
+  position: relative;
+  left: 15px;
 }
 
 .book-search-button {
-  padding: 10px 20px;
+   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   background-color: #1c317e;
@@ -65,6 +71,8 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: relative;
+  left: 15px;
 }
 
 .book-search-button:hover {
@@ -74,23 +82,23 @@
 .books-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   gap: 20px;
   margin-top: 20px;
   width: 100%;
+  max-width: 900px;
 }
 
 .book-item {
-  width: 240px;
-  border: 1px solid #444;
+  width: 250px;
+  border: 1px solid #f8f8f8;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 15px;
-  text-align: start;
+  text-align: left;
   transition: box-shadow 0.5s ease-in-out, transform 0.3s ease;
-  transition: 0.1s ease-in-out;
+  transition: .1s ease-in-out;
   color: white;
-  max-height: 200px;
 }
 
 .book-item:hover {
@@ -141,12 +149,14 @@
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #f5f5f5;
 }
 
 .books-box h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  text-align: start;
+  align-items: start;
+  justify-content: start;
 }
 
 .search-container button{
@@ -163,11 +173,13 @@
 @media(max-width: 1005px){
 
   .book-search-container {
-    padding-left: 10px;
+    justify-content: start;
+    position: relative;
+    left: 0px;
   }
       .theme-buttoni {
-        padding: 4px 8px;
-        width: 101px;
+        padding: 8px 10px;
+        width: 49%;
         font-size: 10px;
     }
 
@@ -178,6 +190,5 @@
 
     .books-box{
       width: 100%;
-      max-width: 325px;
     }
 }
