@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './Books.css';
-import { FaBook, FaLink } from 'react-icons/fa';
+import { FaArrowAltCircleDown, FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowLeft, FaArrowRight, FaBook, FaFire, FaLink } from 'react-icons/fa';
 
 const Books = () => {
   const [query, setQuery] = useState('');
@@ -104,7 +104,14 @@ const Books = () => {
       <div className="suggested-themes">
         {themes.map((theme) => (
           <button key={theme.name} className="theme-buttoni" onClick={() => handleThemeClick(theme)}>
-            {theme.emoji} {theme.name}
+            <div className='theme-buttons'>
+              <div>
+              {theme.emoji} {theme.name} 
+            </div>
+            <div className='themeArrow'>
+              {<FaFire size='12' color="blue"/>}
+            </div>
+            </div>
           </button>
         ))}
       </div>
@@ -163,7 +170,7 @@ const Books = () => {
           onChange={handleInputChange}
           placeholder="Enter book category (e.g., web development, data science)"
         />
-        <button onClick={handleButtonClick}>
+        <button onClick={handleButtonClick} >
           Search
         </button>
       </div>

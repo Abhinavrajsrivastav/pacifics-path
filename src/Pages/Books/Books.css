@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   text-align: start;
-  padding: 100px 30px  20px 30px;
+  padding: 150px 30px  20px 30px;
   background-color: var(--bg-color);
   color: white;
   height: 100%;
@@ -20,7 +20,8 @@
   margin-bottom: 30px;
   text-align: start;
   align-items: start;
-  /* justify-content: start; */
+  position: relative;
+  right: 432px;
 }
 
 .suggested-themes {
@@ -47,14 +48,28 @@
   background-color: rgba(0, 0, 0, 0.334);
 }
 
-.theme-buttoni:hover {
-  background-color: #08112091;
+.theme-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.theme-buttoni:hover {
+  background-color: #29519591;
+}
+
+.themeArrow{
+  opacity: 0;
+}
+
+.theme-buttoni:hover .themeArrow{
+  opacity: 1;
+}
+
 
 .book-search-input {
  width: 300px;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
   margin-bottom: 10px;
@@ -62,11 +77,21 @@
   left: 15px;
 }
 
-.book-search-button {
+.search-container input{
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  position: relative;
+  left: 15px;
+}
+
+.search-container button{
    padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #1c317e;
+  background-color: #2140ad;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -75,8 +100,8 @@
   left: 15px;
 }
 
-.book-search-button:hover {
-  background-color: #120e40;
+.search-container button:hover {
+  background-color: #3f30e6;
 }
 
 .books-container {
@@ -127,7 +152,6 @@
 }
 
 .book-links a {
-  color: #1c317e;
   font-size: 1.5rem;
 }
 
@@ -147,7 +171,6 @@
 .books-box {
   width: 80%;
   margin-bottom: 20px;
-  padding: 20px;
   border-radius: 10px;
 }
 
@@ -159,22 +182,13 @@
   justify-content: start;
 }
 
-.search-container button{
-  background-color: rgb(7, 17, 45);
-  padding: 10px 15px;
-  border-radius: 7px;
-  color: white;
-}
-
- .search-container button:hover{
-  background-color: rgb(11, 34, 95);
- }
 
 @media(max-width: 1005px){
 
   .book-search-container {
     justify-content: start;
     position: relative;
+    padding-top: 100px;
     left: 0px;
   }
       .theme-buttoni {
@@ -190,5 +204,26 @@
 
     .books-box{
       width: 100%;
+    }
+
+    .search-container{
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      left: -40px;
+      gap: 10px;
+    }
+
+    .search-container input{
+      width: 200px;
+      padding: 8px;
+      margin: 0px;
+      font-size: 10px;
+    }
+
+    .search-container button{
+    top: 0px;
+    margin: 0px;
+    padding: 4px 8px;
     }
 }
