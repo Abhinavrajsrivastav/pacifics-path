@@ -33,7 +33,7 @@ function App() {
       <AuthProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={
+          <Route path="/pacifics-path" element={
             <>
               <Vision />
               <Features />
