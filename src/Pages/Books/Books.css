@@ -6,7 +6,7 @@
   align-items: start;
   padding: 50px 20px;
   padding-left: 200px;
-  background-color: rgb(7, 17, 45);
+  background-color: var(--bg-color);
   color: white;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
@@ -27,17 +27,16 @@
   margin-bottom: 20px;
   width: 100%;
   max-width: 1200px;
-  box-shadow: -1px -1px 93px 105px rgba(16, 31, 83, 0.578);
+  /* box-shadow: -1px -1px 93px 105px rgba(16, 31, 83, 0.578); */
   border-radius: 10px;
-  background-color: rgba(16, 31, 83, 0.578);
+  background-color: var(--bg-color));
 }
 
 .theme-buttoni {
   padding: 10px 20px;
   border: none;
-  border-radius: 10px;
-  border: 0.1px solid #9e9e9e;
-  background-color: #1434718a;
+  border-radius: 5px;
+  background-color: #2626275d;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -45,7 +44,7 @@
 }
 
 .theme-buttoni:hover {
-  background-color: #103c7e91;
+  background-color: #08112091;
 }
 
 .book-search-input {

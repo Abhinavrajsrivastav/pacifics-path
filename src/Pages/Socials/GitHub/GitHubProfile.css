@@ -55,6 +55,7 @@ button {
   padding: 0;
   font-size: inherit;
   font-family: inherit;
+  color: black;
 }
 
 button.learn-more {

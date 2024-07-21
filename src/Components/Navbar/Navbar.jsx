@@ -107,7 +107,7 @@ function NavBar() {
                     <ListItem button component={Link} to="/profile">
                         <ListItemText primary="Profile" />
                     </ListItem>
-                    <ListItem button component={Link} to="/gitbub-profile">
+                    <ListItem button component={Link} to="/github-profile">
                         <ListItemText primary="GitHub" />
                     </ListItem>
                      <ListItem button component={Link} to="/projects">
@@ -122,7 +122,7 @@ function NavBar() {
                      <ListItem button component={Link} to="/Leader-board">
                         <ListItemText primary="Learder Board" />
                     </ListItem>
-                    <ListItem button component={Link} to="/self-Learn">
+                    <ListItem button component={Link} to="/selfLearn">
                         <ListItemText primary="Learn With Ai" />
                     </ListItem>
                     </> 

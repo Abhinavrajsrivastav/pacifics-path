@@ -107,7 +107,7 @@ const Compare = () => {
           />
           <button className='compare-btn' type="submit">Compare</button>
         </form>
-        {error && <p className="error">{error}</p>}
+        {/* {error && <p className="error">{error}</p>} */}
         {renderComparison()}
       </div>
     </div>

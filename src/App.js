@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Signup from './Components/Signup/Signup';
@@ -8,7 +8,6 @@ import Features from './Components/Welcome/Pages/Featues-Page/Features';
 import HowWork from './Components/Welcome/Pages/How-Work-Page/HowWork';
 import Profile from './UserProfile/Profile/Profile';
 import { AuthProvider } from './Components/Context/AuthProvider';
-import { AuthContext } from './Components/Context/AuthProvider';
 import Categories from './Categories/Categories';
 import PopupForm from './Categories/PopopForm';
 import SelfLearn from './Pages/SelfLearnign/SelfLearn';
@@ -34,14 +33,13 @@ function App() {
       <AuthProvider>
         <Navbar />
         <Routes>
-          <Route path="/pacifics-path" element={
+          <Route path="/" element={
             <>
               <Vision />
               <Features />
               <Testimonials />
               <FAQ />
               <Developers />
-              <Footer />      
             </>
           } />
           <Route path="/login" element={<Login />} />
@@ -58,6 +56,7 @@ function App() {
           <Route path="/Compare" element={<Compare />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
+        <Footer />
       </AuthProvider>
     </Router>
   );
