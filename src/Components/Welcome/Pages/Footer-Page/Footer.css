@@ -1,3 +1,5 @@
+
+
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +9,7 @@
   color: white;
   align-items: center;
   gap: 700px;
+  padding-top: 150px;
 }
 
 .footer-left, .footer-right {
@@ -29,7 +32,7 @@
 
 .footer-nav {
   display: flex;
-  gap: 3px;
+  gap: 4px;
   margin: 10px 0;
 }
 

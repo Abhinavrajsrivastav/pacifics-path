@@ -40,14 +40,15 @@ h2 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  padding: 0 15px;
+  padding: 0 10px;
   transition: .2s ease-in-out;
   font-size: 12px;
 }
 
 .faq-answer.show {
   max-height: 200px; /* Adjust as needed */
-  padding: 15px;
+  padding: 0px 10px  10px 10px;
+  color: white;
 }
 
 .faq-answer p {

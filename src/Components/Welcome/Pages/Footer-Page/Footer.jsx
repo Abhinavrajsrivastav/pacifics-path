@@ -12,9 +12,9 @@ const Footer = () => {
           <span>Educome</span>
         </div>
         <div className="footer-nav">
-          <a href="#code">•Code</a>
-          <a href="#showcase">•Showcase</a>
-          <a href="#impress">•Impress</a>
+          <a href="#code">Coding</a>
+          <a href="#showcase">Storytelling</a>
+          <a href="#impress">Exploring</a>
         </div>
         <div className="footer-copy">
           <p>© 2024 Made with 💙by Abhinav Srivastav</p>
@@ -25,7 +25,7 @@ const Footer = () => {
         </button>
       </div>
       <div className="footer-right">
-        <h4>Important Links</h4>
+        <h4>Dev Links</h4>
         <ul>
           <li><a href="#contribute">Contribute</a></li>
           <li><a href="#product-hunt">Like on Github</a></li>

@@ -53,11 +53,11 @@ function NavBar() {
                                     Explore
                                 </button>
                                 <div className={`nav-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                                    <Link to="/github-profile" className="nav-dropdown-item">GitHub</Link>
+                                    <Link to="/github-profile" className="nav-dropdown-item">Search dev</Link>
                                     <Link to="/projects" className="nav-dropdown-item">Projects</Link>
                                     <Link to="/read-books" className="nav-dropdown-item">Read Books</Link>
                                     <Link to="/git-mate" className="nav-dropdown-item">Find Mates</Link>
-                                    <Link to="/read-books" className="nav-dropdown-item">LeaderBoard</Link>
+                                    <Link to="/learderboard" className="nav-dropdown-item">LeaderBoard</Link>
                                     <Link to="/selfLearn" className="nav-dropdown-item">Learn With Ai</Link>
                                 </div>
                             </div>
@@ -77,7 +77,8 @@ function NavBar() {
                     {email == null ? (
                         <Link to="/signup"><button className="nav-login-btn">SignUp</button></Link>
                     ) : (
-                        <img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={() => navigate("/profile")} alt="Profile" />
+                        null
+                        // <img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={() => navigate("/profile")} alt="Profile" />
                     )}
                 </div>
             </Toolbar>
@@ -103,13 +104,22 @@ function NavBar() {
                     <ListItem button component="a" href="#dev">
                         <ListItemText primary="Us" />
                     </ListItem>
+                     <ListItem button component={Link} to="/pacifics-path">
+                        <ListItemText primary="Home" />
+                    </ListItem>
+                    <ListItem button component="a" href="#">
+                        <ListItemText primary="About" />
+                    </ListItem>
                     {email &&<>
-                    <ListItem button component={Link} to="/profile">
+                    {/* <ListItem button component={Link} to="/profile">
                         <ListItemText primary="Profile" />
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem button component={Link} to="/github-profile">
-                        <ListItemText primary="GitHub" />
+                        <ListItemText primary="Search dev" />
                     </ListItem>
+                    <ListItem button component={Link} to="Compare">
+                                <ListItemText primary="Compare" />
+                  </ListItem>
                      <ListItem button component={Link} to="/projects">
                         <ListItemText primary="Projects" />
                     </ListItem>
@@ -119,7 +129,7 @@ function NavBar() {
                      <ListItem button component={Link} to="/git-mate">
                         <ListItemText primary="Finds Mates" />
                     </ListItem>
-                     <ListItem button component={Link} to="/Leader-board">
+                     <ListItem button component={Link} to="/learderboard">
                         <ListItemText primary="Learder Board" />
                     </ListItem>
                     <ListItem button component={Link} to="/selfLearn">
@@ -127,16 +137,15 @@ function NavBar() {
                     </ListItem>
                     </> 
                     }
-                    <ListItem button component={Link} to="/pacifics-path">
-                        <ListItemText primary="Home" />
-                    </ListItem>
-                    <ListItem button component="a" href="#">
-                        <ListItemText primary="About" />
-                    </ListItem>
                     <ListItem button component="a" href="#Testemonials">
                         <ListItemText primary="Testimonials" />
                     </ListItem>
-                    {email == null ? (
+                    {email!=null&&<>
+                     <ListItem button onClick={() => logout()}>
+                                <Logout />
+                            </ListItem>
+                    </>}
+                    {email == null&&
                         <>
                             <ListItem button component={Link} to="/login">
                                 <ListItemText primary="Login" />
@@ -145,19 +154,10 @@ function NavBar() {
                                 <ListItemText primary="SignUp" />
                             </ListItem>
                         </>
-                    ) : (
-                        <>
-                            <ListItem button component={Link} to="Compare">
-                                <ListItemText primary="Compare" />
-                            </ListItem>
-                            <ListItem button onClick={() => logout()}>
-                                <Logout />
-                            </ListItem>
+                    }
                             {/* <ListItem>
-                                <Avatar src={data.photoURL} onClick={() => navigate("/profile")} alt="Profile" />
-                            </ListItem> */}
-                        </>
-                    )}
+                            //     <Avatar src={data.photoURL} onClick={() => navigate("/profile")} alt="Profile" />
+                            // </ListItem> */}
                 </List>
             </Drawer>
         </AppBar>

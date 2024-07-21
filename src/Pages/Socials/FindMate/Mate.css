@@ -287,7 +287,7 @@
     min-width: 300px;
   }
 
-  .user-rankings {
+  .user-rankinges {
     padding: 15px;
     margin: 20px;
     width: 88%;
@@ -311,10 +311,13 @@
     align-items: start;
     text-align: start;
     gap: 0px;
+    padding: 0px 20px 0px 20px;
   }
 
    .ranking-item {
-    width: 146px;
+    width: 90%;
+    position: relative;
+    left: 10px;
   }
 
   .profile-infos {

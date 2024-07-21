@@ -16,14 +16,13 @@
 
 
 
-.user-ranking {
+.user-rankings {
   width: 100%;
   max-width: 600px;
-  padding: 80px 80px;
   border-radius: 10px;
-  background: rgba(13, 35, 69, 0.262);
+  background: rgba(13, 35, 69, 0);
   color: rgb(255, 255, 255);
-  border: 1px hsla(217, 100%, 50%, 1) solid;
+  border: 0px hsla(217, 100%, 50%, 1) solid;
 }
 
 .testemonial-user{
@@ -69,10 +68,18 @@
   text-align: start;
 }
 
+th{
+  padding: 10px;
+}
+
 .ranking-tables th, .ranking-tables td {
   border: 0px solid #ddd;
-  padding: 8px;
   text-align: start;
+}
+
+.crown-icon {
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 .ranking-tables th {
@@ -88,9 +95,9 @@
   background-color: 1355b2a5;
 }
 
-.profile-pic {
-  width: 60px;
-  height: 60px;
+.profile-pics {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
@@ -107,13 +114,13 @@
     font-size: 20px;
   }
 
-  .user-ranking {
+  .user-rankings {
     padding: 60px 10px;
 
   }
 
-  .profile-pic {
-    width: 30px;
-    height: 30px;
+  .profile-pics {
+    width: 20px;
+    height: 20px;
   }
 }

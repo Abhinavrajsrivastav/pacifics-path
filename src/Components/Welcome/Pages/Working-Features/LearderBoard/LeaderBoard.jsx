@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FaJava, FaJs, FaPython, FaGithub, FaReact } from 'react-icons/fa';
-import './Testemonials.css';
+import { FaCrown } from 'react-icons/fa';
+import './LeaderBoard.css';
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import { app } from '../../../../Firebase/Firebase';
 
-const Testemonials = () => {
+const LeaderBoard = () => {
   const [userRankings, setUserRankings] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
@@ -21,8 +21,7 @@ const Testemonials = () => {
         rankings.push(doc.data());
       });
       rankings.sort((a, b) => b.devScore - a.devScore);
-      // Slice to show only the first 5 users
-      setUserRankings(rankings.slice(0, 5));
+      setUserRankings(rankings.slice(0, 50));
     } catch (error) {
       console.error('Error fetching user rankings:', error);
     }
@@ -32,19 +31,27 @@ const Testemonials = () => {
     fetchUserRankings(selectedLanguage);
   }, [selectedLanguage]);
 
-  const handleSeeProfileClick = (username) => {
-    window.open(`https://github.com/${username}`, '_blank');
+  const getCrownColor = (index) => {
+    switch(index) {
+      case 0:
+        return 'gold';
+      case 1:
+        return 'silver';
+      case 2:
+        return '#cd7f32'; // bronze
+      default:
+        return 'transparent';
+    }
   };
 
   return (
     <div className="github-profiles" id="Testemonials">
-      <span>Here are some of our recent <span className='testemonial-user'>users</span></span>
-        {/* <img src=".Icons/Cat.png" className='profile-pic'/> */}
-      <div className="user-ranking">
+       <span><span className='testemonial-user'>LeaderBoard</span></span>
+      <div className="user-rankings">
         <table className="ranking-tables">
           <thead>
             <tr>
-              {/* <th>Rank</th> */}
+              <th>Rank</th>
               <th>Avatar</th>
               <th>Username</th>
               <th>Rating</th>
@@ -52,12 +59,20 @@ const Testemonials = () => {
           </thead>
           <tbody>
             {userRankings.map((user, index) => (
-              <tr key={index}>
-                {/* <td>{index + 1}</td> */}
-                <td><img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pic" /></td>
-                <td>{user.username}</td>
-                <td>{user.devScore}</td>
-              </tr>
+              <React.Fragment key={index}>
+                <tr>
+                  <td>{index + 1}</td>
+                  <td><img src={`https://github.com/${user.username}.png`} alt="Profile" className="profile-pics" /></td>
+                  <td>
+                    {index < 3 && (
+                      <FaCrown color={getCrownColor(index)} className="crown-icon" />
+                    )}
+                    {user.username}
+                  </td>
+                  <td>{user.devScore}</td>
+                </tr>
+                <tr><td colSpan="4"><hr /></td></tr>
+              </React.Fragment>
             ))}
           </tbody>
         </table>
@@ -66,4 +81,4 @@ const Testemonials = () => {
   );
 };
 
-export default Testemonials;
+export default LeaderBoard;

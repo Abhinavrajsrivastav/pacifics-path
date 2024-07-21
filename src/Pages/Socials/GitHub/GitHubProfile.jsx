@@ -231,7 +231,7 @@ const GitHubProfile = () => {
         </div>
       )}
       {username && (
-        <div className="user-rankings">
+        <div className="user-rankinges">
           <h2>User Rankings</h2> 
             <div className='navigate-professinals'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 

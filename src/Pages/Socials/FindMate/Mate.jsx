@@ -57,9 +57,8 @@ const Mate = () => {
 
   return (
     <div className="github-profile">
-      <div className="user-rankings">
-        <h2>
-          User Rankings 
+      <h2>User Rankings</h2>
+      <div className="user-rankinges">
           <div className='navigate-professionali'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 
             <span onClick={() => handleLanguageClick('Python')}> Python</span> 
@@ -67,7 +66,6 @@ const Mate = () => {
             <span onClick={() => handleLanguageClick('React')}> React</span>
             <span onClick={() => handleLanguageClick('')}> All</span>
           </div>
-        </h2>
         <div className="ranking-list">
           {userRankings.map((user, index) => (
             <div className="ranking-item" key={index}>

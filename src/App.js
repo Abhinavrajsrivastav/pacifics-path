@@ -26,6 +26,7 @@ import Footer from './Components/Welcome/Pages/Footer-Page/Footer';
 import Projects from './Pages/Projects/Projects';
 import FAQ from './Components/Welcome/Pages/Working-Features/FAQ/FAQ';
 import useSmoothScroll from './useSmoothScroll';
+import LeaderBoard from './Components/Welcome/Pages/Working-Features/LearderBoard/LeaderBoard';
 
 function App() {
   return (
@@ -38,8 +39,8 @@ function App() {
               <Vision />
               <Features />
               <Testimonials />
-              <FAQ />
               <Developers />
+              <FAQ />
             </>
           } />
           <Route path="/login" element={<Login />} />
@@ -55,6 +56,7 @@ function App() {
           <Route path="/chat/:topic" element={<ChatRoom />} />
           <Route path="/Compare" element={<Compare />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/learderboard" element={<LeaderBoard />} />
         </Routes>
         <Footer />
       </AuthProvider>
