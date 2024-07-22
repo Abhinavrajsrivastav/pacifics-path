@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './Projects.css';
 import { FaGithub, FaLink, FaYoutube } from 'react-icons/fa';
+import { OpenApi } from '../../Components/Api/OpenApi';
 
 const Projects = () => {
   const [query, setQuery] = useState('');
@@ -38,7 +39,7 @@ const Projects = () => {
     { name: 'TypeScript React Components Library', emoji: '⚛️' },
     { name: 'Scala Finance Application', emoji: '💸' },
     { name: 'Perl Automation Script', emoji: '🤖' },
-    ];
+  ];
 
   const dataScienceProjects = [
     { name: 'ML Stock Predictor', emoji: '📈' },
@@ -56,7 +57,6 @@ const Projects = () => {
     { name: 'Reinforcement Learning Agent', emoji: '🤖' },
     { name: 'Bioinformatics Tool', emoji: '🧬' },
     { name: 'Sign Language Detection', emoji: '🔎' },
-    
   ];
 
   const otherDomainsProjects = [
@@ -76,6 +76,11 @@ const Projects = () => {
     { name: 'Environmental Monitoring System', emoji: '🌍' },
     { name: 'Legal Document Automation', emoji: '⚖️' },
   ];
+
+  const[webDevelopment, setWebDevelopment] = useState(webDevelopmentProjects);
+  const[programmingLanguages, setProgrammingLanguages] = useState(programmingLanguagesProjects);
+  const[dataScience, setDataScience] = useState(dataScienceProjects);
+  const[otherDomains, setOtherDomains] = useState(otherDomainsProjects);
 
   const handleSearch = async (searchQuery) => {
     const url = `https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&order=desc`;
@@ -114,7 +119,33 @@ const Projects = () => {
     handleSearch(query);
   };
 
-  const renderThemes = (themes, title) => (
+  const getSomeMoreProject = async (themes,setProjects,title) => {
+  const prompt = `Give me a list of ${themes} projects specifically oriented in ${title} in the format of an array like this: ["🎵Music Player", "🙊E-commerce",..etc]. Just give me the project array, nothing else.`;
+
+  try {
+    const response = await OpenApi(prompt);
+    console.log('Response from OpenApi:', response); 
+
+    let projectsArray;
+
+    if (Array.isArray(response)) {
+      projectsArray = response;
+    } else{
+      projectsArray = JSON.parse(response);
+    }
+
+    const newProjects = projectsArray.map(projectName => ({ name: projectName}));
+
+    setProjects(themes => [...themes,...newProjects]);
+
+  } catch (error) {
+    console.error('Error fetching additional projects:', error);
+    setError('Error fetching additional projects. Please try again.');
+  }
+};
+
+
+  const renderThemes = (themes, title,setProjects) => (
     <div className='projects-box'>
       <h2>{title}</h2>
       <div className="suggested-themes">
@@ -123,6 +154,9 @@ const Projects = () => {
             {theme.emoji} {theme.name}
           </button>
         ))}
+        <button className="theme-button" onClick={() => getSomeMoreProject(themes,setProjects,title)}>
+          ➕ Add More
+        </button>
       </div>
     </div>
   );
@@ -168,49 +202,54 @@ const Projects = () => {
     <div className="project-search-container">
       <div className='Project-con'>
         <h1>Project Portfolio</h1>
-
-      {renderThemes(webDevelopmentProjects, 'Web Development')}
-      {renderThemes(programmingLanguagesProjects, 'Programming Languages')}
-      {renderThemes(dataScienceProjects, 'Data Science')}
-      {renderThemes(otherDomainsProjects, 'Other Domains')}
-
-      <div>
-        <input
-          type="text"
-          value={query}
-          onChange={handleInputChange}
-          className="project-search-input"
-          placeholder="Enter project type (e.g., web, data science)"
-        />
-        <button onClick={handleButtonClick} className="project-search-button">
-          Search
-        </button>
+        {renderThemes(webDevelopment, 'Web Development', setWebDevelopment)}
+        {renderThemes(programmingLanguages, 'Programming Languages', setProgrammingLanguages)}
+        {renderThemes(dataScience, 'Data Science', setDataScience)}
+        {renderThemes(otherDomains, 'Other Domains', setOtherDomains)}
+        <div>
+          <input
+            type="text"
+            value={query}
+            onChange={handleInputChange}
+            className="project-search-input"
+            placeholder="Enter project type (e.g., web development, data science)..."
+          />
+          <button onClick={handleButtonClick} className="project-search-button">Search</button>
+        </div>
       </div>
-      {error && <p className="error-message">{error}</p>}
-      <div ref={projectsSectionRef} className="projects-container">
-        {projects.map((project) => (
-          <div key={project.id} className="project-item">
-            <h2>{project.name}</h2>
-            {/* <p>{project.description}</p> */}
-            <div className="project-links">
-              <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-                <FaGithub />
-              </a>
-              {project.homepage && (
-                <a href={project.homepage} target="_blank" rel="noopener noreferrer">
-                  <FaLink />
-                </a>
-              )}
-              {project.youtubeUrl && (
-                <a href={project.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                  <FaYoutube />
-                </a>
-              )}
+      <div ref={projectsSectionRef}>
+        {projects.length > 0 && (
+          <div className="projects-box">
+            <h2>Search Results</h2>
+            <div className="project-cards">
+              {projects.map((project) => (
+                <div className="project-card" key={project.id}>
+                  <h3>{project.name}</h3>
+                  <p>{project.description}</p>
+                  <div className="project-links">
+                    {project.html_url && (
+                      <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <FaGithub /> GitHub
+                      </a>
+                    )}
+                    {project.homepage && (
+                      <a href={project.homepage} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <FaLink /> Website
+                      </a>
+                    )}
+                    {project.has_pages && (
+                      <a href={`${project.html_url}/wiki`} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <FaGithub /> Wiki
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+        )}
       </div>
-      </div>
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 };

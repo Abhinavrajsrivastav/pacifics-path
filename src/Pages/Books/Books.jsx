@@ -9,57 +9,61 @@ const Books = () => {
   const [error, setError] = useState('');
   const booksSectionRef = useRef(null);
 
-  const webDevelopmentBooks = [
-    { name: 'React.js Projects', emoji: '📖' },
-    { name: 'Node.js Development', emoji: '📘' },
-    { name: 'Angular Essentials', emoji: '📗' },
-    { name: 'Vue.js Mastery', emoji: '📖' },
-    { name: 'Frontend Web Development', emoji: '📘' },
-    { name: 'Full-stack Development', emoji: '📗' },
-    { name: 'Django Web Framework', emoji: '📖' },
-    { name: 'Spring Boot Projects', emoji: '📘' },
-    { name: 'ASP.NET Core', emoji: '📗' },
-    { name: 'Ruby on Rails', emoji: '📖' }
-  ];
+const webDevelopmentBooks = [
+  { name: 'Understanding React.js', emoji: '📖' },
+  { name: 'Mastering Node.js', emoji: '📘' },
+  { name: 'Angular Fundamentals', emoji: '📗' },
+  { name: 'Advanced Vue.js', emoji: '📖' },
+  { name: 'Frontend Development Basics', emoji: '📘' },
+  { name: 'Full-stack Web Development', emoji: '📗' },
+  { name: 'Introduction to Django', emoji: '📖' },
+  { name: 'Spring Boot Essentials', emoji: '📘' },
+  { name: 'ASP.NET Core Overview', emoji: '📗' },
+  { name: 'Ruby on Rails Fundamentals', emoji: '📖' }
+];
 
-  const programmingLanguagesBooks = [
-    { name: 'JavaScript Programming', emoji: '📖' },
-    { name: 'Python Programming', emoji: '📘' },
-    { name: 'Java Essentials', emoji: '📗' },
-    { name: 'C++ Programming', emoji: '📖' },
-    { name: 'Ruby Programming', emoji: '📘' },
-    { name: 'Go Programming', emoji: '📗' },
-    { name: 'Swift Programming', emoji: '📖' },
-    { name: 'R Programming', emoji: '📘' },
-    { name: 'PHP Programming', emoji: '📗' },
-    { name: 'TypeScript Handbook', emoji: '📖' }
-  ];
 
-  const dataScienceBooks = [
-    { name: 'Python for Data Science', emoji: '📖' },
-    { name: 'Machine Learning Basics', emoji: '📘' },
-    { name: 'Deep Learning Fundamentals', emoji: '📗' },
-    { name: 'Data Visualization Techniques', emoji: '📖' },
-    { name: 'Big Data Analytics', emoji: '📘' },
-    { name: 'Natural Language Processing', emoji: '📗' },
-    { name: 'Data Mining Algorithms', emoji: '📖' },
-    { name: 'Statistics for Data Science', emoji: '📘' },
-    { name: 'AI and Machine Learning Applications', emoji: '📗' },
-    { name: 'Data Science Projects', emoji: '📖' }
-  ];
+const programmingLanguagesBooks = [
+  { name: 'JavaScript Programming Essentials', emoji: '📖' },
+  { name: 'Python Programming Guide', emoji: '📘' },
+  { name: 'Java Language Basics', emoji: '📗' },
+  { name: 'C++ Programming Techniques', emoji: '📖' },
+  { name: 'Ruby Language Overview', emoji: '📘' },
+  { name: 'Go Programming Insights', emoji: '📗' },
+  { name: 'Swift Programming Fundamentals', emoji: '📖' },
+  { name: 'R Language Essentials', emoji: '📘' },
+  { name: 'PHP Programming Concepts', emoji: '📗' },
+  { name: 'TypeScript Essentials', emoji: '📖' }
+];
 
-  const otherDomainsBooks = [
-    { name: 'Cybersecurity Essentials', emoji: '📖' },
-    { name: 'Cloud Computing Basics', emoji: '📘' },
-    { name: 'Blockchain Technology', emoji: '📗' },
-    { name: 'IoT Fundamentals', emoji: '📖' },
-    { name: 'AR/VR Development', emoji: '📘' },
-    { name: 'Game Development', emoji: '📗' },
-    { name: 'Mobile App Development', emoji: '📖' },
-    { name: 'UI/UX Design Principles', emoji: '📘' },
-    { name: 'Digital Marketing Strategies', emoji: '📗' },
-    { name: 'Project Management Essentials', emoji: '📖' }
-  ];
+
+const dataScienceBooks = [
+  { name: 'Python for Data Science Basics', emoji: '📖' },
+  { name: 'Introduction to Machine Learning', emoji: '📘' },
+  { name: 'Deep Learning Concepts', emoji: '📗' },
+  { name: 'Data Visualization Methods', emoji: '📖' },
+  { name: 'Big Data Analysis', emoji: '📘' },
+  { name: 'Natural Language Processing Fundamentals', emoji: '📗' },
+  { name: 'Algorithms for Data Mining', emoji: '📖' },
+  { name: 'Statistics in Data Science', emoji: '📘' },
+  { name: 'Applications of AI and Machine Learning', emoji: '📗' },
+  { name: 'Data Science Techniques', emoji: '📖' }
+];
+
+
+const otherDomainsBooks = [
+  { name: 'Cybersecurity Principles', emoji: '📖' },
+  { name: 'Cloud Computing Overview', emoji: '📘' },
+  { name: 'Blockchain Technology Basics', emoji: '📗' },
+  { name: 'Fundamentals of IoT', emoji: '📖' },
+  { name: 'AR/VR Development Insights', emoji: '📘' },
+  { name: 'Game Development Concepts', emoji: '📗' },
+  { name: 'Mobile App Development Basics', emoji: '📖' },
+  { name: 'UI/UX Design Fundamentals', emoji: '📘' },
+  { name: 'Digital Marketing Essentials', emoji: '📗' },
+  { name: 'Project Management Basics', emoji: '📖' }
+];
+
 
   const handleSearch = async (searchQuery) => {
     const url = `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`;

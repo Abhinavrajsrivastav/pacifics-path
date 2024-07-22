@@ -66,6 +66,7 @@
   cursor: pointer;
   padding: 10px 20px;
   border-radius: 14px;
+  min-width: 60px;
 }
 
 @media (max-width: 1005px) {

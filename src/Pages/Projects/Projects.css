@@ -175,6 +175,7 @@
     justify-content: start;
     position: relative;
     left: 20px;
+    padding-top: 100px;
   }
 
   .project-item {
@@ -183,7 +184,7 @@
 
   .Project-con{
    max-width: auto;
-   padding: 50px 0px;
+   padding: 20px 0px;
   }
 
   .Project-con h1{
@@ -192,6 +193,8 @@
 
   .project-search-container {
     padding: 20px;
+    position: relative;
+    left: 11px;
   }
 
   .project-search-input {
