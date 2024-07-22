@@ -3,6 +3,15 @@ import axios from 'axios';
 import './Compare.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { Pie } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Compare = () => {
   const [username1, setUsername1] = useState('');
@@ -29,8 +38,11 @@ const Compare = () => {
       const devScore1 = calculateDevScore(user1Response.data, repos1Response.data);
       const devScore2 = calculateDevScore(user2Response.data, repos2Response.data);
 
-      setUserData1({ ...user1Response.data, devScore: devScore1, techStacks: getTechStacks(repos1Response.data) });
-      setUserData2({ ...user2Response.data, devScore: devScore2, techStacks: getTechStacks(repos2Response.data) });
+      const techStacks1 = getTechStacks(repos1Response.data);
+      const techStacks2 = getTechStacks(repos2Response.data);
+
+      setUserData1({ ...user1Response.data, devScore: devScore1, techStacks: techStacks1 });
+      setUserData2({ ...user2Response.data, devScore: devScore2, techStacks: techStacks2 });
     } catch (error) {
       setError('Error fetching GitHub data. Please try again.');
       console.error('Error fetching GitHub data:', error);
@@ -38,7 +50,6 @@ const Compare = () => {
   };
 
   const calculateDevScore = (userData, repos) => {
-    // Simple dev score calculation based on followers, repos, and contributions
     return userData.followers + userData.public_repos + repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
   };
 
@@ -53,13 +64,35 @@ const Compare = () => {
         }
       }
     });
-    return Object.entries(languageCount).sort((a, b) => b[1] - a[1]).map(([lang, count]) => lang).slice(0, 3);
+    return Object.entries(languageCount).sort((a, b) => b[1] - a[1]).map(([lang, count]) => ({ lang, count })).slice(0, 5);
   };
 
   const renderComparison = () => {
     if (!userData1 || !userData2) {
       return null;
     }
+
+    const pieData1 = {
+      labels: userData1.techStacks.map(stack => stack.lang),
+      datasets: [
+        {
+          data: userData1.techStacks.map(stack => stack.count),
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66FF66', '#FFA07A'],
+          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66FF66', '#FFA07A']
+        }
+      ]
+    };
+
+    const pieData2 = {
+      labels: userData2.techStacks.map(stack => stack.lang),
+      datasets: [
+        {
+          data: userData2.techStacks.map(stack => stack.count),
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66FF66', '#FFA07A'],
+          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66FF66', '#FFA07A']
+        }
+      ]
+    };
 
     return (
       <div className="comparisons">
@@ -70,10 +103,16 @@ const Compare = () => {
           <p className="metric">Followers: {userData1.followers}</p>
           <p className="metric">Repos: {userData1.public_repos}</p>
           <p className="metric">Dev Score: {userData1.devScore}</p>
-          <p className="metric">Top Tech Stacks: {userData1.techStacks.join(', ')}</p>
+          <p className="metric">Top Tech Stacks: {userData1.techStacks.map(stack => stack.lang).join(', ')}</p>
         </div>
-        
-        <FontAwesomeIcon icon={faFire} className="vs-icon" style={{color: "yellow"}}/>
+        <div className="chart-container">
+          <h2>Languages Used</h2>
+          <div className="chart">
+            <Pie data={pieData1} />
+          </div>
+        </div>
+
+        <FontAwesomeIcon icon={faFire} className="vs-icon" style={{ color: "yellow" }} />
 
         <div className="userprofile">
           <img src={userData2.avatar_url} alt="Profile 2" />
@@ -82,7 +121,13 @@ const Compare = () => {
           <p className="metric">Followers: {userData2.followers}</p>
           <p className="metric">Repos: {userData2.public_repos}</p>
           <p className="metric">Dev Score: {userData2.devScore}</p>
-          <p className="metric">Top Tech Stacks: {userData2.techStacks.join(', ')}</p>
+          <p className="metric">Top Tech Stacks: {userData2.techStacks.map(stack => stack.lang).join(', ')}</p>
+        </div>
+        <div className="chart-container">
+          <h2>Languages Used</h2>
+          <div className="chart">
+            <Pie data={pieData2} />
+          </div>
         </div>
       </div>
     );
@@ -90,7 +135,7 @@ const Compare = () => {
 
   return (
     <div className="compare">
-      <div className='Compare-Box'>
+      <div className="Compare-Box">
         <h1>Compare GitHub Users</h1>
         <form onSubmit={handleSubmit}>
           <input
@@ -105,9 +150,9 @@ const Compare = () => {
             value={username2}
             onChange={(e) => setUsername2(e.target.value)}
           />
-          <button className='compare-btn' type="submit">Compare</button>
+          <button className="compare-btn" type="submit">Compare</button>
         </form>
-        {/* {error && <p className="error">{error}</p>} */}
+        {error && <p className="error">{error}</p>}
         {renderComparison()}
       </div>
     </div>

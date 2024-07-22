@@ -9,7 +9,7 @@
   background-color: var(--bg-color);
   min-height: 100vh;
   position: relative;
-  top: 70px;
+  padding-top: 100px;
   color: white;
 }
 
@@ -70,14 +70,14 @@ form .compare-btn:hover {
 }
 
 .userprofile {
-  background-color: #fff;
+  background-color: var(--bg-color);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 100%;
   max-width: 300px;
   text-align: center;
   margin: 10px;
+  color: white;
 }
 
 .userprofile img {
@@ -98,13 +98,14 @@ form .compare-btn:hover {
 
 .metric {
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
 }
 
 .vs-icon {
   font-size: 2rem;
   margin: 0 20px;
 }
+
 
 @media (max-width: 600px) {
   .comparisons {
