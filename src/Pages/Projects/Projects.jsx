@@ -10,6 +10,9 @@ const Projects = () => {
   const [error, setError] = useState('');
   const projectsSectionRef = useRef(null);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+
   const webDevelopmentProjects = [
     { name: 'E-commerce App', emoji: '🛒' },
     { name: 'LMS', emoji: 'Ⓜ️' },
@@ -155,7 +158,7 @@ const Projects = () => {
           </button>
         ))}
         <button className="theme-button" onClick={() => getSomeMoreProject(themes,setProjects,title)}>
-          ➕ Add More
+          ➕ See More
         </button>
       </div>
     </div>
@@ -198,6 +201,20 @@ const Projects = () => {
     return text + ' (optimized)';
   };
 
+    const paginate = (projects) => {
+    const indexOfLastProject = currentPage * projectsPerPage;
+    const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+    return projects.slice(indexOfFirstProject, indexOfLastProject);
+  };
+
+   const nextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
+  const prevPage = () => {
+    setCurrentPage(prevPage => prevPage - 1);
+  };
+
   return (
     <div className="project-search-container">
       <div className='Project-con'>
@@ -219,37 +236,44 @@ const Projects = () => {
       </div>
       <div ref={projectsSectionRef}>
         {projects.length > 0 && (
-          <div className="projects-box">
-            <h2>Search Results</h2>
-            <div className="project-cards">
-              {projects.map((project) => (
-                <div className="project-card" key={project.id}>
-                  <h3>{project.name}</h3>
-                  <p>{project.description}</p>
-                  <div className="project-links">
-                    {project.html_url && (
-                      <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <FaGithub /> GitHub
-                      </a>
-                    )}
-                    {project.homepage && (
-                      <a href={project.homepage} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <FaLink /> Website
-                      </a>
-                    )}
-                    {project.has_pages && (
-                      <a href={`${project.html_url}/wiki`} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <FaGithub /> Wiki
-                      </a>
-                    )}
-                  </div>
+           <div ref={projectsSectionRef} className='projects-result'>
+        {projects.length > 0 && (
+          <div className="project-cards">
+            {paginate(projects).map((project) => (
+              <div key={project.id} className="project-card">
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+                <div className="project-links">
+                  <a href={project.html_url} target="_blank" rel="noopener noreferrer">
+                    <FaGithub /> GitHub
+                  </a>
+                  {project.homepage && (
+                    <a href={project.homepage} target="_blank" rel="noopener noreferrer">
+                      🛸 Live Demo
+                    </a>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
+        )}
+        {error && <p className="error-message">{error}</p>}
+        {projects.length > 0 && (
+          <div className="paginations">
+            <button onClick={prevPage} disabled={currentPage === 1}>
+              Back
+            </button>
+            <span>Page {currentPage}</span>
+            <button onClick={nextPage} disabled={currentPage * projectsPerPage >= projects.length}>
+              Next
+            </button>
           </div>
         )}
       </div>
+        )}
+      </div>
       {error && <div className="error-message">{error}</div>}
+      
     </div>
   );
 };

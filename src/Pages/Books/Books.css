@@ -190,6 +190,10 @@
     position: relative;
     padding-top: 100px;
     left: 0px;
+    right: 0px;
+  }
+  .book-search-container h1{
+    right:74px;
   }
       .theme-buttoni {
         padding: 8px 10px;
