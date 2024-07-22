@@ -64,9 +64,18 @@ form .compare-btn:hover {
 
 .comparisons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
   margin-top: 20px;
+  position: relative;
+  top: 100px;
+}
+
+.com-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .userprofile {
@@ -75,21 +84,24 @@ form .compare-btn:hover {
   padding: 20px;
   width: 100%;
   max-width: 300px;
-  text-align: center;
+  text-align: start;
   margin: 10px;
   color: white;
 }
 
 .userprofile img {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   margin-bottom: 10px;
 }
 
 .userprofile h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: #191a1c;
 }
 
 .userprofile p {
@@ -105,6 +117,34 @@ form .compare-btn:hover {
   font-size: 2rem;
   margin: 0 20px;
 }
+
+.comparison-table {
+  margin-top: 20px;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th, .comparison-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: var(--bg-color);
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: var(--bg-color);
+}
+
+.comparison-table tr:hover {
+  background-color:var(--bg-color);
+}
+
 
 
 @media (max-width: 600px) {
