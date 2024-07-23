@@ -297,7 +297,7 @@
     justify-content: start;
     position: relative;
     left: 20px;
-    padding-top: 100px;
+    padding-top: 80px;
   }
 
   .project-item {
@@ -328,7 +328,7 @@
   }
 
   .suggested-themes {
-    width: 48%;
+    width: 100%;
   }
 
   .theme-button {
