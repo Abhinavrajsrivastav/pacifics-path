@@ -17,7 +17,7 @@
 .project-search-container h1 {
   font-size: 2.5rem;
   color: #f5f5f5;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: start;
   align-items: start;
   justify-content: start;
@@ -171,6 +171,11 @@
   position: relative;
 }
 
+.Project-con p{
+  max-width: 1000px;
+  font-size: 14px;
+}
+
 .project-cards {
   display: flex;
   flex-wrap: wrap;
@@ -296,8 +301,12 @@
     justify-content: start;
     position: relative;
     left: 20px;
-    padding-top: 80px;
+    padding-top: 100px;
     overflow-x: hidden;
+  }
+
+  .Project-con p{
+    font-size: 11px;
   }
 
   .project-item {
@@ -306,7 +315,7 @@
 
   .Project-con{
    width: 100%;
-   padding: 20px 0px;
+   padding: 80px 0px;
   }
 
   .Project-con h1{
@@ -372,4 +381,5 @@
   .paginations{
     left:-25px;
   }
+
 }

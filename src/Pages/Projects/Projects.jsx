@@ -219,6 +219,7 @@ const Projects = () => {
     <div className="project-search-container">
       <div className='Project-con'>
         <h1>Project Portfolio</h1>
+        <p>Here's a collection of top-notch projects that you can proudly add to your resume. This Project Portfolio will help you find the best among the best projects, complete with their code, documentation, and live views. Feel free to use any of these and let us know what you think about this initiative! Happy Learning 🎉✌️</p>
         {renderThemes(webDevelopment, 'Web Development', setWebDevelopment)}
         {renderThemes(programmingLanguages, 'Programming Languages', setProgrammingLanguages)}
         {renderThemes(dataScience, 'Data Science', setDataScience)}

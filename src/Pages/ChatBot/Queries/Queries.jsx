@@ -42,7 +42,7 @@ const Queries = () => {
         <span className="brand-name">Educome</span>
         <span className="search-suggestion">Have a question? Ask it!</span>
       </div>
-      <div className="message-boxi">
+      <div className="message-boxies">
         <input
           required
           placeholder="Write here..."

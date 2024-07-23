@@ -34,17 +34,17 @@
   margin-top: -20px;
 }
 
-.message-boxi {
+.message-boxies {
   display: flex;
   align-items: center;
-  background-color: #2d2d2d;
+  background-color: #363434;
   padding: 0 15px;
   border-radius: 14px;
-  border: 1px solid rgb(63, 63, 63);
+  border: 1px solid rgb(0, 0, 0);
   gap: 10px;
 }
 
-.message-boxi:focus-within {
+.message-boxies:focus-within {
   border: 2px solid var(--main-color);
 }
 
@@ -100,8 +100,8 @@
   .brand-name {
     font-size: 4rem;
   }
-  .message-boxi {
-    width: 55%;
+  .message-boxies {
+    width: 52%;
     flex-direction: row;
     gap: 5px;
     position:relative;
@@ -123,8 +123,10 @@
 
 #sendButton{
    position: relative;
-   right: 40px;
+   right: 6px;
    background-color: #176cda;
+   width: 200px;
+   padding-left: 33px;
 }
 
 }
