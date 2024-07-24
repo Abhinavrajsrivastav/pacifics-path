@@ -120,11 +120,9 @@
 .nav-dropdown-menu {
     display: none;
     position: absolute;
-    top: 150%;
+    top: 107%;
     left: -40px;
-    background-color: var(--bg-color);
-    color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: rgb(3 12 37 / 0%);
     padding: 10px;
     min-width: 160px;
     z-index: 1000;

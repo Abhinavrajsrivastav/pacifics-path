@@ -56,8 +56,8 @@ const Mate = () => {
   };
 
   return (
-    <div className="github-profile">
-      <h2>User Rankings</h2>
+    <div className="dev-mate">
+      <h2>Find you dev mate</h2>
       <div className="user-rankinges">
           <div className='navigate-professionali'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 
