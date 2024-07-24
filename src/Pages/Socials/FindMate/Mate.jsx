@@ -57,8 +57,8 @@ const Mate = () => {
 
   return (
     <div className="dev-mate">
-      <h2>Find you dev mate</h2>
-      <div className="user-rankinges">
+      <h2>Find your<span className='dev-mate-text'>dev mate 🛸</span></h2>
+      <div className="user-rankingss">
           <div className='navigate-professionali'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 
             <span onClick={() => handleLanguageClick('Python')}> Python</span> 

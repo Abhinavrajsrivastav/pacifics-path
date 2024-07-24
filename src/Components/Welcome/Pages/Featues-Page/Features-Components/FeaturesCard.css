@@ -47,7 +47,7 @@
   left: 1rem;
   top: 1em;
   text-transform: lowercase;
-  opacity: 0;
+  opacity: 1;
   transition: .3s ease-in-out;
   font-weight: 500;
   max-width: 280px;
@@ -59,7 +59,7 @@
 }
 
 .e-card:hover .name {
-  opacity: .6;
+  opacity: 1;
 }
 
 .wave:nth-child(2),

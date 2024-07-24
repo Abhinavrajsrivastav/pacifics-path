@@ -45,9 +45,6 @@ function NavBar() {
                     {window.innerWidth > 1005 && 
                         <>
                             <Link to="/pacifics-path"><a href="#" className="nav-link">Home</a></Link>
-                            <a href="#" className="nav-link">About</a>
-                            <a href="#Testemonials" className="nav-link">Testimonials</a>
-                            <a href="#dev" className="nav-link">Us</a>
                             <div className="nav-dropdown" >
                                 <button className="nav-dropdown-button nav-link" onClick={() => setDropdownOpen(!dropdownOpen)}>
                                     Explore
@@ -61,6 +58,9 @@ function NavBar() {
                                     <Link to="/selfLearn" className="nav-dropdown-item">Learn With Ai</Link>
                                 </div>
                             </div>
+                            <a href="#" className="nav-link">About</a>
+                            <a href="#Testemonials" className="nav-link">Testimonials</a>
+                            <a href="#dev" className="nav-link">Us</a>
                             {email == null ? (
                                 <>
                                     <Link to="/login"><button className="nav-login-btn">login</button></Link>
