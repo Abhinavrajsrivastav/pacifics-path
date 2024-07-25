@@ -11,16 +11,16 @@ const Footer = () => {
           {/* <FaGoogle  size='25'/> */}
           <span>Educome</span>
         </div>
-        <button className="footer-github-button">
-          <FaStar size='25'/>
-          Star on GitHub
-        </button>
         <div className="footer-nav">
           <a href="#code">Coding</a>
           <a href="#showcase">Storytelling</a>
           <a href="#impress">Exploring</a>
           <a href="#contact">🚀🛸</a>
         </div>
+        <button className="footer-github-button">
+          <FaStar size='25'/>
+          Star on GitHub
+        </button>
       </div>
       
       <div className="footer-right">
