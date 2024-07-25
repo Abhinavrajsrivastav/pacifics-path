@@ -10,7 +10,7 @@ function Developers() {
         <img src='./Images/dev-profile.jpg' alt="Developer" />
         </div>
         <div className="about-dev">
-        <h2>Abhinav Srivastava</h2>
+        <h2>Abhinav Raj Srivastava</h2>
         <p>Hey! Developers, I am Abhinav Raj Srivastav. Currently a Final Year Student at ABES Engineering College Ghaziabad. I would be very happy to listen any valuable feedback from your side, feel free you write it in the feedback section. As always, Keep Hustling 🤌🚀🧑‍🚀.</p>
           </div>
       </div>

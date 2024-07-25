@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 .FAQ-BOX{
     background-color: var(--bg-color);
+    padding-bottom: 40px;
 }
 
 .faq-container {
@@ -13,6 +16,12 @@
 h2 {
   text-align: center;
   margin-bottom: 20px;
+   font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 40px;
+  color: #007bff;
 }
 
 .faq-list {
@@ -54,4 +63,21 @@ h2 {
 .faq-answer p {
   margin: 0;
   color: #ccc;
+}
+
+
+@media(max-width: 1005px){
+  .faq-container{
+    padding: 20px;
+  }
+  .faq-question{
+    font-size: 15px;
+  }
+  .faq-answer p{
+    font-size: 15px;
+  }
+
+  h2{
+    font-size: 30px;
+  }
 }

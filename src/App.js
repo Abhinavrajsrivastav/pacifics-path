@@ -42,7 +42,7 @@ function App() {
               <Testimonials />
               <Developers />
               <FAQ />
-              <Feedback />
+              {/* <Feedback /> */}
             </>
           } />
           <Route path="/login" element={<Login />} />
@@ -59,6 +59,7 @@ function App() {
           <Route path="/Compare" element={<Compare />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/learderboard" element={<LeaderBoard />} />
+          <Route path="/feedback" element={<Feedback />} />
         </Routes>
         <Footer />
       </AuthProvider>

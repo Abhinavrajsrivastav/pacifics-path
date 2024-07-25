@@ -1,66 +1,142 @@
-.feedback-box{
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+
+.feedback-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: var(--bg-color);
-  justify-content: start;
-  padding: 60px 0px 50px 0px;
   color: white;
 }
 
 .feedback-container {
+  background: var(--bg-color);
   padding: 2rem;
-  border-radius: 8px;
-  color: #ffffff; 
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
 }
 
-.feedback-form{
-  justify-content: flex;
+.feedback-container span{
+  font-family: "Playwrite HR Lijeva", cursive;
+  font-optical-sizing: auto;
+  font-weight:800;
+  font-style: normal;
+  font-size: 40px;
+  color: #007bff;
+  position: relative;
+  bottom: 20px;
+  right: 10px;
+}
+
+.feedback-header h2 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-header p {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.feedback-thankyou{
+  position: relative;
+}
+
+.feedback-thankyou h5 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.feedback-thankyou p {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.feedback-form {
+  display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 
 .feedback-form input{
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  position: relative;
+  left: -11px;
+  background-color: var(--bg-color);
+}
+
+.feedback-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.feedback-form button {
+  padding: 0.75rem;
   border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100px;
 }
 
-
-.feedback-container h2,
-.feedback-container p,
-.feedback-container h5,
-.feedback-container .MuiTypography-body1,
-.feedback-container .MuiTypography-h4,
-.feedback-container .MuiTypography-h5 {
-  color: #ffffff; /* Ensuring text remains white */
-}
-
-.feedback-form .MuiTextField-root .MuiInputBase-input,
-.feedback-form .MuiTextField-root .MuiInputLabel-root,
-.feedback-form .MuiTextField-root .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-  color: #ffffff; /* Input text color */
-  border-color: #ffffff; /* Input border color */
-}
-
-.feedback-form .MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-  border-color: #ffffff; /* Input border color on hover */
-}
-
-.feedback-form .MuiButton-root {
-  background-color: #007bff; /* Custom button color */
-  color: #ffffff;
-}
-
-.feedback-form .MuiButton-root:hover {
-  background-color: #0056b3; /* Custom hover color */
-}
-
-.MuiSnackbarContent-message {
-  color: #ffffff; /* Snackbar message text color */
+.feedback-form button:hover {
+  background-color: #0056b3;
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+@media (max-width: 1005px) {
   .feedback-container {
     padding: 1rem;
   }
 
-  .feedback-form .MuiTextField-root {
-    margin-bottom: 0.5rem;
+  .feedback-header h2 {
+    font-size: 1.5rem;
   }
+
+  .feedback-header p {
+    font-size: 1rem;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .feedback-form input {
+    font-size: 1rem;
+  }
+
+  .feedback-form textarea {
+    font-size: 1rem;
+  }
+
+  .feedback-form button {
+    font-size: 1rem;
+  }
+
+  .feedback-form input{
+    width: 93%;
+  }
+
+  .feedback-form textarea {
+    width: 93%;
+  }
+
 }

@@ -160,4 +160,8 @@
     .nav-links {
         display: none;
     }
-}
+    .nav-brand{
+        gap: 200px;
+    }
+
+    }

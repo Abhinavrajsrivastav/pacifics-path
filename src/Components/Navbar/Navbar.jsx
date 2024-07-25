@@ -24,11 +24,11 @@ function NavBar() {
     };
 
     return (
-        <AppBar position="fixed" className="nav-container" style={{ backgroundColor: 'var(--bg-color)' }} sx>
+        <AppBar position="fixed" className="nav-container" style={{ backgroundColor: 'var(--bg-color)' }}>
             <Toolbar className="nav-elements">
                 <div className="nav-brand">
                     <div className='navbrand'>
-                        <img src="./Icons/google (1).png" alt="" style={{ height: '30px', width: '30px' }} className='m-3' />
+                        <img src="./Icons/cat.png" alt="" style={{ height: '30px', width: '30px' }} className='m-3' />
                         <Typography variant="h6" className="nav-brand-name">
                             Educome
                         </Typography>
@@ -45,6 +45,7 @@ function NavBar() {
                     {window.innerWidth > 1005 && 
                         <>
                             <Link to="/pacifics-path"><a href="#" className="nav-link">Home</a></Link>
+                            <a href="#" className="nav-link">About</a>
                             {email!=null&&
                             <>
                             <div className="nav-dropdown" >
@@ -58,10 +59,10 @@ function NavBar() {
                                     <Link to="/git-mate" className="nav-dropdown-item">Find Mates</Link>
                                     <Link to="/learderboard" className="nav-dropdown-item">LeaderBoard</Link>
                                     <Link to="/selfLearn" className="nav-dropdown-item">Learn With Ai</Link>
+                                    <Link to="feedback" className='nav-dropdown-item' >Feedback</Link>
                                 </div>
                             </div>
                             </>}
-                            <a href="#" className="nav-link">About</a>
                             <a href="#Testemonials" className="nav-link">Testimonials</a>
                             <a href="#dev" className="nav-link">Us</a>
                             {email == null ? (
@@ -137,6 +138,9 @@ function NavBar() {
                     </ListItem>
                     <ListItem button component={Link} to="/selfLearn">
                         <ListItemText primary="Learn With Ai" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/feedback">
+                        <ListItemText primary="Feedback" />
                     </ListItem>
                     </> 
                     }
