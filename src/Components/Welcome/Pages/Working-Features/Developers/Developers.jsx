@@ -4,13 +4,14 @@ import './Developers.css';
 function Developers() {
   return (
     <div className="developer-container">
+      <span>About Developer</span>
       <div className="about-section">
          <div className="photo-section">
-        <img src='./Icons/cat.png' alt="Developer" />
+        <img src='./Images/dev-profile.jpg' alt="Developer" />
         </div>
         <div className="about-dev">
-        <h2>Antonio Sebestian</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet.</p>
+        <h2>Abhinav Srivastava</h2>
+        <p>Hey! Developers, I am Abhinav Raj Srivastav. Currently a Final Year Student at ABES Engineering College Ghaziabad. I would be very happy to listen any valuable feedback from your side, feel free you write it in the feedback section. As always, Keep Hustling 🤌🚀🧑‍🚀.</p>
           </div>
       </div>
     </div>

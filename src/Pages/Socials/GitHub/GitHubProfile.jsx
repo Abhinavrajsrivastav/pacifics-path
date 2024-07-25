@@ -149,8 +149,8 @@ const GitHubProfile = () => {
     <div className="github-profile">
       <div className="app-containers">
         <header className="brand-header">
-          <h1 className="brand-name">Educome</h1>
-          <p className="search-description">Find the best developers on GitHub</p>
+          {/* <h1 className="brand-name">Educome</h1> */}
+          {/* <p className="search-description">Find the best developers on GitHub</p> */}
         </header>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
@@ -162,10 +162,7 @@ const GitHubProfile = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
             <button className="learn-more" type="submit">
-              <span className="circle" aria-hidden="true">
-                <span className="icon arrow"></span>
-              </span>
-              <span className="button-text">Search</span>
+              Search
             </button>
           </div>
         </form>
@@ -230,8 +227,8 @@ const GitHubProfile = () => {
           </div>
         </div>
       )}
-      {username && (
-        <div className="user-rankinges">
+      {false && (
+        <div className="user-ranks">
           <h2>User Rankings</h2> 
             <div className='navigate-professinals'>
             <span onClick={() => handleLanguageClick('Java')}> Java</span> 

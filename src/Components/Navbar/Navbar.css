@@ -19,7 +19,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 170px;
+    gap: 450px;
 }
 
 .navbrand {
@@ -39,7 +39,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    margin-right: 2rem;
+    margin-right: 7rem;
     padding: 0;
     gap: 2rem;
 }

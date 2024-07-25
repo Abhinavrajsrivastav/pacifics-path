@@ -1,15 +1,20 @@
 /* Global styles */
 .github-profile {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
   height: auto;
-  padding: 20px;
-  padding-top: 80px;
+  padding: 50px;
   font-family: Arial, sans-serif;
   color: white;
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
+  background-color: var(--bg-color);
+  /* justify-content: center; */
+  text-align: center;
+  align-items: center;
 }
 
 .github-profile::-webkit-scrollbar {
@@ -31,7 +36,9 @@
   display: flex;
   background-color: rgba(38, 46, 190, 0);
   position: relative;
-  left: 40px;
+  left: 0px;
+  top: 80px;
+  margin-bottom: 100px;
 }
 
 .github-profile input {
@@ -42,94 +49,17 @@
   width: 250px;
 }
 
-/* Button styles */
-button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  background: transparent;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-  color: black;
-}
-
-button.learn-more {
-  width: 12rem;
+.learn-more{
+  padding: 12px 16px;
+  background-color: #0336c3;
+  border-radius: 4px;
+  border: none;
+  color: white;
   height: auto;
-}
-
-button.learn-more .circle {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  width: auto;
+  font-size: 13px;
   position: relative;
-  display: block;
-  margin: 0;
-  width: 3rem;
-  height: 3rem;
-  background: #28293676;
-  border-radius: 1.625rem;
-}
-
-button.learn-more .circle .icon {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  background: #fff;
-}
-
-button.learn-more .circle .icon.arrow {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  left: 0.625rem;
-  width: 1.125rem;
-  height: 0.125rem;
-  background: none;
-}
-
-button.learn-more .circle .icon.arrow::before {
-  position: absolute;
-  content: "";
-  top: -0.29rem;
-  right: 0.0625rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-right: 0.125rem solid #fff;
-  transform: rotate(45deg);
-}
-
-button.learn-more .button-text {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.75rem 0;
-  margin: 0 0 0 1.85rem;
-  color: #282936;
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-button:hover .circle {
-  width: 100%;
-}
-
-button:hover .circle .icon.arrow {
-  background: #fff;
-  transform: translate(1rem, 0);
-}
-
-button:hover .button-text {
-  color: #fff;
+  top: -3px;
 }
 
 .search-description{
@@ -490,7 +420,8 @@ button:hover .button-text {
   .app-container {
    position: relative;
    top: 0px;
-   left: 0px
+   left: 0px;
+   padding: 30px;
   }
 
   .github-profile {

@@ -27,6 +27,7 @@ import Projects from './Pages/Projects/Projects';
 import FAQ from './Components/Welcome/Pages/Working-Features/FAQ/FAQ';
 import useSmoothScroll from './useSmoothScroll';
 import LeaderBoard from './Components/Welcome/Pages/Working-Features/LearderBoard/LeaderBoard';
+import Feedback from './Components/Welcome/Feedback/Feedback';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Testimonials />
               <Developers />
               <FAQ />
+              <Feedback />
             </>
           } />
           <Route path="/login" element={<Login />} />

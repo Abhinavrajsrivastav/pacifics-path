@@ -138,7 +138,6 @@ const Videos = () => {
   return (
     <div className="Video-response">
       <div className="videos-container">
-        <span>Back</span>
         <form onSubmit={handleSubmit} className="search-form">
           <input
             type="text"

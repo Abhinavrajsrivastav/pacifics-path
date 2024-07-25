@@ -24,7 +24,7 @@ function NavBar() {
     };
 
     return (
-        <AppBar position="fixed" className="nav-container" style={{ backgroundColor: 'var(--bg-color)' }}>
+        <AppBar position="fixed" className="nav-container" style={{ backgroundColor: 'var(--bg-color)' }} sx>
             <Toolbar className="nav-elements">
                 <div className="nav-brand">
                     <div className='navbrand'>
@@ -45,6 +45,8 @@ function NavBar() {
                     {window.innerWidth > 1005 && 
                         <>
                             <Link to="/pacifics-path"><a href="#" className="nav-link">Home</a></Link>
+                            {email!=null&&
+                            <>
                             <div className="nav-dropdown" >
                                 <button className="nav-dropdown-button nav-link" onClick={() => setDropdownOpen(!dropdownOpen)}>
                                     Explore
@@ -58,6 +60,7 @@ function NavBar() {
                                     <Link to="/selfLearn" className="nav-dropdown-item">Learn With Ai</Link>
                                 </div>
                             </div>
+                            </>}
                             <a href="#" className="nav-link">About</a>
                             <a href="#Testemonials" className="nav-link">Testimonials</a>
                             <a href="#dev" className="nav-link">Us</a>

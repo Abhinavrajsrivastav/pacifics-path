@@ -7,7 +7,7 @@
   flex-direction: column;
   height: 100vh;
   position: relative;
-  top: 80px;
+  top: 110px;
 }
 
 .bgblue {
@@ -110,6 +110,7 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: #0f12157d;
+  font-size: 15px;
 }
 
 .query-right {

@@ -13,18 +13,23 @@
 .web-response-index {
     color: white;
     padding: 1px 7px;
-    border-radius: 50%;
-    background-color: #5232bbab;
+    border-radius: 20px;
+    background-color: #235ec6ab;
     position: relative;
-    top: 3px;
+    top: -2px;
     left: -5px;
 }
 
 .response-items {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 10px;
     background-color: #131415c2;
     border-radius: 10px;
+    transition: .2s ease-in-out;
+}
+
+.response-items:hover{
+    cursor: pointer;
 }
 
 .responses-list {

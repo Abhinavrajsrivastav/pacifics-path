@@ -1,0 +1,66 @@
+.feedback-box{
+  background-color: var(--bg-color);
+  justify-content: start;
+  padding: 60px 0px 50px 0px;
+  color: white;
+}
+
+.feedback-container {
+  padding: 2rem;
+  border-radius: 8px;
+  color: #ffffff; 
+}
+
+.feedback-form{
+  justify-content: flex;
+  flex-direction: column;
+}
+
+.feedback-form input{
+  border: none;
+}
+
+
+.feedback-container h2,
+.feedback-container p,
+.feedback-container h5,
+.feedback-container .MuiTypography-body1,
+.feedback-container .MuiTypography-h4,
+.feedback-container .MuiTypography-h5 {
+  color: #ffffff; /* Ensuring text remains white */
+}
+
+.feedback-form .MuiTextField-root .MuiInputBase-input,
+.feedback-form .MuiTextField-root .MuiInputLabel-root,
+.feedback-form .MuiTextField-root .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  color: #ffffff; /* Input text color */
+  border-color: #ffffff; /* Input border color */
+}
+
+.feedback-form .MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #ffffff; /* Input border color on hover */
+}
+
+.feedback-form .MuiButton-root {
+  background-color: #007bff; /* Custom button color */
+  color: #ffffff;
+}
+
+.feedback-form .MuiButton-root:hover {
+  background-color: #0056b3; /* Custom hover color */
+}
+
+.MuiSnackbarContent-message {
+  color: #ffffff; /* Snackbar message text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .feedback-container {
+    padding: 1rem;
+  }
+
+  .feedback-form .MuiTextField-root {
+    margin-bottom: 0.5rem;
+  }
+}

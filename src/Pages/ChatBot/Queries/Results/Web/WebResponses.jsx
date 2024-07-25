@@ -9,7 +9,7 @@ function WebResponses({
     // const searchResults = location.state.searchResults || [];
     const [searchResults, setSearchResults] = useState(searchResult || []); 
     const [currentPage, setCurrentPage] = useState(1);
-    const resultsPerPage = 3;
+    const resultsPerPage = 4;
     const totalPages = Math.ceil(searchResults.length / resultsPerPage);
     console.log(searchResult);
 

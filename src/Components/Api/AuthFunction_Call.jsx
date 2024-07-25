@@ -54,7 +54,7 @@ const handleGoogleSignIn = () => {
             });
              setUser(user);
             localStorage.setItem('userData', JSON.stringify(user));
-             navigate('/profile');
+             navigate('/pacifics-path');
         })
         .catch((error) => {
             console.error('Google Sign-in error:', error);
@@ -76,7 +76,7 @@ const handleEmailSignup = (event) => {
             });
             setUser(user);
             localStorage.setItem('userData', JSON.stringify(user));
-            navigate('/profile');
+            navigate('/pacifics-path');
         })
         .catch((error) => {
             console.error('Email/password Sign-up error:', error);
@@ -95,7 +95,7 @@ const EmailSignin = (e) => {
             const user = userCredential.user;
             setUser(user);
             localStorage.setItem('userData', JSON.stringify(user));
-            navigate('/profile');
+            navigate('/pacifics-path');
         })
         .catch((error) => {
             console.error('Error logging in:', error);
