@@ -49,7 +49,7 @@ function NavBar() {
                             {email!=null&&
                             <>
                             <div className="nav-dropdown" >
-                                <button className="nav-dropdown-button nav-link" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                                <button className="nav-dropdown-button nav-link-explore" onClick={() => setDropdownOpen(!dropdownOpen)}>
                                     Explore
                                 </button>
                                 <div className={`nav-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>

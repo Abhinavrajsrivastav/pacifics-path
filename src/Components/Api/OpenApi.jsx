@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const API_KEY = 'AIzaSyAwY9jOFq5DpDG-Tp9R1tEbteFvcdv_oAs';
-const SEARCH_ENGINE_ID = 'd3ec914403b414c71';
+const API_KEY = process.env.REACT_APP_Gemini_Key;
+const SEARCH_ENGINE_ID = process.env.REACT_APP_Google_Search_Engine;
 
 const OpenApi = async (query) => {
   try {

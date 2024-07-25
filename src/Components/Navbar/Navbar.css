@@ -1,7 +1,7 @@
 .nav-container {
     background-color: var(--bg-color);
     color: white;
-    padding: 8px;
+    padding: 11px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -19,7 +19,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 450px;
+    gap: 250px;
 }
 
 .navbrand {
@@ -39,7 +39,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    margin-right: 7rem;
+    /* margin-right: 7rem; */
     padding: 0;
     gap: 2rem;
 }
@@ -49,9 +49,13 @@
     right: 14px;
 }
 
+.nav-link-explore{
+    font-size: 1.3rem;
+}
+
 .nav-links a {
     color: white;
-    font-size: 1.0rem;
+    font-size: 1.3rem;
     text-decoration: none;
     opacity: 1;
     font-weight: 500;
@@ -112,7 +116,15 @@
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    transition: 0.1s ease-in-out;
+}
+
+.nav-dropdown-button:hover{
+    color: rgb(100, 154, 255); 
     cursor: pointer;
 }
 
@@ -134,7 +146,7 @@
     padding: 10px 15px;
     text-decoration: none;
     color: white;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .nav-dropdown-item:hover {

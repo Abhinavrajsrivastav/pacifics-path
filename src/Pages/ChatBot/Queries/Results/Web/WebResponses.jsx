@@ -11,7 +11,7 @@ function WebResponses({
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 4;
     const totalPages = Math.ceil(searchResults.length / resultsPerPage);
-    console.log(searchResult);
+    // console.log(searchResult);
 
     const nextPage = () => {
         setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));

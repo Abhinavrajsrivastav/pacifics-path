@@ -40,7 +40,7 @@
   background-color: #1b1a3e56;
 }
 
-.about-dev h2 {
+.about-developer h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #007bff;
@@ -49,7 +49,7 @@
   justify-content: start;
 }
 
-.about-dev{
+.about-developer{
   flex-direction: row;
   text-align: center;
   align-items: start;
@@ -57,7 +57,7 @@
   border-radius: 10px;
 }
 
-.about-dev p {
+.about-developer p {
   font-size: 20px;
   line-height: 1.1;
   font-family: "Zain", sans-serif;
