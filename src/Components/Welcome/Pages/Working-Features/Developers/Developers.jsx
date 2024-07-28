@@ -3,7 +3,7 @@ import './Developers.css';
 
 function Developers() {
   return (
-    <div className="developer-container">
+    <div className="developer-container" id="dev">
       <span>About Developer</span>
       <div className="about-section">
          <div className="photo-section">

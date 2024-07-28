@@ -109,7 +109,7 @@ function NavBar() {
                      <ListItem button component={Link} to="/pacifics-path">
                         <FaHome style={{position:'relative', right: '6px', top: '-1px'}} /> <ListItemText primary="Home" />
                     </ListItem>
-                    <ListItem button component="a" href="#">
+                    <ListItem button component="a" href="#dev">
                         <FaIcons style={{position:'relative', right: '6px', top: '-1px'}}  /> <ListItemText primary="About" />
                     </ListItem>
                     {email &&<>
