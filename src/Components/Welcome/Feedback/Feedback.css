@@ -21,9 +21,9 @@
 }
 
 .feedback-container span{
-  font-family: "Playwrite HR Lijeva", cursive;
+   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
-  font-weight:800;
+  font-weight: 800;
   font-style: normal;
   font-size: 40px;
   color: #007bff;

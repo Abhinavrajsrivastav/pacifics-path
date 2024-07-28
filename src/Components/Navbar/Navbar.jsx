@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import UserAuth from '../Api/AuthFunction_Call';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText, Avatar } from '@mui/material';
-import { Menu as MenuIcon, Close as CloseIcon, Leaderboard, Logout } from '@mui/icons-material';
+import { Menu as MenuIcon, Close as CloseIcon, Leaderboard, Logout, Search, SearchOff, Feedback, Power } from '@mui/icons-material';
 import './Navbar.css';
+import { FaAnchor, FaBook, FaGoogle, FaHome, FaSearch, FaStar, FaTeamspeak, FaUserNinja } from 'react-icons/fa';
 
 function NavBar() {
     const [menuActive, setMenuActive] = useState(false);
@@ -53,13 +54,13 @@ function NavBar() {
                                     Explore
                                 </button>
                                 <div className={`nav-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                                    <Link to="/github-profile" className="nav-dropdown-item">Search dev</Link>
-                                    <Link to="/projects" className="nav-dropdown-item">Projects</Link>
-                                    <Link to="/read-books" className="nav-dropdown-item">Read Books</Link>
-                                    <Link to="/git-mate" className="nav-dropdown-item">Find Mates</Link>
-                                    <Link to="/learderboard" className="nav-dropdown-item">LeaderBoard</Link>
-                                    <Link to="/selfLearn" className="nav-dropdown-item">Learn With Ai</Link>
-                                    <Link to="feedback" className='nav-dropdown-item' >Feedback</Link>
+                                    <Link to="/github-profile" className="nav-dropdown-item"><FaSearch style={{position:'relative', right: '4px', top: '4px'}} />Search</Link>
+                                    <Link to="/projects" className="nav-dropdown-item"><FaStar style={{position:'relative', right: '4px', top: '4px'}} /> Projects</Link>
+                                    <Link to="/read-books" className="nav-dropdown-item"><FaBook style={{position:'relative', right: '4px', top: '4px'}} /> Books</Link>
+                                    <Link to="/git-mate" className="nav-dropdown-item"><FaUserNinja style={{position:'relative', right: '4px', top: '4px'}} /> Find Mate</Link>
+                                    <Link to="/learderboard" className="nav-dropdown-item"><Leaderboard style={{position:'relative', right: '4px', top: '4px'}} /> LeaderBoard</Link>
+                                    <Link to="/selfLearn" className="nav-dropdown-item"><FaGoogle style={{position:'relative', right: '4px', top: '4px'}} /> Learn With Ai</Link>
+                                    <Link to="feedback" className='nav-dropdown-item' ><Feedback style={{position:'relative', right: '4px', top: '4px'}} /> Feedback</Link>
                                 </div>
                             </div>
                             </>}
@@ -105,51 +106,45 @@ function NavBar() {
                     </IconButton>
                 </div>
                 <List style={{justifyContent: 'end', textAlign:'end',alignItems: 'end'}}>
-                    <ListItem button component="a" href="#dev">
-                        <ListItemText primary="Us" />
-                    </ListItem>
                      <ListItem button component={Link} to="/pacifics-path">
-                        <ListItemText primary="Home" />
+                        <FaHome style={{position:'relative', right: '6px', top: '-1px'}} /> <ListItemText primary="Home" />
                     </ListItem>
                     <ListItem button component="a" href="#">
-                        <ListItemText primary="About" />
+                        <FaAnchor style={{position:'relative', right: '6px', top: '-1px'}}  /> <ListItemText primary="About" />
                     </ListItem>
                     {email &&<>
-                    {/* <ListItem button component={Link} to="/profile">
-                        <ListItemText primary="Profile" />
-                    </ListItem> */}
                     <ListItem button component={Link} to="/github-profile">
-                        <ListItemText primary="Search dev" />
+                        <FaSearch style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Search" />
                     </ListItem>
                     <ListItem button component={Link} to="Compare">
-                                <ListItemText primary="Compare" />
+                                <Leaderboard style={{position:'relative', right: '6px', top: '-1px'}}/><ListItemText primary="Compare" />
                   </ListItem>
                      <ListItem button component={Link} to="/projects">
-                        <ListItemText primary="Projects" />
+                        <FaStar style={{position:'relative', right: '6px', top: '-1px'}} /> <ListItemText primary="Projects" />
                     </ListItem>
                      <ListItem button component={Link} to="/read-books">
-                        <ListItemText primary="Read Books" />
+                        <FaBook style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Books" />
                     </ListItem>
                      <ListItem button component={Link} to="/git-mate">
-                        <ListItemText primary="Finds Mates" />
+                       <FaUserNinja style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Find Mate" />
                     </ListItem>
                      <ListItem button component={Link} to="/learderboard">
-                        <ListItemText primary="Learder Board" />
+                        <Leaderboard style={{position:'relative', right: '6px', top: '-1px'}} /> <ListItemText primary="Leader Board" />
                     </ListItem>
                     <ListItem button component={Link} to="/selfLearn">
-                        <ListItemText primary="Learn With Ai" />
+                        <FaGoogle style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Learn With Ai" />
+                    </ListItem>
+                    <ListItem button component="a" href="#Testemonials">
+                        <Power style={{position:'relative', right: '6px', top: '-1px'}}/><ListItemText primary="Testimonials" />
                     </ListItem>
                     <ListItem button component={Link} to="/feedback">
-                        <ListItemText primary="Feedback" />
+                        <Feedback style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Feedback" />
                     </ListItem>
                     </> 
                     }
-                    <ListItem button component="a" href="#Testemonials">
-                        <ListItemText primary="Testimonials" />
-                    </ListItem>
                     {email!=null&&<>
                      <ListItem button onClick={() => logout()}>
-                                <Logout />
+                                <Logout style={{position:'relative', right: '6px', top: '-1px'}}/>Logout
                             </ListItem>
                     </>}
                     {email == null&&

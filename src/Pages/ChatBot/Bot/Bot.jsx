@@ -44,7 +44,7 @@ const Bot = () => {
           required
           placeholder="Write here..."
           type="text"
-          id="messageInput"
+          id="messageInputs"
           value={query}
           onChange={handleQuery}
         />

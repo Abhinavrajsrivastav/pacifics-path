@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Videos.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import YouTube from 'react-youtube';
-import { FaWhatsapp, FaInstagram, FaTwitter, FaLink } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaTwitter, FaLink, FaPlaystation, FaPlayCircle } from 'react-icons/fa';
 
 const Videos = () => {
   const location = useLocation();
@@ -135,6 +135,8 @@ const Videos = () => {
     window.open(instagramUrl, '_blank');
   };
 
+  const screenSize = window.innerWidth;
+
   return (
     <div className="Video-response">
       <div className="videos-container">
@@ -148,7 +150,7 @@ const Videos = () => {
           />
           <button type="submit" className="search-button">Search</button>
         </form>
-        <span>Recommended Videos</span>
+        <span><FaPlayCircle style={{position: 'relative', top:'4px'}} /> EVideos</span>
         <div className="video-list">
           {videos.length > 0 && videos.map((video) => (
             <div key={video.id.videoId} className="video-card">
@@ -171,7 +173,24 @@ const Videos = () => {
         {activeVideo && (
           <>
             <div className="video-overlay" onClick={handleCloseVideo}>
-              <YouTube videoId={activeVideo} className="video-player-fullscreen" />
+              {screenSize<=1005?(
+                <YouTube
+  videoId={activeVideo}
+  className="video-player-fullscreen"
+  opts={{
+    height: '250',
+    width: '380',
+  }}
+/>
+              ):
+              <YouTube
+  videoId={activeVideo}
+  className="video-player-fullscreen"
+  opts={{
+    height: '390',
+    width: '640',
+  }}
+/>}
             </div>
             {showShareButtons && (
               <div className="share-buttons-overlay">

@@ -161,7 +161,7 @@ const otherDomainsBooks = [
 
   return (
     <div className="book-search-container">
-      <h1>Book Library</h1>    
+      <h1>Book Bank</h1>    
       <p>Explore a curated collection of books across various genres. Whether you're looking for fiction, non-fiction, science, history, or more, find your next great read here 🎉✌️.</p>
       {renderThemes(webDevelopmentBooks, 'Web Development')}
       {renderThemes(programmingLanguagesBooks, 'Programming Languages')}

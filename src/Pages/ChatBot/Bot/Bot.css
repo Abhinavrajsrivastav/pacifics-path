@@ -66,7 +66,7 @@
   opacity: 1;
 }
 
-#messageInput {
+#messageInputs {
   width: 405px;
   height: 100%;
   background-color: transparent;
@@ -77,8 +77,8 @@
   font-size: 16px;
 }
 
-#messageInput:focus ~ #sendButton svg path,
-#messageInput:valid ~ #sendButton svg path {
+#messageInputs:focus ~ #sendButton svg path,
+#messageInputs:valid ~ #sendButton svg path {
   fill: #3c3c3c;
   stroke: var(--main-color);
 }

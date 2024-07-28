@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Queries.css';
 import { OpenApi, fetchSearchResults } from '../../../Components/Api/OpenApi';
+import { FaSearch, FaSeedling } from 'react-icons/fa';
+import { Send } from '@mui/icons-material';
 
 const Queries = () => {
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ const Queries = () => {
           disabled={loading}
         />
         <button id="sendButton" onClick={handleSubmit} disabled={loading} style={{backgroundColor: "#176cda"}}>
-          {loading ? 'Searching...' : 'Search'}
+          {loading ? <FaSearch /> : <Send />}
         </button>
       </div>
       {error && <p className="error-message">{error}</p>}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Gemini.css';
 import Bot from '../../../Bot/Bot';
+import { FaPlayCircle, FaVideo } from 'react-icons/fa';
 
 function Gemini() {
   const location = useLocation();
@@ -59,7 +60,7 @@ function Gemini() {
   return (
     <div className="Gemini-response">
       <div className="bgblue">
-        <h2>Response {"|"} <span onClick={navigateToVideosResponse}>Videos</span></h2>
+        <h2><span onClick={navigateToVideosResponse}><FaPlayCircle style={{position:'relative',top:'3px'}}/> ETube</span></h2>
         <div className="card">
           {queryHistory.map((entry, index) => (
             <div key={index} className="history-entry">

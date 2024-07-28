@@ -35,12 +35,18 @@
   font-size: 1.2em;
   margin-bottom: 0px;
   cursor: pointer;
-  color: rgba(53, 131, 248, 0.535);
+  color: rgba(255, 255, 255, 0.887);
   transition: .3s ease-in-out;
+  background-color: #1130e0;
+  padding: 5px 15px;
+  border-radius: 10px;
+  position: relative;
+  top: 15px;
+  right: 15px;
 }
 
 .bgblue span:hover {
-  color: rgba(86, 150, 246, 0.766);
+  color: rgba(42, 127, 255, 0.766);
 }
 
 .response-content {
@@ -129,7 +135,7 @@
 @media (max-width: 1005px) {
   .bgblue {
     margin: 0;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 0;
     padding: 10px;
     overflow-x: hidden;
@@ -181,5 +187,10 @@
     top: 85%;
     left: 2%;
     z-index: 1000;
+  }
+
+  .bgblue span{
+    font-size: 1.6rem;
+    right: 20px;
   }
 }
