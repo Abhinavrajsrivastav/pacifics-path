@@ -135,7 +135,7 @@ function NavBar() {
                     <ListItem button component={Link} to="/selfLearn">
                         <FaGoogle style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Learn With Ai" />
                     </ListItem>
-                    <ListItem button component="a" href="/cover-letter">
+                    <ListItem button component={Link} to="/cover-letter">
                         <FaPen style={{position:'relative', right: '6px', top: '-1px'}}/><ListItemText primary="Cover Letter" />
                     </ListItem>
                     <ListItem button component={Link} to="/feedback">
