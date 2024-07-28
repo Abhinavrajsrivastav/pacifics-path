@@ -45,8 +45,8 @@ const LeaderBoard = () => {
   };
 
   return (
-    <div className="github-profiles" id="Testemonials">
-       <span><span className='testemonial-user'>LeaderBoard</span></span>
+    <div className="github-profiless" id="Testemonials">
+       <span><span className='testemonial-users'>LeaderBoard</span></span>
       <div className="user-rankings">
         <table className="ranking-tables">
           <thead>

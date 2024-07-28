@@ -5,7 +5,7 @@ import UserAuth from '../Api/AuthFunction_Call';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText, Avatar, Icon } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon, Leaderboard, Logout, Search, SearchOff, Feedback, Power, NewReleases, Celebration } from '@mui/icons-material';
 import './Navbar.css';
-import { FaAnchor, FaBook, FaGoogle, FaHome, FaIcons, FaInbox, FaSearch, FaSignInAlt, FaStar, FaTeamspeak, FaUserNinja } from 'react-icons/fa';
+import { FaAnchor, FaBook, FaGoogle, FaHome, FaIcons, FaInbox, FaSearch, FaSignInAlt, FaStar, FaTeamspeak, FaUserFriends, FaUserNinja } from 'react-icons/fa';
 
 function NavBar() {
     const [menuActive, setMenuActive] = useState(false);
@@ -57,14 +57,14 @@ function NavBar() {
                                     <Link to="/github-profile" className="nav-dropdown-item"><FaSearch style={{position:'relative', right: '4px', top: '2px'}} />Search</Link>
                                     <Link to="/projects" className="nav-dropdown-item"><FaStar style={{position:'relative', right: '4px', top: '2px'}} /> Projects</Link>
                                     <Link to="/read-books" className="nav-dropdown-item"><FaBook style={{position:'relative', right: '4px', top: '2px'}} /> Books</Link>
-                                    <Link to="/git-mate" className="nav-dropdown-item"><FaUserNinja style={{position:'relative', right: '4px', top: '2px'}} /> Find Mate</Link>
+                                    <Link to="/git-mate" className="nav-dropdown-item"><FaUserFriends style={{position:'relative', right: '4px', top: '2px'}} /> Find Mates</Link>
                                     <Link to="/learderboard" className="nav-dropdown-item"><Leaderboard style={{position:'relative', right: '4px', top: '2px'}} /> LeaderBoard</Link>
                                     <Link to="/selfLearn" className="nav-dropdown-item"><FaGoogle style={{position:'relative', right: '4px', top: '2px'}} /> Learn With Ai</Link>
                                     <Link to="feedback" className='nav-dropdown-item' ><Feedback style={{position:'relative', right: '4px', top: '2px'}} /> Feedback</Link>
                                 </div>
                             </div>
                             </>}
-                            <a href="#Testemonials" className="nav-link">Testimonials</a>
+                            {/* <a href="#Testemonials" className="nav-link">Testimonials</a> */}
                             <a href="#dev" className="nav-link">Us</a>
                             {email == null ? (
                                 <>
@@ -134,9 +134,9 @@ function NavBar() {
                     <ListItem button component={Link} to="/selfLearn">
                         <FaGoogle style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Learn With Ai" />
                     </ListItem>
-                    <ListItem button component="a" href="#Testemonials">
+                    {/* <ListItem button component="a" href="#Testemonials">
                         <Power style={{position:'relative', right: '6px', top: '-1px'}}/><ListItemText primary="Testimonials" />
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem button component={Link} to="/feedback">
                         <Feedback style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Feedback" />
                     </ListItem>

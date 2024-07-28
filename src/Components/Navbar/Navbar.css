@@ -138,6 +138,7 @@
     padding: 10px;
     min-width: 160px;
     z-index: 1000;
+    color: rgb(47, 87, 250);
 }
 
 /* Dropdown item */
@@ -145,8 +146,8 @@
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: white;
     font-size: 1.2rem;
+    color: rgb(47, 87, 250);
 }
 
 .nav-dropdown-item:hover {

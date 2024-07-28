@@ -14,8 +14,8 @@ const Footer = () => {
         <div className="footer-nav">
           <a href="#code">Coding</a>
           <a href="#showcase">Storytelling</a>
-          <a href="#impress">Exploring</a>
-          <a href="#contact">🚀🛸</a>
+          <a href="#impress">Hustling</a>
+          <a href="#contact">🧑‍🚀🛸</a>
         </div>
         <button className="footer-github-button">
           <FaStar size='25'/>
