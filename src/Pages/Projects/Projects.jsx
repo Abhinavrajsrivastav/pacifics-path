@@ -230,7 +230,7 @@ const Projects = () => {
             value={query}
             onChange={handleInputChange}
             className="project-search-input"
-            placeholder="Enter project type (e.g., web development, data science)..."
+            placeholder="Enter project name..."
           />
           <button onClick={handleButtonClick} className="project-search-button">Search</button>
         </div>
@@ -238,6 +238,7 @@ const Projects = () => {
       <div ref={projectsSectionRef}>
         {projects.length > 0 && (
            <div ref={projectsSectionRef} className='projects-result'>
+            <h3 className='head-result'>Projects</h3>
         {projects.length > 0 && (
           <div className="project-cards">
             {paginate(projects).map((project) => (
