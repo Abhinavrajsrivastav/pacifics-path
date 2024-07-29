@@ -134,11 +134,12 @@
     position: absolute;
     top: 107%;
     left: -40px;
-    background-color: rgb(3, 12, 37);
+    background-color: rgba(3, 12, 37, 0);
     padding: 10px;
-    min-width: 160px;
+    min-width: 190px;
     z-index: 1000;
     color: rgb(47, 87, 250);
+    font-size: .8rem;;
 }
 
 /* Dropdown item */
@@ -146,7 +147,7 @@
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: rgb(47, 87, 250);
 }
 
