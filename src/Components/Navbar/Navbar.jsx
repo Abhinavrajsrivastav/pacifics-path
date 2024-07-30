@@ -61,7 +61,7 @@ function NavBar() {
                                     <Link to="/learderboard" className="nav-dropdown-item"><Leaderboard style={{position:'relative', right: '4px', top: '2px'}} /> LeaderBoard</Link>
                                     <Link to="/selfLearn" className="nav-dropdown-item"><FaGoogle style={{position:'relative', right: '4px', top: '2px'}} /> Learn With Ai</Link>
                                     <Link to="/cover-letter" className="nav-dropdown-item"><FaPen style={{position:'relative', right: '4px', top: '2px'}} /> Cover Letter</Link>
-                                    <Link to="feedback" className='nav-dropdown-item' ><Feedback style={{position:'relative', right: '4px', top: '2px'}} /> Feedback</Link>
+                                    <Link to="https://forms.gle/JaN34JzzDWhtjAUv5" className='nav-dropdown-item' ><Feedback style={{position:'relative', right: '4px', top: '2px'}} /> Feedback</Link>
                                 </div>
                             </div>
                             </>}
@@ -138,7 +138,7 @@ function NavBar() {
                     <ListItem button component={Link} to="/cover-letter">
                         <FaPen style={{position:'relative', right: '6px', top: '-1px'}}/><ListItemText primary="Cover Letter" />
                     </ListItem>
-                    <ListItem button component={Link} to="/feedback">
+                    <ListItem button component={Link} to="https://forms.gle/JaN34JzzDWhtjAUv5">
                         <Feedback style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Feedback" />
                     </ListItem>
                     </> 
