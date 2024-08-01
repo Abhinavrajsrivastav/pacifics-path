@@ -121,6 +121,7 @@
     position: relative;
     top: 2px;
     transition: 0.1s ease-in-out;
+    margin: 10px;
 }
 
 .nav-dropdown-button:hover{
@@ -134,8 +135,7 @@
     position: absolute;
     top: 107%;
     left: -40px;
-    background-color: rgba(3, 12, 37, 0);
-    padding: 10px;
+    background-color: rgb(3, 12, 37);
     min-width: 190px;
     z-index: 1000;
     color: rgb(47, 87, 250);
@@ -152,8 +152,8 @@
 }
 
 .nav-dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: rgb(100, 154, 255); 
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 89, 255); 
 }
 
 .nav-dropdown:hover .nav-dropdown-menu {

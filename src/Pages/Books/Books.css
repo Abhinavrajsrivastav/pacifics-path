@@ -23,7 +23,6 @@
   text-align: start;
   align-items: start;
   position: relative;
-  right: 445px;
 }
 
 .book-search-container p{
@@ -33,9 +32,9 @@
   text-align: start;
   align-items: start;
   position: relative;
-  left: -23px;
+  left: 0px;
   right: 0px;
-  max-width: 1000px;
+  max-width: 1050px;
 }
 
 .suggested-themes {
@@ -140,7 +139,9 @@
 }
 
 .book-item {
-  width: 250px;
+  width: auto;
+  max-width: 300px;
+  overflow: hidden;
   border: 1px solid #f8f8f8;
   border-radius: 10px;
   padding: 15px;

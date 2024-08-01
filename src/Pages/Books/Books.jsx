@@ -113,7 +113,7 @@ const otherDomainsBooks = [
               {theme.emoji} {theme.name} 
             </div>
             <div className='themeArrow'>
-              {<FaFire size='12' color="blue"/>}
+              {<FaFire size='12' color="yellow"/>}
             </div>
             </div>
           </button>
@@ -133,36 +133,34 @@ const otherDomainsBooks = [
   };
 
   const ensureEnglishAndOptimize = async (description) => {
-    // Dummy language detection and translation logic for illustration
-    const language = detectLanguage(description); // This function should detect the language of the description
+    const language = detectLanguage(description); 
 
     if (language !== 'en') {
-      description = await translateToEnglish(description); // This function should translate the description to English
+      description = await translateToEnglish(description);
     }
 
-    const optimizedDescription = await optimizeWithGemini(description); // This function should call the Gemini API to optimize the description
+    const optimizedDescription = await optimizeWithGemini(description); 
     return optimizedDescription;
   };
 
   const detectLanguage = (text) => {
-    // Dummy function: always returns 'en'
     return 'en';
   };
 
   const translateToEnglish = async (text) => {
-    // Dummy function: assumes the text is already in English
     return text;
   };
 
   const optimizeWithGemini = async (text) => {
-    // Dummy function: returns the text with "(optimized)" appended
     return text + ' (optimized)';
   };
 
   return (
     <div className="book-search-container">
-      <h1>Book Bank</h1>    
+      <div>
+        <h1>Book Bank</h1>    
       <p>Explore a curated collection of books across various genres. Whether you're looking for fiction, non-fiction, science, history, or more, find your next great read here 🎉✌️.</p>
+      </div>
       {renderThemes(webDevelopmentBooks, 'Web Development')}
       {renderThemes(programmingLanguagesBooks, 'Programming Languages')}
       {renderThemes(dataScienceBooks, 'Data Science')}
