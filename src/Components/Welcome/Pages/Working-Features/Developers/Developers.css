@@ -69,13 +69,14 @@
 }
 
 .social-profiles {
+  display: flex;
   margin-top: 20px;
+  gap: 20px;
 }
 
 .social-profiles a {
   color: var(--accent-color);
   text-decoration: none;
-  margin: 0 10px;
   font-size: 18px;
   transition: color 0.3s ease;
 }
