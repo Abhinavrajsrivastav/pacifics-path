@@ -10,6 +10,8 @@ export const gsapAnimations = () => {
   const categories = document.querySelectorAll('.category');
   const brands = document.querySelectorAll('.brand-names');
   const cap = document.querySelector('.centered');
+  const gitProfile = document.querySelector('.user-ranking');
+  const aboutdev = document.querySelector('.about-section');
 
   // Exclude visioIcons from rotation animation
 
@@ -69,6 +71,23 @@ export const gsapAnimations = () => {
     y: 50,
     duration: 1,
     delay: 0.8,
+    stagger: 0.2,
+  });
+
+  gsap.from(gitProfile, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    delay: 0.8,
+    stagger: 0.2,
+  });
+
+  gsap.from(aboutdev, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    delay: 0.5
+    ,
     stagger: 0.2,
   });
 };
