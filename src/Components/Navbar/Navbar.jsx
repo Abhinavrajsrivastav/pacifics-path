@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import UserAuth from '../Api/AuthFunction_Call';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText, Avatar, Icon } from '@mui/material';
-import { Menu as MenuIcon, Close as CloseIcon, Leaderboard, Logout, Search, SearchOff, Feedback, Power, NewReleases, Celebration, Pages, RocketLaunch, BookOnline } from '@mui/icons-material';
+import { Menu as MenuIcon, Close as CloseIcon, Leaderboard, Logout, Search, SearchOff, Feedback, Power, NewReleases, Celebration, Pages, RocketLaunch, BookOnline, Support } from '@mui/icons-material';
 import './Navbar.css';
 import { FaAnchor, FaBook, FaGoogle, FaHome, FaIcons, FaInbox, FaPen, FaSearch, FaSignInAlt, FaStar, FaTeamspeak, FaUserFriends, FaUserNinja } from 'react-icons/fa';
 
@@ -57,6 +57,7 @@ function NavBar() {
                                     <Link to="/github-profile" className="nav-dropdown-item"><FaSearch style={{position:'relative', right: '4px', top: '2px'}} />Search</Link>
                                     <Link to="/projects" className="nav-dropdown-item"><FaStar style={{position:'relative', right: '4px', top: '2px'}} /> Projects</Link>
                                     <Link to="/read-books" className="nav-dropdown-item"><FaBook style={{position:'relative', right: '4px', top: '2px'}} /> Books</Link>
+                                    <Link to="/join-community" className="nav-dropdown-item"><Support style={{position:'relative', right: '4px', top: '2px'}} /> Find Community</Link>
                                     <Link to="/git-mate" className="nav-dropdown-item"><FaUserFriends style={{position:'relative', right: '4px', top: '2px'}} /> Find Mates</Link>
                                     <Link to="/learderboard" className="nav-dropdown-item"><Leaderboard style={{position:'relative', right: '4px', top: '2px'}} /> LeaderBoard</Link>
                                     <Link to="/selfLearn" className="nav-dropdown-item"><FaGoogle style={{position:'relative', right: '4px', top: '2px'}} /> Learn With Ai</Link>
@@ -128,6 +129,9 @@ function NavBar() {
                     </ListItem>
                      <ListItem button component={Link} to="/git-mate">
                        <FaUserFriends style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Find Mate" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/join-community">
+                       <Support style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Find Community" />
                     </ListItem>
                      <ListItem button component={Link} to="/learderboard">
                         <Leaderboard style={{position:'relative', right: '6px', top: '-1px'}} /> <ListItemText primary="Leader Board" />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Community.css';
 import { OpenApi } from '../../Components/Api/OpenApi';
-import { Help } from '@mui/icons-material';
+import { Group } from '@mui/icons-material';
 
 const Community = () => {
   const [selectedCommunity, setSelectedCommunity] = useState(null);
@@ -23,6 +23,30 @@ const Community = () => {
     {
       name: 'Class 10',
       communities: ['Science', 'Math', 'English']
+    },
+    {
+      name: 'Data Science',
+      communities: ['Machine Learning', 'Statistics', 'Data Analysis']
+    },
+    {
+      name: 'Web Development',
+      communities: ['HTML', 'CSS', 'React']
+    },
+    {
+      name: 'Mobile Development',
+      communities: ['iOS', 'Android', 'Flutter']
+    },
+    {
+      name: 'Cloud Computing',
+      communities: ['AWS', 'Azure', 'Google Cloud']
+    },
+    {
+      name: 'Cybersecurity',
+      communities: ['Ethical Hacking', 'Network Security', 'Cryptography']
+    },
+    {
+      name: 'Artificial Intelligence',
+      communities: ['Neural Networks', 'Natural Language Processing', 'Robotics']
     }
   ];
 
@@ -59,7 +83,9 @@ const Community = () => {
 
   return (
     <div className="community-container">
-      <h1 className="community-title">Join a Community <Help color='white' size='10'/></h1>
+      <h1 className="community-title">
+        Join a Community <Group style={{ fontSize: '2.5rem', verticalAlign: 'middle', marginLeft: '10px' }} color='white'/>
+      </h1>
       <div className="community-domains">
         {domains.map((domain, index) => (
           <div key={index} className="community-domain">
@@ -85,7 +111,7 @@ const Community = () => {
             {communityDetails.map((detail, index) => (
               <div key={index} className="community-card">
                 {detail[3] ? (
-                  <img src= "community.jpg" alt={detail[0]} className="community-card-img" />
+                  <img src={detail[3]} alt={detail[0]} className="community-card-img" />
                 ) : (
                   <div className="community-card-img-placeholder">No Image</div>
                 )}

@@ -19,7 +19,8 @@
   justify-content: center;
   text-align: start;
   color: black;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1250px;
 }
 
 .community-domain {
