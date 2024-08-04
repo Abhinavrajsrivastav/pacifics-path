@@ -29,6 +29,7 @@ import useSmoothScroll from './useSmoothScroll';
 import LeaderBoard from './Components/Welcome/Pages/Working-Features/LearderBoard/LeaderBoard';
 import Feedback from './Components/Welcome/Feedback/Feedback';
 import CoverLetterGenerator from './Pages/CoverLetter/CoverLetterGenerator';
+import Community from './Pages/Community/Community';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/learderboard" element={<LeaderBoard />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/cover-letter" element={<CoverLetterGenerator />} />
+          <Route path="/join-community" element={<Community />} />
         </Routes>
         <Footer />
       </AuthProvider>
