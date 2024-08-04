@@ -113,8 +113,8 @@ const Community = () => {
                 {detail[3] ? (
                     <img 
                          src={
-                              detail[0] === "Discord" ? "./discord.jpg" :
-                              detail[0] === "Slack" ? "./slack.jpeg" : "./telegram.jpg"
+                              detail[0] === "Discord" ? "./Community/discord.jpg" :
+                              detail[0] === "Slack" ? "./Community/slack.jpeg" : "./Community/telegram.jpg"
                             } 
                         alt={detail[0]} 
                          className="community-card-img" 
