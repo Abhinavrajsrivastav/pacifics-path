@@ -1,3 +1,5 @@
+![Thumbnail](https://abhinavrajsrivastav.github.io/pacifics-path/Icons/GeminiAi.png)
+
 ## Issues Faced:
 * Git lock file issue
 * Folder Lock issue
