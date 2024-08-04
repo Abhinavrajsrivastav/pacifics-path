@@ -111,7 +111,15 @@ const Community = () => {
             {communityDetails.map((detail, index) => (
               <div key={index} className="community-card">
                 {detail[3] ? (
-                  <img src={detail[3]} alt={detail[0]} className="community-card-img" />
+                    <img 
+                         src={
+                              detail[0] === "Discord" ? "./discord.jpg" :
+                              detail[0] === "Slack" ? "./slack.jpeg" : "./telegram.jpg"
+                            } 
+                        alt={detail[0]} 
+                         className="community-card-img" 
+                    />
+
                 ) : (
                   <div className="community-card-img-placeholder">No Image</div>
                 )}
