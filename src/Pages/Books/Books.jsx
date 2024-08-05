@@ -157,8 +157,9 @@ const otherDomainsBooks = [
 
   return (
     <div className="book-search-container">
-      <div>
-        <h1>Book Bank</h1>    
+      <div className='book-banke'>
+        <div>
+        <h1>Book Library</h1>    
       <p>Explore a curated collection of books across various genres. Whether you're looking for fiction, non-fiction, science, history, or more, find your next great read here 🎉✌️.</p>
       </div>
       {renderThemes(webDevelopmentBooks, 'Web Development')}
@@ -171,7 +172,7 @@ const otherDomainsBooks = [
           type="text"
           value={query}
           onChange={handleInputChange}
-          placeholder="Enter book category (e.g., web development, data science)"
+          placeholder="Enter book category or name"
         />
         <button onClick={handleButtonClick} >
           Search
@@ -197,6 +198,7 @@ const otherDomainsBooks = [
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

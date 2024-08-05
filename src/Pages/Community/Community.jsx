@@ -84,7 +84,7 @@ const Community = () => {
   return (
     <div className="community-container">
       <h1 className="community-title">
-        Join a Community <Group style={{ fontSize: '2.5rem', verticalAlign: 'middle', marginLeft: '10px' }} color='white'/>
+       💌 Join a Community 🫂
       </h1>
       <div className="community-domains">
         {domains.map((domain, index) => (
@@ -106,21 +106,11 @@ const Community = () => {
       </div>
       {selectedCommunity && communityDetails.length > 0 && (
         <div className="community-details">
-          <h2 className="details-title">{selectedCommunity} Communities</h2>
+          <h2 className="details-title">🍀 {selectedCommunity} Communities 🍀</h2>
           <div className="community-cards">
             {communityDetails.map((detail, index) => (
               <div key={index} className="community-card">
-                {detail[3] ? (
-                   <img 
-                     src={`./Community/${detail[3]}.jpg`} 
-                     alt={detail[0]} 
-                      className="community-card-img" 
-                    />
-
-
-                ) : (
-                  <div className="community-card-img-placeholder">No Image</div>
-                )}
+                   <img src='./community.jpg' alt='img' className="community-card-img" />
                 <div className="community-card-content">
                   <h3>{detail[0]}</h3>
                   <p>{detail[1]}</p>

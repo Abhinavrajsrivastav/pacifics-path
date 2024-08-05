@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
 
 .book-search-container {
   display: flex;
@@ -11,20 +13,27 @@
   background-color: var(--bg-color);
   color: white;
   height: 100%;
-  font-family: 'Arial', sans-serif;
   position: relative;
-  justify-content: start;
+  justify-content: center;
 }
 
 .book-search-container h1 {
-  font-size: 2.5rem;
   color: #4580ff;
   margin-bottom: 10px;
   text-align: start;
   align-items: start;
   position: relative;
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 3rem;
 }
 
+.book-banke{
+  max-width: 1000px;
+  margin-left: 100px;
+}
 .book-search-container p{
   font-size: 1.5rem;
   color: #f5f5f5;
@@ -34,7 +43,7 @@
   position: relative;
   left: 0px;
   right: 0px;
-  max-width: 1050px;
+  width: auto;
 }
 
 .suggested-themes {

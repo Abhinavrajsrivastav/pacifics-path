@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
 
 .project-search-container {
   display: flex;
@@ -9,7 +11,6 @@
   background-color: var(--bg-color);
   color: white;
   height: 100%;
-  font-family: 'Arial', sans-serif;
   position: relative;
   justify-content: center;
 }
@@ -19,9 +20,12 @@
   text-align: start;
   align-items: start;
   justify-content: start;
-  font-size: 2.5rem;
-  color: #4580ff;
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 600;
+  font-style: normal;
+  font-size: 3rem;
+  color: #4580ff;
 }
 
 .suggested-themes {

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
+
 .community-container {
   font-family: Arial, sans-serif;
   padding: 160px 40px 160px 40px;
@@ -7,9 +11,13 @@
 
 .community-title {
   text-align: center;
-  font-size: 2rem;
   color: #ffffff;
   margin-bottom: 60px;
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 3rem;
 }
 
 .community-domains {
@@ -21,13 +29,16 @@
   color: black;
   width: 100%;
   max-width: 1250px;
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .community-domain {
-  background-color: #4554e3;
-  /* border-radius: 8px; */
-  padding: 15px;
-  box-shadow: 10px 20px 0px rgba(109, 129, 255, 0.95);
+  border-radius: 8px;
+  padding: 10px;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   width: 250px;
   text-align: start;
   justify-content: start;
@@ -39,6 +50,8 @@
   color: #ffffff;
   margin-bottom: 10px;
   text-align: start;
+  background-color: #030303;
+  padding: 5px;
 }
 
 .community-list {
@@ -57,7 +70,7 @@
 }
 
 .community-item:hover {
-  background-color: #00000090;
+  background-color: #32187c90;
   color: white;
 }
 
@@ -66,11 +79,15 @@
 }
 
 .details-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: #ffffff;
   margin-bottom: 15px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .community-cards {
@@ -81,11 +98,11 @@
 }
 
 .community-card {
-  background-color: #4727ff;
   overflow: hidden;
-  box-shadow: 5px 10px 0px rgba(111, 59, 243, 0.631);
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
   width: 300px;
   transition: transform 0.3s;
+  border-radius: 15px;
 }
 
 
@@ -101,13 +118,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0;
   color: #999;
   font-size: 1rem;
+  background-image: url('./community.jpg');
 }
 
 .community-card-content {
   padding: 15px;
+  font-family: "Signika Negative", sans-serif;
 }
 
 .community-card-content h3 {
@@ -124,17 +142,21 @@
 
 .community-card-link {
   display: inline-block;
-  background-color: #007bff;
+  background-color: #030303;
   color: #fff;
   padding: 10px 15px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .community-card-link:hover {
-  background-color: #0056b3;
+  background-color: #1a1a1a;
 }
 
 /* Media query for screens with a maximum width of 1005px */
