@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Community.css';
 import { OpenApi } from '../../Components/Api/OpenApi';
-import { Group } from '@mui/icons-material';
 
 const Community = () => {
   const [selectedCommunity, setSelectedCommunity] = useState(null);
   const [communityDetails, setCommunityDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const domains = [
     {
@@ -52,27 +53,24 @@ const Community = () => {
 
   const fetchCommunityDetails = async (community) => {
     try {
-      const query = `give me the ${community} communities only including its description, name, and joining links for platforms like Discord, Slack, and Telegram. I am developing an educational project. give me the result in this format {["platformname", "description", "platformjoinlink","platformimg"]} only, else do not give any single word. please do not give anythings else not a single word.`;
-      
-      // Fetch data
-      const response = await OpenApi(query);
-      console.log('Raw API response:', response);
+      setLoading(true);
+      setError(null);
 
-      // Parse response if it's a string
+      const query = `give me the ${community} communities only including its description, name, and joining links for platforms like Discord, Slack, and Telegram. I am developing an educational project. give me the result in this format {["platformname", "description", "platformjoinlink","platformimg"]} only, else do not give any single word. please do not give anythings else not a single word.`;
+
+      const response = await OpenApi(query);
       const data = typeof response === 'string' ? JSON.parse(response) : response;
 
-      console.log('Parsed Community details:', data);
-
-      // Ensure data is an array
       if (Array.isArray(data)) {
         setCommunityDetails(data);
       } else {
-        console.error('Unexpected data format:', data);
-        setCommunityDetails([]);
+        throw new Error('Unexpected data format');
       }
     } catch (error) {
       console.error('Error fetching community details:', error);
-      setCommunityDetails([]);
+      setError('Failed to load community details. Please try again later.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,7 +82,7 @@ const Community = () => {
   return (
     <div className="community-container">
       <h1 className="community-title">
-       💌 Join a Community 🫂
+        💌 Join a Community 🫂
       </h1>
       <div className="community-domains">
         {domains.map((domain, index) => (
@@ -104,18 +102,20 @@ const Community = () => {
           </div>
         ))}
       </div>
-      {selectedCommunity && communityDetails.length > 0 && (
+      {loading && <p>Loading community details...</p>}
+      {error && <p>{error}</p>}
+      {selectedCommunity && communityDetails.length > 0 && !loading && !error && (
         <div className="community-details">
           <h2 className="details-title">🍀 {selectedCommunity} Communities 🍀</h2>
           <div className="community-cards">
             {communityDetails.map((detail, index) => (
               <div key={index} className="community-card">
-                   <img src='.Images/community.jpg' alt='img' className="community-card-img" />
+                <img src='https://www.mindful.org/content/uploads/Finding-community-where-you-least-expect-it.jpg' alt='img' className="community-card-img" />
                 <div className="community-card-content">
                   <h3>{detail[0]}</h3>
                   <p>{detail[1]}</p>
-                  <a href={detail[2]} target="_blank" rel="noopener noreferrer" className="community-card-link">
-                    Join on {detail[0]}
+                  <a href={detail[2]} className="community-card-link" target="_blank" rel="noopener noreferrer">
+                    Join Now
                   </a>
                 </div>
               </div>
