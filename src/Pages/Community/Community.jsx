@@ -110,7 +110,7 @@ const Community = () => {
           <div className="community-cards">
             {communityDetails.map((detail, index) => (
               <div key={index} className="community-card">
-                   <img src='./community.jpg' alt='img' className="community-card-img" />
+                   <img src='.Images/community.jpg' alt='img' className="community-card-img" />
                 <div className="community-card-content">
                   <h3>{detail[0]}</h3>
                   <p>{detail[1]}</p>

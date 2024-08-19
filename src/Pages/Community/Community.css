@@ -38,7 +38,7 @@
 .community-domain {
   border-radius: 8px;
   padding: 10px;
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: linear-gradient(135deg, var(--bg-color), #764ba2 100%);
   width: 250px;
   text-align: start;
   justify-content: start;
@@ -120,7 +120,6 @@
   justify-content: center;
   color: #999;
   font-size: 1rem;
-  background-image: url('./community.jpg');
 }
 
 .community-card-content {
