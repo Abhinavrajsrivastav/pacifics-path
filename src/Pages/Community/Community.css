@@ -62,12 +62,15 @@
 
 .community-details {
   margin-top: 100px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 .details-title {
   font-size: 2rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 45px;
   text-align: center;
   font-family: "Signika Negative", sans-serif;
   font-weight: 600;
@@ -78,6 +81,8 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .community-card {
@@ -89,9 +94,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.community-card:hover {
-  transform: scale(1.05);
-}
 
 .community-card-img {
   width: 100%;
@@ -127,9 +129,6 @@
   transition: background-color 0.3s;
 }
 
-.community-card-link:hover {
-  background-color: #1a1a1a;
-}
 
 @media (max-width: 1005px) {
   .community-container {

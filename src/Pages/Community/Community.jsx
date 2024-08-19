@@ -56,7 +56,7 @@ const Community = () => {
       setLoading(true);
       setError(null);
 
-      const query = `give me the ${community} communities only including its description, name, and joining links for platforms like Discord, Slack, and Telegram. I am developing an educational project. give me the result in this format {["platformname", "description", "platformjoinlink","platformimg"]} only, else do not give any single word. please do not give anythings else not a single word.`;
+      const query = `give me the ${community} communities only including its description, name, and joining links for platforms like Discord, Slack, and Telegram. I am developing an educational project. give me the result in this format {["platformname", "description", "platformjoinlink","platformimg"]} only, else do not give any single word. please do not give anythings else not a single word. give minumum 6 resources.`;
 
       const response = await OpenApi(query);
       const data = typeof response === 'string' ? JSON.parse(response) : response;
