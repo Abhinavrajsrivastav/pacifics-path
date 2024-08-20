@@ -105,7 +105,7 @@ const otherDomainsBooks = [
   const renderThemes = (themes, title) => (
     <div className='books-box'>
       <h2>{title}</h2>
-      <div className="suggested-themes">
+      <div className="suggested-theme">
         {themes.map((theme) => (
           <button key={theme.name} className="theme-buttoni" onClick={() => handleThemeClick(theme)}>
             <div className='theme-buttons'>

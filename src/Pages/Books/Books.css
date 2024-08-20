@@ -4,12 +4,10 @@
 
 .book-search-container {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: start;
-    position: relative;
-  padding: 150px 30px  20px 30px;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  padding: 120px 30px  100px 30px;
   background-color: var(--bg-color);
   color: white;
   height: 100%;
@@ -18,16 +16,16 @@
 }
 
 .book-search-container h1 {
-  color: #4580ff;
-  margin-bottom: 10px;
+ margin-bottom: 10px;
   text-align: start;
   align-items: start;
-  position: relative;
+  justify-content: start;
   font-family: "Signika Negative", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
   font-size: 3rem;
+  color: #4580ff;
 }
 
 .book-banke{
@@ -35,7 +33,7 @@
   margin-left: 100px;
 }
 .book-search-container p{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #f5f5f5;
   margin-bottom: 30px;
   text-align: start;
@@ -43,10 +41,10 @@
   position: relative;
   left: 0px;
   right: 0px;
-  width: auto;
+  width: 1000px;
 }
 
-.suggested-themes {
+.suggested-theme {
   display: flex; 
   flex-wrap: wrap;
   gap: 6px;
@@ -90,13 +88,14 @@
 
 
 .book-search-input {
- width: 300px;
+  width: 300px;
   padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
   margin-bottom: 10px;
   position: relative;
-  left: 15px;
+  left: -8px;
 }
 
 .search-container{
@@ -105,7 +104,7 @@
   text-align: center;
   align-items: center;
   position: relative;
-  left: 0px;
+  left: -130px;
   right: 0px;
   width: 100%;
 }
@@ -148,9 +147,7 @@
 }
 
 .book-item {
-  width: auto;
-  max-width: 300px;
-  overflow: hidden;
+  width: 250px;
   border: 1px solid #f8f8f8;
   border-radius: 10px;
   padding: 15px;
@@ -204,7 +201,7 @@
 }
 
 .books-box {
-  width: 80%;
+  width: 100%;
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -238,9 +235,10 @@
   }
 
   .book-search-container p{
-    font-size: 15px;
+    font-size: 13px;
     left: 0px;
     right: 0px;
+    max-width:100%;
   }
       .theme-buttoni {
         padding: 8px 10px;
@@ -249,7 +247,7 @@
     }
 
     .book-item{
-      width: 100%;
+      width: 37%;
       height: 100%;
     }
 
@@ -265,7 +263,7 @@
       align-items: start;
       left: -120px;
       gap: 10px;
-      top: -16px;
+      top: 5px;
     }
 
     .search-container input{
@@ -275,10 +273,19 @@
       font-size: 10px;
     }
 
+    .book-banke{
+      margin-left: 0px;
+      max-width: 100%;
+    }
+
     .search-container button{
     top: 0px;
     margin: 0px;
     padding: 7px 8px;
     left: 116px;
+    }
+
+    .suggested-theme{
+      width: 100%;
     }
 }
