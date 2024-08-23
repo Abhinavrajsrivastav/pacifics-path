@@ -113,7 +113,7 @@ const otherDomainsBooks = [
               {theme.emoji} {theme.name} 
             </div>
             <div className='themeArrow'>
-              {<FaFire size='12' color="yellow"/>}
+              {<FaFire size='12' color="blue"/>}
             </div>
             </div>
           </button>
@@ -188,11 +188,11 @@ const otherDomainsBooks = [
             <p>{book.description}</p>
             <div className="book-links">
               <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">
-                <FaBook />
+                <FaBook color='white'/>
               </a>
               {book.volumeInfo.previewLink && (
                 <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-                  <FaLink />
+                  <FaLink color='white'/>
                 </a>
               )}
             </div>
