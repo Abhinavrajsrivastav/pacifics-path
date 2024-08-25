@@ -82,7 +82,7 @@ const Community = () => {
   return (
     <div className="community-container">
       <h1 className="community-title">
-        💌 Join a Community 🫂
+        💌 Join a Community
       </h1>
       <div className="community-domains">
         {domains.map((domain, index) => (
