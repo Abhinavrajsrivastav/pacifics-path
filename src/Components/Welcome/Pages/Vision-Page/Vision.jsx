@@ -18,20 +18,30 @@ function Vision() {
           <FaGraduationCap className="vision-icon" />
         </div>
         <p className="brand-names">Educome</p>
-         <p className="vision-heading">
-        <AnimatedGradientText>
-          A Platform For Engineers 💙
-        </AnimatedGradientText>
+        <p className="vision-heading">
+          <AnimatedGradientText>
+            A Platform For Engineers💙
+          </AnimatedGradientText> 
         </p>
-        {/* <p className="vision-heading">
-          A Platform For <span className="vision-learning">Engineers</span>
-        </p> */}
-        <p className="vision-subheading">
-          {/* A digital, secure and interactive classroom <br /> where students can learn and share */}
-        </p>
-        <Link to="/signup">
-          <button className="vision-btn">Start Learning now!</button>
+       
+        <div className='vis-btn'>
+          <Link to="/signup">
+          <button className="featured-btn"> Start learning now!</button>
         </Link>
+        <a 
+          href="https://www.producthunt.com/posts/educome?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-educome" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <img 
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=491405&theme=neutral" 
+            alt="Educome - A Platform for Engineering Aspirants | Product Hunt" 
+            style={{ width: '250px', height: '54px' }} 
+            width="250" 
+            height="54" 
+          />
+        </a>
+        </div>
       </div>
     </div>
   );
