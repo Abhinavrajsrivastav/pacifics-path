@@ -20,7 +20,7 @@ function Vision() {
         <p className="brand-names">Educome</p>
          <p className="vision-heading">
         <AnimatedGradientText>
-          A Platform For Engineers
+          A Platform For Engineers 💙
         </AnimatedGradientText>
         </p>
         {/* <p className="vision-heading">
