@@ -150,15 +150,15 @@
   }
 
   .vision-icon {
-    height: 30px; /* Smaller icon */
+    height: 30px;
     width: 30px;
-    top: 5px; /* Adjusted positioning */
-    left: 0; /* Center icon */
+    top: 5px; 
+    left: 0; 
   }
 
   .vision-subheading {
-    font-size: 0.9rem; /* Smaller subheading */
-    padding: 0 10px; /* Add padding for spacing */
+    font-size: 0.9rem;
+    padding: 0 10px; 
     position: relative;
     bottom: 0px;
   }
