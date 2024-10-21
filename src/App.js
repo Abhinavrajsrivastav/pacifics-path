@@ -18,7 +18,7 @@ import Videos from './Pages/ChatBot/Queries/Results/Video/Videos';
 import Books from './Pages/Books/Books';
 import GitHubProfile from './Pages/Socials/GitHub/GitHubProfile';
 import Mate from './Pages/Socials/FindMate/Mate';
-import ChatRoom from '../src/Categories/ChatRoom';
+// import ChatRoom from '../src/Categories/ChatRoom';
 import Testimonials from './Components/Welcome/Pages/Working-Features/Testemonials/Testemonials';
 import Developers from './Components/Welcome/Pages/Working-Features/Developers/Developers';
 import Compare from './Components/Welcome/Pages/Working-Features/Compare/Compare';
@@ -31,6 +31,7 @@ import Feedback from './Components/Welcome/Feedback/Feedback';
 import CoverLetterGenerator from './Pages/CoverLetter/CoverLetterGenerator';
 import Community from './Pages/Community/Community';
 import Chatbot from './Components/IBM_Service/Chatbot';
+import ServerError from './Pages/ServerError/ServerError';
 
 function App() {
   return (
@@ -70,7 +71,7 @@ function App() {
     //     <Footer />
     //   </AuthProvider>
     // </Router>
-    <h1>hello</h1>
+    <ServerError />
   );
 }
 
