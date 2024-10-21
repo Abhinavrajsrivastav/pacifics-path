@@ -70,6 +70,7 @@ function App() {
     //     <Footer />
     //   </AuthProvider>
     // </Router>
+    <h1>hello</h1>
   );
 }
 
