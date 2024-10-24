@@ -18,7 +18,7 @@ import Videos from './Pages/ChatBot/Queries/Results/Video/Videos';
 import Books from './Pages/Books/Books';
 import GitHubProfile from './Pages/Socials/GitHub/GitHubProfile';
 import Mate from './Pages/Socials/FindMate/Mate';
-import ChatRoom from '../src/Categories/ChatRoom';
+// import ChatRoom from '../src/Categories/ChatRoom';
 import Testimonials from './Components/Welcome/Pages/Working-Features/Testemonials/Testemonials';
 import Developers from './Components/Welcome/Pages/Working-Features/Developers/Developers';
 import Compare from './Components/Welcome/Pages/Working-Features/Compare/Compare';
