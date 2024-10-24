@@ -35,42 +35,42 @@ import ServerError from './Pages/ServerError/ServerError';
 
 function App() {
   return (
-    // <Router>
-    //   <AuthProvider>
-    //     <Navbar />
-    //     <Routes>
-    //       <Route path="/pacifics-path" element={
-    //         <>
-    //           <Vision />
-    //           <Features />
-    //           <Testimonials />
-    //           <Developers />
-    //           <FAQ />
-    //           {/* <Feedback /> */}
-    //         </>
-    //       } />
-    //       <Route path="/login" element={<Login />} />
-    //       <Route path="/signup" element={<Signup />} />
-    //       <Route path="/profile" element={<Profile />} />
-    //       <Route path="/watson-bot" element={<Chatbot />} />
-    //       <Route path="/categories" element={<Categories />} />
-    //       <Route path="/selfLearn" element={<SelfLearn />} />
-    //       <Route path="/self-learn/response" element={<Result />} />
-    //       <Route path="/self-learn/response/Videos" element={<Videos />} />
-    //       <Route path="/read-books" element={<Books />} />
-    //       <Route path="/github-profile" element={<GitHubProfile />} />
-    //       <Route path="/git-mate" element={<Mate />} />
-    //       <Route path="/chat/:topic" element={<ChatRoom />} />
-    //       <Route path="/Compare" element={<Compare />} />
-    //       <Route path="/projects" element={<Projects />} />
-    //       <Route path="/learderboard" element={<LeaderBoard />} />
-    //       <Route path="/feedback" element={<Feedback />} />
-    //       <Route path="/cover-letter" element={<CoverLetterGenerator />} />
-    //       <Route path="/join-community" element={<Community />} />
-    //     </Routes>
-    //     <Footer />
-    //   </AuthProvider>
-    // </Router>
+    <Router>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/pacifics-path" element={
+            <>
+              <Vision />
+              <Features />
+              <Testimonials />
+              <Developers />
+              <FAQ />
+              {/* <Feedback /> */}
+            </>
+          } />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/watson-bot" element={<Chatbot />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/selfLearn" element={<SelfLearn />} />
+          <Route path="/self-learn/response" element={<Result />} />
+          <Route path="/self-learn/response/Videos" element={<Videos />} />
+          <Route path="/read-books" element={<Books />} />
+          <Route path="/github-profile" element={<GitHubProfile />} />
+          <Route path="/git-mate" element={<Mate />} />
+          <Route path="/chat/:topic" element={<ChatRoom />} />
+          <Route path="/Compare" element={<Compare />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/learderboard" element={<LeaderBoard />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/cover-letter" element={<CoverLetterGenerator />} />
+          <Route path="/join-community" element={<Community />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
+    </Router>
     <ServerError />
   );
 }
