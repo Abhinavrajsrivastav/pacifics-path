@@ -71,7 +71,7 @@ function App() {
         <Footer />
       </AuthProvider>
     </Router>
-    <ServerError />
+    // <ServerError />
   );
 }
 
