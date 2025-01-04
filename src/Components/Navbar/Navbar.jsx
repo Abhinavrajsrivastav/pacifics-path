@@ -114,7 +114,7 @@ function NavBar() {
                     <ListItem button component="a" href="#dev">
                         <FaIcons style={{position:'relative', right: '6px', top: '-1px'}}  /> <ListItemText primary="About" />
                     </ListItem>
-                    {email &&<>
+                    {/* {email &&<> */}
                     <ListItem button component={Link} to="/github-profile">
                         <FaSearch style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Search" />
                     </ListItem>
@@ -145,8 +145,8 @@ function NavBar() {
                     <ListItem button component={Link} to="https://forms.gle/JaN34JzzDWhtjAUv5">
                         <Feedback style={{position:'relative', right: '6px', top: '-1px'}} /><ListItemText primary="Feedback" />
                     </ListItem>
-                    </> 
-                    }
+                    {/* </> 
+                    } */}
                     {email!=null&&<>
                      <ListItem button onClick={() => logout()}>
                                 <Logout style={{position:'relative', right: '6px', top: '-1px'}}/>Logout
