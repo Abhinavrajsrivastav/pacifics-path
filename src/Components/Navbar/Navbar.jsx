@@ -66,12 +66,10 @@ function NavBar() {
                                 </div>
                             </div>
                             {/* </>} */}
-                            {/* <a href="#Testemonials" className="nav-link">Testimonials</a> */}
                             <a href="#dev" className="nav-link">Us</a>
                             {email == null ? (
                                 <>
                                     <Link to="/login"><button className="nav-login-btn">login</button></Link>
-                                    {/* <Link to="/signup"><button className="nav-login-btn">SignUp</button></Link> */}
                                 </>
                             ) : (
                                 <div className='log-out-btns' style={{display:"flex", gap: "8px"}}>
@@ -85,7 +83,6 @@ function NavBar() {
                         <Link to="/signup"><button className="nav-login-btn">SignUp</button></Link>
                     ) : (
                         null
-                        // <img src={data.photoURL} style={{height: "30px", width: "30px", marginRight: "20px", borderRadius: "50%" }} onClick={() => navigate("/profile")} alt="Profile" />
                     )}
                 </div>
             </Toolbar>
