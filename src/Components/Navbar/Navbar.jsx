@@ -47,8 +47,8 @@ function NavBar() {
                         <>
                             <Link to="/pacifics-path"><a href="#" className="nav-link">Home</a></Link>
                             <a href="#" className="nav-link">About</a>
-                            {email!=null&&
-                            <>
+                            {/* {email!=null&& */}
+                            {/* <> */}
                             <div className="nav-dropdown" >
                                 <button className="nav-dropdown-button nav-link-explore" onClick={() => setDropdownOpen(!dropdownOpen)}>
                                     Explore
@@ -65,7 +65,7 @@ function NavBar() {
                                     <Link to="https://forms.gle/JaN34JzzDWhtjAUv5" className='nav-dropdown-item' ><Feedback style={{position:'relative', right: '4px', top: '2px'}} /> Feedback</Link>
                                 </div>
                             </div>
-                            </>}
+                            {/* </>} */}
                             {/* <a href="#Testemonials" className="nav-link">Testimonials</a> */}
                             <a href="#dev" className="nav-link">Us</a>
                             {email == null ? (
