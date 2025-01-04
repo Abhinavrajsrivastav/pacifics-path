@@ -44,18 +44,12 @@ Watch the explanation and walkthrough video here:
 - **Deployment:** Netlify (Frontend), Render/Heroku (Backend)
 
 ## 📷 Screenshots
-
+> Glimpse of Educome
 ![image](https://github.com/user-attachments/assets/6f6ae949-ee06-4a1e-a6a9-1d2a9841e0b3)
 ![image](https://github.com/user-attachments/assets/b3aa3882-b10f-40d0-909d-f4cabbda4e6e)
 ![image](https://github.com/user-attachments/assets/1abadd77-14fa-4bbf-9689-ce946dc42214)
 ![image](https://github.com/user-attachments/assets/eb9f2822-ccf9-4e3d-82ca-c0d8f12187ba)
 ![image](https://github.com/user-attachments/assets/3af1f8a9-0396-4c6d-8b7e-3c890e55d057)
-
-
-
-
-
-> Add a few screenshots of the platform here to give an overview of the interface.
 
 ## 📜 Live Demo
 
