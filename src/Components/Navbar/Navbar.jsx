@@ -42,6 +42,7 @@ function NavBar() {
                         ) : null}
                     </div>
                 </div>
+                
                 <div className="nav-links">
                     {window.innerWidth > 1005 && 
                         <>
