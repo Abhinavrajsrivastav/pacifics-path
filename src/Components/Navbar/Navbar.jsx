@@ -7,8 +7,6 @@ import { Menu as MenuIcon, Close as CloseIcon, Leaderboard, Logout, Search, Sear
 import './Navbar.css';
 import { FaAnchor, FaBook, FaGoogle, FaHome, FaIcons, FaInbox, FaPen, FaSearch, FaSignInAlt, FaStar, FaTeamspeak, FaUserFriends, FaUserNinja } from 'react-icons/fa';
 
-
-
 function NavBar() {
     const [menuActive, setMenuActive] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
