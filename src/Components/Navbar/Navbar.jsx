@@ -9,6 +9,7 @@ import { FaAnchor, FaBook, FaGoogle, FaHome, FaIcons, FaInbox, FaPen, FaSearch, 
 
 
 
+
 function NavBar() {
     const [menuActive, setMenuActive] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
