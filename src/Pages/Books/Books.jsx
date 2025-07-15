@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import { useRef, useState } from 'react';
+import { FaBook, FaLink } from 'react-icons/fa';
 import './Books.css';
-import { FaArrowAltCircleDown, FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowLeft, FaArrowRight, FaBook, FaFire, FaLink } from 'react-icons/fa';
 
 const Books = () => {
   const [query, setQuery] = useState('');
@@ -103,19 +103,29 @@ const otherDomainsBooks = [
   };
 
   const renderThemes = (themes, title) => (
-    <div className='books-box'>
-      <h2>{title}</h2>
-      <div className="suggested-theme">
+    <div className='books-category'>
+      <div className="category-header">
+        <div className="category-title">
+          <h2>{title}</h2>
+          <div className="category-icon">
+            {title === 'Web Development' && '🌐'}
+            {title === 'Programming Languages' && '💻'}
+            {title === 'Data Science' && '📊'}
+            {title === 'Other Domains' && '🚀'}
+          </div>
+        </div>
+        <div className="books-count">{themes.length} books</div>
+      </div>
+      <div className="themed-books-grid">
         {themes.map((theme) => (
-          <button key={theme.name} className="theme-buttoni" onClick={() => handleThemeClick(theme)}>
-            <div className='theme-buttons'>
-              <div>
-              {theme.emoji} {theme.name} 
-            </div>
-            <div className='themeArrow'>
-              {<FaFire size='12' color="blue"/>}
-            </div>
-            </div>
+          <button 
+            key={theme.name} 
+            className="modern-theme-button" 
+            onClick={() => handleThemeClick(theme)}
+          >
+            <div className="theme-emoji">{theme.emoji}</div>
+            <span className="theme-name">{theme.name}</span>
+            <div className="theme-arrow">→</div>
           </button>
         ))}
       </div>
@@ -157,49 +167,101 @@ const otherDomainsBooks = [
 
   return (
     <div className="book-search-container">
-      <div className='book-banke'>
-        <div>
-        <h1>Book Library</h1>    
-      <p>Explore a curated collection of books across various genres. Whether you're looking for fiction, non-fiction, science, history, or more, find your next great read here 🎉✌️.</p>
-      </div>
-      {renderThemes(webDevelopmentBooks, 'Web Development')}
-      {renderThemes(programmingLanguagesBooks, 'Programming Languages')}
-      {renderThemes(dataScienceBooks, 'Data Science')}
-      {renderThemes(otherDomainsBooks, 'Other Domains')}
-      
-      <div className="search-container">
-        <input
-          type="text"
-          value={query}
-          onChange={handleInputChange}
-          placeholder="Enter book category or name"
-        />
-        <button onClick={handleButtonClick} >
-          Search
-        </button>
-      </div>
-      
-      {error && <p className="error-message">{error}</p>}
-      
-      <div ref={booksSectionRef} className="books-container">
-        {books.map((book) => (
-          <div key={book.id} className="book-item">
-            <h2>{book.volumeInfo.title}</h2>
-            <p>{book.description}</p>
-            <div className="book-links">
-              <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">
-                <FaBook color='white'/>
-              </a>
-              {book.volumeInfo.previewLink && (
-                <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-                  <FaLink color='white'/>
-                </a>
-              )}
+      <div className="books-hero">
+        <div className="hero-content">
+          <h1>Discover <span className="highlight-text">Books</span></h1>
+          <p className="hero-description">
+            Find amazing books to expand your knowledge and skills
+          </p>
+          
+          <div className="search-section">
+            <div className="search-container">
+              <input
+                type="text"
+                value={query}
+                onChange={handleInputChange}
+                className="modern-search-input"
+                placeholder="Search books..."
+              />
+              <button onClick={handleButtonClick} className="modern-search-button">
+                Search
+              </button>
             </div>
           </div>
-        ))}
+        </div>
       </div>
+
+      <div className="categories-section">
+        {renderThemes(webDevelopmentBooks, 'Web Development')}
+        {renderThemes(programmingLanguagesBooks, 'Programming Languages')}
+        {renderThemes(dataScienceBooks, 'Data Science')}
+        {renderThemes(otherDomainsBooks, 'Other Domains')}
       </div>
+
+      {books.length > 0 && (
+        <div ref={booksSectionRef} className="results-section">
+          <div className="results-header">
+            <h3 className="results-title">📚 Discovered Books</h3>
+            <div className="results-badge">{books.length} books found</div>
+          </div>
+          
+          <div className="books-grid">
+            {books.map((book) => (
+              <div key={book.id} className="modern-book-card">
+                <div className="card-header">
+                  <h4 className="book-title">{book.volumeInfo.title}</h4>
+                  {book.volumeInfo.authors && (
+                    <p className="book-authors">by {book.volumeInfo.authors.join(', ')}</p>
+                  )}
+                </div>
+                
+                <p className="book-description">{book.description}</p>
+                
+                <div className="book-meta">
+                  {book.volumeInfo.publishedDate && (
+                    <span className="publish-date">📅 {book.volumeInfo.publishedDate}</span>
+                  )}
+                  {book.volumeInfo.pageCount && (
+                    <span className="page-count">📄 {book.volumeInfo.pageCount} pages</span>
+                  )}
+                </div>
+                
+                <div className="card-actions">
+                  <a 
+                    href={book.volumeInfo.infoLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="action-button primary"
+                  >
+                    <FaBook className="action-icon" />
+                    <span>View Book</span>
+                  </a>
+                  {book.volumeInfo.previewLink && (
+                    <a 
+                      href={book.volumeInfo.previewLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="action-button secondary"
+                    >
+                      <FaLink className="action-icon" />
+                      <span>Preview</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {error && (
+        <div className="error-notification">
+          <div className="error-content">
+            <span className="error-icon">⚠️</span>
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import './Projects.css';
-import { FaGithub, FaLink, FaYoutube } from 'react-icons/fa';
+import { useRef, useState } from 'react';
+import { FaGithub, FaLink } from 'react-icons/fa';
 import { OpenApi } from '../../Components/Api/OpenApi';
+import './Projects.css';
 
 const Projects = () => {
   const [query, setQuery] = useState('');
@@ -148,17 +148,38 @@ const Projects = () => {
 };
 
 
-  const renderThemes = (themes, title,setProjects) => (
-    <div className='projects-box'>
-      <h2>{title}</h2>
-      <div className="suggested-themes">
+  const renderThemes = (themes, title, setProjects) => (
+    <div className='projects-category'>
+      <div className="category-header">
+        <div className="category-title">
+          <h2>{title}</h2>
+          <div className="category-icon">
+            {title === 'Web Development' && '🌐'}
+            {title === 'Programming Languages' && '💻'}
+            {title === 'Data Science' && '📊'}
+            {title === 'Other Domains' && '🚀'}
+          </div>
+        </div>
+        <div className="projects-count">{themes.length} projects</div>
+      </div>
+      <div className="themed-projects-grid">
         {themes.map((theme) => (
-          <button key={theme.name} className="theme-button" onClick={() => handleThemeClick(theme)}>
-            {theme.emoji} {theme.name}
+          <button 
+            key={theme.name} 
+            className="modern-theme-button" 
+            onClick={() => handleThemeClick(theme)}
+          >
+            <div className="theme-emoji">{theme.emoji}</div>
+            <span className="theme-name">{theme.name}</span>
+            <div className="theme-arrow">→</div>
           </button>
         ))}
-        <button className="theme-button" onClick={() => getSomeMoreProject(themes,setProjects,title)}>
-          ➕ See More
+        <button 
+          className="see-more-button" 
+          onClick={() => getSomeMoreProject(themes, setProjects, title)}
+        >
+          <div className="plus-icon">+</div>
+          <span>Discover More</span>
         </button>
       </div>
     </div>
@@ -217,65 +238,121 @@ const Projects = () => {
 
   return (
     <div className="project-search-container">
-      <div className='Project-con'>
-        <h1>Project Portfolio</h1>
-        <p>Here's a collection of top-notch projects that you can proudly add to your resume. This Project Portfolio will help you find the best among the best projects, complete with their code, documentation, and live views. Feel free to use any of these and let us know what you think about this initiative! Happy Learning 🎉✌️</p>
+      <div className="projects-heroo">
+        <div className="hero-content">
+          <h1>Discover <span className="highlight-text">Projects</span></h1>
+          <p className="hero-description">
+            Find amazing projects to build and showcase your skills
+          </p>
+          
+          <div className="search-sections">
+            <div className="search-containerr">
+              <input
+                type="text"
+                value={query}
+                onChange={handleInputChange}
+                className="modern-search-input"
+                placeholder="Search projects..."
+              />
+              <button onClick={handleButtonClick} className="modern-search-button">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="categories-section">
         {renderThemes(webDevelopment, 'Web Development', setWebDevelopment)}
         {renderThemes(programmingLanguages, 'Programming Languages', setProgrammingLanguages)}
         {renderThemes(dataScience, 'Data Science', setDataScience)}
         {renderThemes(otherDomains, 'Other Domains', setOtherDomains)}
-        <div>
-          <input
-            type="text"
-            value={query}
-            onChange={handleInputChange}
-            className="project-search-input"
-            placeholder="Enter project name..."
-          />
-          <button onClick={handleButtonClick} className="project-search-button">Search</button>
-        </div>
       </div>
-      <div ref={projectsSectionRef}>
-        {projects.length > 0 && (
-           <div ref={projectsSectionRef} className='projects-result'>
-            <h3 className='head-result'>Projects</h3>
-        {projects.length > 0 && (
-          <div className="project-cards">
+
+      {projects.length > 0 && (
+        <div ref={projectsSectionRef} className="results-section">
+          <div className="results-header">
+            <h3 className="results-title">🎯 Discovered Projects</h3>
+            <div className="results-badge">{projects.length} projects found</div>
+          </div>
+          
+          <div className="projects-grid">
             {paginate(projects).map((project) => (
-              <div key={project.id} className="project-card">
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <div className="project-links">
-                  <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-                    <FaGithub /> GitHub
+              <div key={project.id} className="modern-project-card">
+                <div className="card-header">
+                  <h4 className="project-title">{project.name}</h4>
+                  <div className="project-stats">
+                    <span className="stars">⭐ {project.stargazers_count}</span>
+                    <span className="forks">🍴 {project.forks_count}</span>
+                  </div>
+                </div>
+                
+                <p className="project-description">{project.description}</p>
+                
+                <div className="project-tech">
+                  {project.language && (
+                    <span className="tech-badge">{project.language}</span>
+                  )}
+                </div>
+                
+                <div className="card-actions">
+                  <a 
+                    href={project.html_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="action-button primary"
+                  >
+                    <FaGithub className="action-icon" />
+                    <span>View Code</span>
                   </a>
                   {project.homepage && (
-                    <a href={project.homepage} target="_blank" rel="noopener noreferrer">
-                      🛸 Live Demo
+                    <a 
+                      href={project.homepage} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="action-button secondary"
+                    >
+                      <FaLink className="action-icon" />
+                      <span>Live Demo</span>
                     </a>
                   )}
                 </div>
               </div>
             ))}
           </div>
-        )}
-        {error && <p className="error-message">{error}</p>}
-        {projects.length > 0 && (
-          <div className="paginations">
-            <button onClick={prevPage} disabled={currentPage === 1}>
-              Back
-            </button>
-            <span>Page {currentPage}</span>
-            <button onClick={nextPage} disabled={currentPage * projectsPerPage >= projects.length}>
-              Next
-            </button>
+          
+          {projects.length > projectsPerPage && (
+            <div className="modern-pagination">
+              <button 
+                onClick={prevPage} 
+                disabled={currentPage === 1}
+                className="pagination-button"
+              >
+                ← Previous
+              </button>
+              <div className="page-info">
+                <span className="page-indicator">Page {currentPage} of {Math.ceil(projects.length / projectsPerPage)}</span>
+              </div>
+              <button 
+                onClick={nextPage} 
+                disabled={currentPage * projectsPerPage >= projects.length}
+                className="pagination-button"
+              >
+                Next →
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {error && (
+        <div className="error-notification">
+          <div className="error-content">
+            <span className="error-icon">⚠️</span>
+            <p>{error}</p>
           </div>
-        )}
-      </div>
-        )}
-      </div>
-      {error && <div className="error-message">{error}</div>}
-      
+        </div>
+      )}
     </div>
   );
 };
